@@ -1,0 +1,6 @@
+wget
+thefuck
+tldr
+awscli
+jq
+with-readline

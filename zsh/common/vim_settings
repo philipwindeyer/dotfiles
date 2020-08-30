@@ -1,0 +1,18 @@
+#!/bin/zsh
+
+# Inside function as I don't want the vim_conf var globally available
+function configure_vim {
+  local vim_conf=~/.vimrc
+  
+  if [ ! -f $vim_conf ]; then
+    cat - > $vim_conf <<SETTINGS
+set number
+set autoindent
+syntax on
+colorscheme desert
+SETTINGS
+fi
+}
+
+configure_vim
+

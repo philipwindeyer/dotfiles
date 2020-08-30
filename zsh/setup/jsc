@@ -1,0 +1,2 @@
+JSC_PATH=/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/
+export PATH="$JSC_PATH:$PATH"

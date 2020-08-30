@@ -1,0 +1,51 @@
+alias http-server='/usr/bin/python -m SimpleHTTPServer'
+alias ll='ls -alh'
+alias gst='git status'
+alias gco='git commit'
+alias gch='git checkout'
+alias ga='git add'
+alias gd='git diff'
+alias gb='git branch'
+alias gbd='git branch -d'
+alias gfp='git fetch && git pull'
+
+alias be='bundle exec'
+alias bi='bundle install'
+alias bu='bundle update'
+
+alias ssh-nas='ssh philipwindeyer@192.168.1.18'
+
+alias dce='docker-compose exec'
+alias dce-hotels-bash='docker-compose exec hotels bash'
+alias dce-gatekeeper-bash='docker-compose exec gatekeeper bash'
+alias dce-customer-notifications-bash='cd ~/workspaces/ted; docker-compose exec customer-notifications bash'
+alias dce-bookings-api-bash='cd ~/workspaces/ted; docker-compose exec bookings-api bash'
+alias docker-login='AWS_PROFILE=services ~/workspaces/ted/bin/login'
+alias docker-customer-notifications='cd ~/workspaces/ted; /usr/local/bin/docker-compose up -d customer-notifications'
+alias docker-bookings-api='cd ~/workspaces/ted; /usr/local/bin/docker-compose up -d bookings-api'
+alias docker-platformdb='cd ~/workspaces/ted; /usr/local/bin/docker-compose up -d platformdb'
+alias docker-platform-up='cd ~/workspaces/ted; AWS_PROFILE=nonprod bin/up'
+alias docker-ubuntu='docker run -it ubuntu bash'
+
+alias self-service='yarn run start'
+alias self-service-staging='yarn run start:staging'
+
+# Requires 'with-readline'. Install via Homebrew; brew install with-readline
+alias sftp='with-readline sftp'
+
+# Terraform
+alias terraform-init-with-upgrade='terraform init -upgrade'
+alias tf="AWS_PROFILE=services terraform"
+alias tfi="tf init -upgrade"
+alias tfw="tf workspace"
+alias tfp="tf plan"
+
+alias weather='curl wttr.in'
+alias fuck-yeah='fuck --yeah'
+
+alias postgres-start='~/.asdf/installs/postgres/12.0/bin/pg_ctl -D ~/.asdf/installs/postgres/12.0/data -l logfile start'
+
+alias aws-google-auth-services='aws-google-auth -k -d 28800 -p services'
+
+# Work Utils
+alias hammer-hnl='hammer book --location HNL --points 0 --voucher 0'
