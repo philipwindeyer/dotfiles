@@ -1,6 +1,11 @@
+coreutils
+gnupg
+ctop
+starship
+telnet
 wget
+with-readline
 thefuck
 tldr
 awscli
 jq
-with-readline

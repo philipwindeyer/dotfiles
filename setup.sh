@@ -3,6 +3,12 @@
 sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+# TODO Add a "-f" for full-install option to the script
+# I.e. don't run all of the config steps unless -f specified 
+# AND/OR keep state in a dotfile (i.e. if never run, then run "first time install" mode)
+
+# Add a "--work" option so the script uses the *-work.txt files for apps on work issued machine
+
 function install_dev_tools {
   xcode-select --install
 }

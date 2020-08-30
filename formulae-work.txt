@@ -1,0 +1,13 @@
+wget
+thefuck
+tldr
+awscli
+jq
+with-readline
+coreutils
+gnupg
+ctop
+starship
+telnet
+docker
+docker-compose
