@@ -26,6 +26,7 @@ alias docker-bookings-api='cd ~/workspaces/ted; /usr/local/bin/docker-compose up
 alias docker-platformdb='cd ~/workspaces/ted; /usr/local/bin/docker-compose up -d platformdb'
 alias docker-platform-up='cd ~/workspaces/ted; AWS_PROFILE=nonprod bin/up'
 alias docker-ubuntu='docker run -it ubuntu bash'
+alias docker-nuke='read "doit?Are ya sure there buddy? Type YaASsS if so: " && [[ "$doit" == "YaASsS" ]] && docker container stop $(docker container ls -aq) && docker system prune -af --volumes && docker image prune -af'
 
 alias self-service='yarn run start'
 alias self-service-staging='yarn run start:staging'
