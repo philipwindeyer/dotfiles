@@ -157,5 +157,5 @@ reset_launchpad
 create_dirs
 finder_settings
 global_settings
-daemon_settings
+#daemon_settings
 zshrc
