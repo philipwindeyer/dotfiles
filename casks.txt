@@ -26,3 +26,5 @@ handbrake
 mjml
 insomnia
 kap
+houseparty
+noxappplayer

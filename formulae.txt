@@ -1,7 +1,6 @@
 coreutils
 gnupg
 ctop
-starship
 telnet
 wget
 with-readline

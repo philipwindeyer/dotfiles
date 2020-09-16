@@ -7,7 +7,6 @@ with-readline
 coreutils
 gnupg
 ctop
-starship
 telnet
 docker
 docker-compose

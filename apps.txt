@@ -3,3 +3,4 @@ affinity-photo
 imovie
 poolsidefm
 messenger-facebook
+garageband
