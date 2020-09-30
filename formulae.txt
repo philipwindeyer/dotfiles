@@ -8,3 +8,4 @@ thefuck
 tldr
 awscli
 jq
+aws-sam-cli
