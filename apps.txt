@@ -4,3 +4,4 @@ imovie
 poolsidefm
 messenger-facebook
 garageband
+trello
