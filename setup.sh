@@ -131,7 +131,7 @@ function finder_settings() {
   defaults write com.apple.finder ShowToolbar -bool true
   defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
   defaults write com.apple.finder NewWindowTarget -string "PfHm"
-  defaults write com.apple.finder AppleShowAllFiles true; killall Finder
+  defaults write com.apple.finder AppleShowAllFiles true
 
   killAll cfprefsd
   killAll Finder
