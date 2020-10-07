@@ -1,0 +1,6 @@
+bundler
+nodejs
+nodejs latest:12
+ruby
+terraform
+yarn

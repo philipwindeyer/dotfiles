@@ -12,9 +12,14 @@ done 2>/dev/null &
 # AND/OR keep state in a dotfile (i.e. if never run, then run "first time install" mode)
 
 # Add a "--work" option so the script uses the *-work.txt files for apps on work issued machine
+# Add better logging using tee
 
 function install_dev_tools() {
   xcode-select --install
+}
+
+function install_system_updates() {
+  softwareupdate --install --all
 }
 
 function manage_homebrew() {
@@ -23,7 +28,7 @@ function manage_homebrew() {
     brew doctor
     brew update
     brew upgrade
-    brew cask upgrade
+    brew upgrade --cask
 
   else
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -50,8 +55,6 @@ function manage_asdf() {
     echo "Installing asdf for managed versions of JS and Ruby"
     brew install asdf
   fi
-
-  asdf upgrade
 }
 
 function add_taps() {
@@ -68,7 +71,7 @@ function install_formulae() {
 
 function install_casks() {
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
-    brew cask list ${LINE} || brew cask install ${LINE}
+    brew list --cask ${LINE} || brew cask install ${LINE}
   done <./casks.txt
 }
 
@@ -78,8 +81,37 @@ function install_apps() {
   done <./apps.txt
 }
 
+function add_asdf_plugins() {
+  while IFS='' read -r LINE || [ -n "${LINE}" ]; do
+    asdf plugin add "${LINE}"
+  done <./asdf-plugins.txt
+
+  ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+}
+
+function install_asdf_libs() {
+  while IFS='' read -r LINE || [ -n "${LINE}" ]; do
+    local lib=$(echo $LINE | awk '{print $1}')
+    local version=$(echo $LINE | awk '{print $2}')
+    if [[ -z "${version// }" ]]; then version=latest; fi
+
+    asdf install $lib $version
+
+    local global_version=$(asdf list $lib | tail -n 1 | awk '{$1=$1};1')
+    asdf global $lib $global_version
+  done <./asdf-libs.txt
+}
+
 function reset_launchpad() {
   defaults write com.apple.dock ResetLaunchPad -bool true
+  killall Dock
+}
+
+function dock_settings() {
+  defaults write com.apple.dock mouse-over-hilite-stack -bool true
+  defaults write com.apple.Dock showhidden -bool true
+  defaults write com.apple.dock mineffect suck
+  
   killall Dock
 }
 
@@ -99,6 +131,7 @@ function finder_settings() {
   defaults write com.apple.finder ShowToolbar -bool true
   defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
   defaults write com.apple.finder NewWindowTarget -string "PfHm"
+  defaults write com.apple.finder AppleShowAllFiles true; killall Finder
 
   killAll cfprefsd
   killAll Finder
@@ -112,7 +145,7 @@ function global_settings() {
   killall coreaudiod
 
   # Resets hostname to prevent rewrites when on other networks
-  scutil --set HostName "$(scutil --get LocalHostName).local"
+  sudo scutil --set HostName "$(scutil --get LocalHostName).local"
 }
 
 function daemon_settings() {
@@ -126,7 +159,7 @@ function zshrc() {
 
   if [ -f $local_zshrc ]; then
     echo ".zshrc file already exists"
-    grep "source $zshrc_config" $local_zshrc
+    grep "source $zshrc_config" $local_zshrc >/dev/null
 
     if [ ! $? -eq 0 ]; then
       echo "Config not sourced in .zshrc. Adding..."
@@ -158,6 +191,7 @@ function enable_ntfs_write() {
 }
 
 install_dev_tools
+install_system_updates
 manage_homebrew
 manage_mas
 manage_asdf
@@ -165,9 +199,12 @@ add_taps
 install_formulae
 install_casks
 install_apps
+add_asdf_plugins
+install_asdf_libs
 reset_launchpad
 create_dirs
 finder_settings
 global_settings
 #daemon_settings
 zshrc
+#enable_ntfs_write
