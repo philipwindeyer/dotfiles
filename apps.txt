@@ -5,3 +5,4 @@ poolsidefm
 messenger-facebook
 garageband
 trello
+xcode
