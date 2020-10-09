@@ -1,5 +1,5 @@
 if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+  export FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
-PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:$PATH"

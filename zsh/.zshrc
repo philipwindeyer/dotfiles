@@ -4,6 +4,7 @@
 source ${0%/*}/setup/startup
 source ${0%/*}/setup/homebrew
 source ${0%/*}/setup/asdf
+source ${0%/*}/setup/yarn
 source ${0%/*}/setup/thefuck
 source ${0%/*}/setup/jsc
 
