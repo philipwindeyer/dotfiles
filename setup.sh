@@ -104,7 +104,16 @@ function install_asdf_libs() {
 
 function install_yarn_global_pkgs() {
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
-    yarn global add "${LINE}"
+    local pkg=$(echo $LINE | awk '{print $1}')
+    local registry=$(echo $LINE | awk '{print $2}')
+
+    if [[ -z "${version// }" ]]; then
+      yarn global add $pkg
+
+    else
+      # "--registry" does not work with `yarn global`
+      npm install -g <package_name> --registry "$registry"
+    fi
   done <./yarn-global-pkgs.txt
 }
 
