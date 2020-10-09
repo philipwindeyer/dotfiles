@@ -104,7 +104,7 @@ function install_asdf_libs() {
 
 function install_yarn_global_pkgs() {
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
-    mas lucky "${LINE}"
+    yarn global add "${LINE}"
   done <./yarn-global-pkgs.txt
 }
 
