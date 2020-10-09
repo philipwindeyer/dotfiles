@@ -107,13 +107,14 @@ function install_yarn_global_pkgs() {
     local pkg=$(echo $LINE | awk '{print $1}')
     local registry=$(echo $LINE | awk '{print $2}')
 
-    if [[ -z "${version// }" ]]; then
+    if [[ -z "${registry// }" ]]; then
       yarn global add $pkg
 
     else
       # "--registry" does not work with `yarn global`
-      npm install -g <package_name> --registry "$registry"
+      npm install -g $pkg --registry "$registry"
     fi
+
   done <./yarn-global-pkgs.txt
 }
 
