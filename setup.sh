@@ -102,6 +102,12 @@ function install_asdf_libs() {
   done <./asdf-libs.txt
 }
 
+function install_yarn_global_pkgs() {
+  while IFS='' read -r LINE || [ -n "${LINE}" ]; do
+    mas lucky "${LINE}"
+  done <./yarn-global-pkgs.txt
+}
+
 function reset_launchpad() {
   defaults write com.apple.dock ResetLaunchPad -bool true
   killall Dock
@@ -201,6 +207,7 @@ install_casks
 install_apps
 add_asdf_plugins
 install_asdf_libs
+install_yarn_global_pkgs
 reset_launchpad
 create_dirs
 finder_settings

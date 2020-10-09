@@ -49,5 +49,7 @@ alias postgres-start='~/.asdf/installs/postgres/12.0/bin/pg_ctl -D ~/.asdf/insta
 alias aws-google-auth-services='aws-google-auth -k -d 28800 -p services'
 alias aws-google-auth-nonprod='aws-google-auth -k -d 28800 -p nonprod'
 
+alias rm-ds_store-files='find . -name '.DS_Store' -type f -delete'
+
 # Work Utils
 alias hammer-hnl='hammer book --location HNL --points 0 --voucher 0'
