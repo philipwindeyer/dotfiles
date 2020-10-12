@@ -53,3 +53,14 @@ alias rm-ds_store-files='find . -name '.DS_Store' -type f -delete'
 
 # Work Utils
 alias hammer-hnl='hammer book --location HNL --points 0 --voucher 0'
+
+function work-platform-find-scheduled() {
+  local job_id="$1"
+  for i in {1..100}; do
+    local url="https://staging-platform-scheduler.nonprod.jqdev.net/que/scheduled?page=$i"
+    if curl -s $url | grep "$job_id" >/dev/null; then
+      echo $url
+      break
+    fi
+  done
+}
