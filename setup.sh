@@ -118,16 +118,33 @@ function install_yarn_global_pkgs() {
   done <./yarn-global-pkgs.txt
 }
 
-function reset_launchpad() {
-  defaults write com.apple.dock ResetLaunchPad -bool true
-  killall Dock
-}
-
 function dock_settings() {
+  defaults write com.apple.dock autohide -bool true
   defaults write com.apple.dock mouse-over-hilite-stack -bool true
-  defaults write com.apple.Dock showhidden -bool true
+  defaults write com.apple.dock showhidden -bool true
+  defaults write com.apple.dock show-recents -bool false
   defaults write com.apple.dock mineffect suck
+  defaults write com.apple.dock tilesize 52
+  defaults write com.apple.dock orientation bottom
+  defaults write com.apple.dock ResetLaunchPad -bool true
+
+  # Dock apps/directories
+  defaults write com.apple.dock persistent-apps -array
+  defaults write com.apple.dock persistent-others -array
+
+  while IFS='' read -r LINE || [ -n "${LINE}" ]; do
+    defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>${LINE}</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+  done <./dock-apps.txt
+
+  local dirs=(
+    "$HOME/"
+    "$HOME/Downloads/"
+  )
   
+  for dir in "${dirs[@]}"; do
+    defaults write com.apple.dock persistent-others -array-add "<dict><key>tile-data</key><dict><key>arrangement</key><integer>1</integer><key>displayas</key><integer>1</integer><key>file-data</key><dict><key>_CFURLString</key><string>file://$dir</string><key>_CFURLStringType</key><integer>15</integer></dict><key>showas</key><integer>2</integer></dict><key>tile-type</key><string>directory-tile</string></dict>"
+  done
+
   killall Dock
 }
 
@@ -165,7 +182,8 @@ function global_settings() {
 }
 
 function daemon_settings() {
-  # Stop iTunes opening when "Play" pressed
+  # TODO: Update to ONLY pevent iTunes from opening when "play" pressed
+  # This was in to stop iTunes from opening when the "play" key was pressed, but it actually disables the media keys/controls
   launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 }
 
@@ -189,23 +207,6 @@ function zshrc() {
   fi
 }
 
-function enable_ntfs_write() {
-  # Mounting as read/write fails in Catalina
-  local config_file=/etc/fstab
-  local windows=$(diskutil list | grep -i microsoft | sed 's/.*Microsoft Basic Data//' | awk '{print $1}')
-
-  [ ! -f $config_file ] && echo "Adding fstab config" && sudo touch $config_file
-
-  while IFS= read -r LINE; do
-    if grep -q $LINE $config_file; then
-      echo "$LINE already mounted as read/write volume"
-    else
-      echo "Mounting $LINE as read/write volume"
-      echo "LABEL=$LINE none ntfs rw,auto,nobrowse" | sudo tee -a $config_file
-    fi
-  done <<<"$windows"
-}
-
 install_dev_tools
 install_system_updates
 manage_homebrew
@@ -218,10 +219,9 @@ install_apps
 add_asdf_plugins
 install_asdf_libs
 install_yarn_global_pkgs
-reset_launchpad
+dock_settings
 create_dirs
 finder_settings
 global_settings
-#daemon_settings
+# daemon_settings
 zshrc
-#enable_ntfs_write
