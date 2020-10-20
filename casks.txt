@@ -28,3 +28,4 @@ insomnia
 kap
 houseparty
 noxappplayer
+signal
