@@ -45,4 +45,4 @@ Steps:
 - Install Discord `choco install -y discord`
 - Install WhatsApp `choco install -y whatsapp`
 - Install Facebook Messenger (via Windows Store - is there a tool similar to MAS to automate this?)
-- 
+- Install Google Backup and Sync `choco install google-backup-and-sync`
