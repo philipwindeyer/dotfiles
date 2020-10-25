@@ -121,7 +121,7 @@ function install_yarn_global_pkgs() {
 function dock_settings() {
   defaults write com.apple.dock autohide -bool true
   defaults write com.apple.dock mouse-over-hilite-stack -bool true
-  defaults write com.apple.dock showhidden -bool true
+  defaults write com.apple.dock showhidden -bool false
   defaults write com.apple.dock show-recents -bool false
   defaults write com.apple.dock mineffect suck
   defaults write com.apple.dock tilesize 52
@@ -164,7 +164,7 @@ function finder_settings() {
   defaults write com.apple.finder ShowToolbar -bool true
   defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
   defaults write com.apple.finder NewWindowTarget -string "PfHm"
-  defaults write com.apple.finder AppleShowAllFiles true
+  defaults write com.apple.finder AppleShowAllFiles false
 
   killAll cfprefsd
   killAll Finder
