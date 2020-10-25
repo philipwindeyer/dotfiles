@@ -21,3 +21,4 @@ abstract
 tableplus
 falcon-sql-client
 docker
+google-backup-and-sync
