@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-cd "$(dirname "${BASH_SOURCE[0]}")"
+cd $0:a:h
 
 source macos/macos-fns.sh
 source common/common-fns.sh
