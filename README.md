@@ -1,15 +1,24 @@
 # dotfiles
 
-My dotfiles, installed apps, macOS settings, etc
+My dotfiles, installed apps, macOS system settings, Finder settings, etc.
 
-# TODO List
+Fork, or copy and set up as you'd like. The root scripts (i.e. `macos.sh`) can be run as often as you'd like. Subsequent runs after the first/inital execution, will common functions that should only run once, but will still update dependencies and apps, thus keeping everything up to date.
 
-- Add aliasses for docker desktop settings
-  - docker-minimal (for running platformdb only)
-  - docker-heavy (for running the whole platform)
-  - Edit `~/Library/Group Containers/group.com.docker/settings.json` using jq
-  - Use the GUI to set settings, then grab the updates values from `settings.json`
-  - Resources:
-    - https://forums.docker.com/t/pinata-missing-in-latest-mac-beta-1-11-2-beta15/15541/40
-    - https://stackoverflow.com/questions/42402825/how-to-set-dockers-system-memory
-    - https://stedolan.github.io/jq/tutorial/
+In `scripts/`, there is a zsh script per environment (macOS, macOS - work machine, etc). These scripts source common functions from `scripts/common` and `scripts/macos` for macOS scripts.
+
+For automatic management/installation of Homebrew formulae and casks, asdf plugins, etc, use the text files in each sub-directory to list your required apps etc.
+
+Set them as environment vars in the root script accordingly.
+
+E.g. (inside `macos.sh`)
+
+```
+readonly TAPS=common/taps.txt
+readonly FORMULAE=common/formulae.txt
+readonly CASKS=macos/casks.txt
+readonly APPS=macos/apps.txt
+readonly ASDF_PLUGINS=common/asdf-plugins.txt
+readonly ASDF_LIBS=common/asdf-libs.txt
+readonly YARN_PKGS=common/yarn-global-pkgs.txt
+readonly DOCK_APPS=macos/dock-apps.txt
+```

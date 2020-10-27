@@ -14,6 +14,5 @@ readonly ASDF_LIBS=common/asdf-libs.txt
 readonly YARN_PKGS=macos-work/yarn-global-pkgs.txt
 readonly DOCK_APPS=macos/dock-apps.txt
 
-# TODO better logging using tee
 common_setup
 macos_setup
