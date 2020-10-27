@@ -1,5 +1,4 @@
 evernote
-dropbox
 keeweb
 google-chrome
 zoomus
