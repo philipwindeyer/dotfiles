@@ -90,8 +90,3 @@ function global_settings() {
   # Resets hostname to prevent rewrites when on other networks
   sudo scutil --set HostName "$(scutil --get LocalHostName).local"
 }
-
-
-# function macos_setup() {
-
-# }
