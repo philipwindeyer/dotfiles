@@ -1,5 +1,12 @@
 #!/bin/zsh
 
+sudo -v
+while true; do
+  sudo -n true
+  sleep 60
+  kill -0 "$$" || exit
+done 2>/dev/null &
+
 function manage_homebrew() {
   if command -v brew &>/dev/null; then
     echo "Homebrew installed. Updating and upgrading"
@@ -94,4 +101,17 @@ function zshrc() {
     touch $local_zshrc
     echo "source $zshrc_config" >>$local_zshrc
   fi
+}
+
+# Run this from main script
+function common_setup() {
+  manage_homebrew
+  manage_asdf
+  add_taps
+  install_formulae
+  add_asdf_plugins
+  install_asdf_libs
+  install_yarn_global_pkgs
+  create_dirs
+  zshrc
 }
