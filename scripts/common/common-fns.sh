@@ -91,24 +91,29 @@ function zshrc() {
   local zshrc_config="$(dirname $0:a:h)"/zsh/.zshrc
 
   if [ -f $local_zshrc ]; then
-    echo ".zshrc file already exists"
+    echo "$local_zshrc file already exists"
     grep "source $zshrc_config" $local_zshrc >/dev/null
 
     if [ ! $? -eq 0 ]; then
       echo "Config not sourced in .zshrc. Adding..."
       echo "source $zshrc_config" >>$local_zshrc
-      echo "source $local_secrets" >>$local_zshrc
     fi
 
+    grep "source $local_secrets" $local_zshrc >/dev/null
+
+    if [ ! $? -eq 0 ]; then
+      echo "Secrets file not sourced in .zshrc. Adding..."
+      echo "source $local_secrets" >>$local_zshrc
+    fi
   else
-    echo "Adding new .zshrc file"
+    echo "Adding new $local_zshrc file"
     touch $local_zshrc
     echo "source $zshrc_config" >>$local_zshrc
     echo "source $local_secrets" >>$local_zshrc
   fi
 
   if [ ! -f $local_secrets ]; then
-    echo "Adding new .zsh_secrets file"
+    echo "Adding new $local_secrets file"
     touch $local_secrets
   fi
 
