@@ -12,3 +12,4 @@ aws-sam-cli
 docker
 docker-compose
 aws-google-auth
+postgresql
