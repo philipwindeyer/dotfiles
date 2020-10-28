@@ -121,6 +121,10 @@ function global_settings() {
   defaults write -globalDomain NSUserKeyEquivalents -dict-add "Show Next Tab" "@~\\U2192"
   defaults write -globalDomain NSUserKeyEquivalents -dict-add "Show Previous Tab" "@~\\U2190"
 
+  # Terminal theme
+  defaults write ~/Library/Preferences/com.apple.Terminal.plist "Default Window Settings" "Homebrew"
+  defaults write ~/Library/Preferences/com.apple.Terminal.plist "Startup Window Settings" "Homebrew"
+
   killAll Finder
   killall SystemUIServer
 }
