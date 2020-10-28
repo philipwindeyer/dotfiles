@@ -103,7 +103,26 @@ function global_settings() {
   # Resets hostname to prevent rewrites when on other networks
   sudo scutil --set HostName "$(scutil --get LocalHostName).local"
 
+  # Enable "Tap to click"
+  defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+  sudo defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+  sudo defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+  sudo defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+  # Date and time in Finder bar
+  defaults write com.apple.menuextra.clock IsAnalog -bool false
+  defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM HH:mm"
+
+  # Battery percentage
+  defaults write com.apple.menuextra.battery ShowPercent -bool true
+
+  # Global Keyboard shortcuts
+  defaults write -globalDomain NSUserKeyEquivalents -dict-add "Save as PDF\\U2026" "@\$p"
+  defaults write -globalDomain NSUserKeyEquivalents -dict-add "Show Next Tab" "@~\\U2192"
+  defaults write -globalDomain NSUserKeyEquivalents -dict-add "Show Previous Tab" "@~\\U2190"
+
   killAll Finder
+  killall SystemUIServer
 }
 
 # Run this from main script
