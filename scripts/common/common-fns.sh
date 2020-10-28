@@ -89,7 +89,7 @@ function git_settings() {
 
 function zshrc() {
   local local_zshrc=~/.zshrc
-  local zshrc_config="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"/../zsh/.zshrc
+  local zshrc_config="$(dirname $0:a:h)"/zsh/.zshrc
 
   if [ -f $local_zshrc ]; then
     echo ".zshrc file already exists"
@@ -105,6 +105,8 @@ function zshrc() {
     touch $local_zshrc
     echo "source $zshrc_config" >>$local_zshrc
   fi
+
+  compaudit | xargs chmod g-w
 }
 
 # Run this from main script

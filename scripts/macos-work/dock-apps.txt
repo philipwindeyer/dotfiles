@@ -1,0 +1,12 @@
+/System/Applications/Launchpad.app
+/Applications/Google Chrome.app
+/Applications/Evernote.app
+/System/Applications/Utilities/Terminal.app
+/Applications/Visual Studio Code.app
+/Applications/Sublime Text.app
+/Applications/Spotify.app
+/Applications/Poolside FM.app
+/Applications/WhatsApp.app
+/Applications/KeeWeb.app
+/Applications/1Password 7.app
+/System/Applications/System Preferences.app
