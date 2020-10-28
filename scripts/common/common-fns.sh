@@ -77,6 +77,12 @@ function install_npm_global_pkgs() {
   done <$NPM_PKGS
 }
 
+function install_gems() {
+  while IFS='' read -r LINE || [ -n "${LINE}" ]; do
+    gem install ${LINE}
+  done <$GEMS
+}
+
 function create_dirs() {
   [ ! -d ~/workspaces ] && mkdir ~/workspaces
 }
@@ -131,6 +137,7 @@ function common_setup() {
   add_asdf_plugins
   install_asdf_libs
   install_npm_global_pkgs
+  install_gems
   create_dirs
   git_settings
   zshrc
