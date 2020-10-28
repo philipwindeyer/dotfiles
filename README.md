@@ -2,7 +2,7 @@
 
 My dotfiles, installed apps, macOS system settings, Finder settings, etc.
 
-Fork, or copy and set up as you'd like. The root scripts (i.e. `macos.sh`) can be run as often as you'd like. Subsequent runs after the first/inital execution, will common functions that should only run once, but will still update dependencies and apps, thus keeping everything up to date.
+Fork, or copy and set up as you'd like. The root scripts (i.e. `macos.sh`) can be run as often as you'd like. Subsequent runs after the first/inital execution, will ignore or appropriately handle common functions that should only run once, but will still update dependencies and apps, thus keeping everything up to date.
 
 In `scripts/`, there is a zsh script per environment (macOS, macOS - work machine, etc). These scripts source common functions from `scripts/common` and `scripts/macos` for macOS scripts.
 

@@ -83,6 +83,10 @@ function create_dirs() {
   [ ! -d ~/workspaces ] && mkdir ~/workspaces
 }
 
+function git_settings() {
+  git config --global core.editor vim
+}
+
 function zshrc() {
   local local_zshrc=~/.zshrc
   local zshrc_config="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"/../zsh/.zshrc
@@ -113,5 +117,6 @@ function common_setup() {
   install_asdf_libs
   install_yarn_global_pkgs
   create_dirs
+  git_settings
   zshrc
 }

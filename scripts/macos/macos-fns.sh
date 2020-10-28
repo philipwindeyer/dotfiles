@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+osascript -e 'tell application "System Preferences" to quit'
+
 function install_dev_tools() {
   xcode-select --install
 }
@@ -75,6 +77,15 @@ function finder_settings() {
   defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
   defaults write com.apple.finder NewWindowTarget -string "PfHm"
   defaults write com.apple.finder AppleShowAllFiles false
+  defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+  # Enable snap-to-grid for icons on the desktop and in other icon views
+  /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+  /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+  /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+  
+  chflags nohidden ~/Library
+  sudo chflags nohidden /Volumes
 
   killAll cfprefsd
   killAll Finder
@@ -82,13 +93,17 @@ function finder_settings() {
 
 function global_settings() {
   defaults write NSGlobalDomain AppleShowAllExtensions -bool true
-  killAll Finder
 
+  # Disable the “Are you sure you want to open this application?” dialog
+  defaults write com.apple.LaunchServices LSQuarantine -bool false
+  
   # Resets audio out controller
   killall coreaudiod
 
   # Resets hostname to prevent rewrites when on other networks
   sudo scutil --set HostName "$(scutil --get LocalHostName).local"
+
+  killAll Finder
 }
 
 # Run this from main script
