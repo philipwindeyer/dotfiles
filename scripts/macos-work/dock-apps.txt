@@ -6,6 +6,7 @@
 /Applications/Sublime Text.app
 /Applications/Spotify.app
 /Applications/Poolside FM.app
+/Applications/Slack.app
 /Applications/WhatsApp.app
 /Applications/KeeWeb.app
 /Applications/1Password 7.app
