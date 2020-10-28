@@ -11,7 +11,7 @@ readonly CASKS=macos-work/casks.txt
 readonly APPS=macos-work/apps.txt
 readonly ASDF_PLUGINS=common/asdf-plugins.txt
 readonly ASDF_LIBS=common/asdf-libs.txt
-readonly YARN_PKGS=macos-work/yarn-global-pkgs.txt
+readonly NPM_PKGS=macos-work/npm-global-pkgs.txt
 readonly DOCK_APPS=macos-work/dock-apps.txt
 
 common_setup

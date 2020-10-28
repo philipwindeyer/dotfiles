@@ -63,20 +63,18 @@ function install_asdf_libs() {
   done <$ASDF_LIBS
 }
 
-function install_yarn_global_pkgs() {
+function install_npm_global_pkgs() {
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
     local pkg=$(echo $LINE | awk '{print $1}')
     local registry=$(echo $LINE | awk '{print $2}')
 
     if [[ -z "${registry// }" ]]; then
-      yarn global add $pkg
-
+      npm install -g $pkg
     else
-      # "--registry" does not work with `yarn global`
       npm install -g $pkg --registry "$registry"
     fi
 
-  done <$YARN_PKGS
+  done <$NPM_PKGS
 }
 
 function create_dirs() {
@@ -89,6 +87,7 @@ function git_settings() {
 
 function zshrc() {
   local local_zshrc=~/.zshrc
+  local local_secrets=~/.zsh_secrets
   local zshrc_config="$(dirname $0:a:h)"/zsh/.zshrc
 
   if [ -f $local_zshrc ]; then
@@ -98,13 +97,22 @@ function zshrc() {
     if [ ! $? -eq 0 ]; then
       echo "Config not sourced in .zshrc. Adding..."
       echo "source $zshrc_config" >>$local_zshrc
+      echo "source $local_secrets" >>$local_zshrc
     fi
 
   else
     echo "Adding new .zshrc file"
     touch $local_zshrc
     echo "source $zshrc_config" >>$local_zshrc
+    echo "source $local_secrets" >>$local_zshrc
   fi
+
+  if [ ! -f $local_secrets ]; then
+    echo "Adding new .zsh_secrets file"
+    touch $local_secrets
+  fi
+
+  echo "Add your secrets and machine specific aliases etc to $local_secrets"
 
   compaudit | xargs chmod g-w
 }
@@ -117,7 +125,7 @@ function common_setup() {
   install_formulae
   add_asdf_plugins
   install_asdf_libs
-  install_yarn_global_pkgs
+  install_npm_global_pkgs
   create_dirs
   git_settings
   zshrc
