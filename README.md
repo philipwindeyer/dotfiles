@@ -4,11 +4,13 @@ My dotfiles, installed apps, macOS system settings, Finder settings, etc.
 
 Fork, or copy and set up as you'd like. The root scripts (i.e. `macos.sh`) can be run as often as you'd like. Subsequent runs after the first/inital execution, will ignore or appropriately handle common functions that should only run once, but will still update dependencies and apps, thus keeping everything up to date.
 
-In `scripts/`, there is a zsh script per environment (macOS, macOS - work machine, etc). These scripts source common functions from `scripts/common` and `scripts/macos` for macOS scripts.
+Note: For Windows setup, see specific instructions at [windows.md](windows.md)
+
+In `scripts/`, there is a zsh/ps1 script per environment (macOS, macOS - work machine, etc). These scripts source common functions from `scripts/common` and `scripts/macos` for macOS scripts, and `scripts/windows` for Windows.
 
 For automatic management/installation of Homebrew formulae and casks, asdf plugins, etc, use the text files in each sub-directory to list your required apps etc.
 
-Set them as environment vars in the root script accordingly.
+Set them as environment vars in the root script accordingly (where applicable)
 
 E.g. (inside `macos.sh`)
 
@@ -22,4 +24,9 @@ readonly ASDF_LIBS=common/asdf-libs.txt
 readonly NPM_PKGS=common/npm-global-pkgs.txt
 readonly GEMS=common/gems.txt
 readonly DOCK_APPS=macos/dock-apps.txt
+```
+Inside windows.ps1
+
+```
+$env:CHOCOLATEY_APPS = 'windows/chocolatey.txt'
 ```

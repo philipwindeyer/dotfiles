@@ -1,0 +1,16 @@
+git
+mac-precision-touchpad
+autohotkey
+google-backup-and-sync
+keeweb
+visualstudiocode
+googlechrome
+evernote
+steam
+origin
+epicgameslauncher
+discord
+whatsapp
+microsoft-windows-terminal
+dolphin
+sublimetext2
