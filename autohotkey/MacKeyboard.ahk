@@ -47,6 +47,29 @@ F12::SendInput {Volume_Up}
 ;Lwin & Left::Send, !{Left}
 ;Lwin & Right::Send, !{Right}
 
+;following section remaps command-arrow
+;keys to mimic OSX behaviour
+#Up::Send {Lctrl down}{Home}{Lctrl up}
+#Down::Send {Lctrl down}{End}{Lctrl up}
+#Left::Send {Home}
+#Right::Send {End}
+
+; OSX NAVIGATION AND SELECTION WITH ALT
+!Left::Send {ctrl down}{Left}{ctrl up}
+!Right::Send {ctrl down}{Right}{ctrl up}
+!+Left::Send {ctrl down}{shift down}{Left}{shift up}{ctrl up}
+!+Right::Send {ctrl down}{shift down}{Right}{shift up}{ctrl up}
+
+; DISABLES UNMODIFIED WIN-KEY IN FAVOR OF OSX SPOTLIGHT-LIKE BEHAVIOR
+LWin::return
+RWin::return
+#Space::LWin
+
+; REMAPS CTRL-LEFT-CLICK TO CMD AND REPLICATES OSX CTRL-CLICK RIGHT-CLICK
+LWIN & LBUTTON::send {ctrl down}{LButton}{ctrl up}
+RWIN & LBUTTON::send {ctrl down}{LButton}{ctrl up}
+CTRL & LBUTTON::send {RButton}
+
 ; Eject Key
 ;F20::SendInput {Insert} ; F20 doesn't show up on AHK anymore, see #3
 
@@ -54,12 +77,6 @@ F12::SendInput {Volume_Up}
 F13::SendInput {PrintScreen}
 F14::SendInput {ScrollLock}
 F15::SendInput {Pause}
-
-;F16-19 custom app launchers, see http://www.autohotkey.com/docs/Tutorial.htm for usage info
-F16::Run http://twitter.com
-F17::Run http://tumblr.com
-F18::Run http://www.reddit.com
-F19::Run https://facebook.com
 
 ; --------------------------------------------------------------
 ; OS X system shortcuts
