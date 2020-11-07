@@ -14,3 +14,5 @@ $chocolatey_apps = 'windows/chocolatey.txt'
 # source aliases in bashrc equivalent
 # copy-paste the shortcut file for autohotkey into startup items
 # match the macos/ubuntu script i guess?
+
+# somewhere in here, I need to automate: `cp .\autohotkey\mackeyboard.ahk-alias.lnk "$HOME\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\"`
