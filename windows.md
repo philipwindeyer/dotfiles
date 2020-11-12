@@ -82,4 +82,5 @@ Set up on my Windows machine (i.e. gaming rig) requires some initial manual step
 - Install Discord `choco install -y discord`
 - Install WhatsApp `choco install -y whatsapp`
 - Install Facebook Messenger (via Windows Store - is there a tool similar to MAS to automate this?)
+- Install Bluestacks (via https://www.bluestacks.com - there's no choco pkg, nor is it on the windows store)
 - Install Windows Terminal `choco install -y microsoft-windows-terminal`
