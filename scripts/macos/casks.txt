@@ -30,3 +30,4 @@ noxappplayer
 signal
 google-backup-and-sync
 freecad
+qbittorrent
