@@ -24,7 +24,7 @@ function manage_mas() {
 
 function install_casks() {
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
-    brew list --cask ${LINE} || brew cask install ${LINE}
+    brew list --cask ${LINE} || brew install --cask ${LINE}
   done <$CASKS
 }
 

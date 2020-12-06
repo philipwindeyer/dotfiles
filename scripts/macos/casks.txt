@@ -30,3 +30,6 @@ noxappplayer
 signal
 google-backup-and-sync
 freecad
+xquartz
+playonmac
+soapui
