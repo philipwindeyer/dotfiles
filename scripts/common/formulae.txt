@@ -9,3 +9,4 @@ tldr
 awscli
 jq
 aws-sam-cli
+mysql
