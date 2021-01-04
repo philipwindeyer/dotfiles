@@ -33,3 +33,4 @@ freecad
 xquartz
 playonmac
 mysqlworkbench
+dropbox
