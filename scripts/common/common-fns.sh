@@ -14,6 +14,7 @@ function manage_homebrew() {
     brew update
     brew upgrade
     brew upgrade --cask
+    brew cleanup
 
   else
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
