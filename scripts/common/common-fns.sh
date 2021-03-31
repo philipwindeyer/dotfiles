@@ -84,6 +84,31 @@ function install_gems() {
   done <$GEMS
 }
 
+function install_nativefier_apps() {
+  local apps_dir=/Applications
+
+  while IFS='' read -r LINE || [ -n "${LINE}" ]; do
+    local app=$(echo $LINE | awk '{print $1}')
+    local name=$(echo $LINE | awk '{ $1=""; print}' | sed -e 's/^[[:space:]]*//')
+
+    if [[ -z "${name// }" ]]; then
+      local output=$(nativefier --darwin-dark-mode-support "$app")
+    else
+      local output=$(nativefier --name "$name" --darwin-dark-mode-support "$app")
+    fi
+
+    echo $output
+
+    echo "$output" | while IFS= read -r line ; do
+      if [[ $line =~ "^App built to*" ]]; then
+        local app_path=$(echo $line | awk -F, '{print $1}' | awk '{ $1=""; $2=""; $3=""; print}' | sed -e 's/^[[:space:]]*//')
+        echo "Moving $app_path to $apps_dir"
+        mv -f $app_path $apps_dir
+      fi
+    done
+  done <$NATIVEFIER
+}
+
 function create_dirs() {
   [ ! -d ~/workspaces ] && mkdir ~/workspaces
 }
@@ -139,6 +164,7 @@ function common_setup() {
   install_asdf_libs
   install_npm_global_pkgs
   install_gems
+  install_nativefier_apps
   create_dirs
   git_settings
   zshrc

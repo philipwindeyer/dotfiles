@@ -11,3 +11,4 @@ jq
 aws-sam-cli
 mysql
 cmake
+nativefier

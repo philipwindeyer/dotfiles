@@ -13,6 +13,7 @@ readonly ASDF_PLUGINS=common/asdf-plugins.txt
 readonly ASDF_LIBS=common/asdf-libs.txt
 readonly NPM_PKGS=macos-work/npm-global-pkgs.txt
 readonly GEMS=common/gems.txt
+readonly NATIVEFIER=macos-work/nativefier.txt
 readonly DOCK_APPS=macos-work/dock-apps.txt
 
 common_setup
