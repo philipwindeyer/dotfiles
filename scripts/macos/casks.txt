@@ -34,3 +34,4 @@ xquartz
 playonmac
 mysqlworkbench
 dropbox
+soundcleod
