@@ -1,7 +1,7 @@
 evernote
 keeweb
 google-chrome
-zoomus
+zoom
 visual-studio-code
 sublime-text
 firefox
