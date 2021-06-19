@@ -35,3 +35,4 @@ playonmac
 mysqlworkbench
 dropbox
 soundcleod
+appcleaner
