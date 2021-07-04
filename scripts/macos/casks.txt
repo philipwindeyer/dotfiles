@@ -37,3 +37,4 @@ mysqlworkbench
 dropbox
 soundcleod
 appcleaner
+sequel-ace
