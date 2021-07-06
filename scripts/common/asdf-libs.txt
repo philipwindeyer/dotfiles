@@ -1,5 +1,6 @@
 nodejs
 nodejs latest:12
+nodejs 12.4.0
 ruby
 terraform
 yarn

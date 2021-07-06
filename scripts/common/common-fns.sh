@@ -104,6 +104,10 @@ function install_nativefier_apps() {
         local app_path=$(echo $line | awk -F, '{print $1}' | awk '{ $1=""; $2=""; $3=""; print}' | sed -e 's/^[[:space:]]*//')
         echo "Moving $app_path to $apps_dir"
         mv -f $app_path $apps_dir
+
+        if [ -f $local_zshrc ]; then
+          rm -Rf $app_path
+        fi
       fi
     done
   done <$NATIVEFIER
