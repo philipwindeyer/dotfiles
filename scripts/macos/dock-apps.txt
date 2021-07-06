@@ -7,7 +7,7 @@
 /Applications/Sublime Text.app
 /Applications/Affinity Photo.app
 /Applications/Spotify.app
-/Applications/Poolside FM.app
+/Applications/Poolsuite FM.app
 /System/Applications/Messages.app
 /Applications/WhatsApp.app
 /Applications/Messenger.app

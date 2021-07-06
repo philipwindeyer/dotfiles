@@ -23,4 +23,3 @@ falcon-sql-client
 docker
 google-drive-file-stream
 miro
-soundcleod

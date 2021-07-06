@@ -35,6 +35,5 @@ xquartz
 playonmac
 mysqlworkbench
 dropbox
-soundcleod
 appcleaner
 sequel-ace

@@ -5,7 +5,7 @@
 /Applications/Visual Studio Code.app
 /Applications/Sublime Text.app
 /Applications/Spotify.app
-/Applications/Poolside FM.app
+/Applications/Poolsuite FM.app
 /Applications/Slack.app
 /Applications/WhatsApp.app
 /Applications/KeeWeb.app
