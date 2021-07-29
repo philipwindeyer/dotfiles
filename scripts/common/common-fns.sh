@@ -105,7 +105,7 @@ function install_nativefier_apps() {
         echo "Moving $app_path to $apps_dir"
         mv -f $app_path $apps_dir
 
-        if [ -f $local_zshrc ]; then
+        if [ -d $app_path ]; then
           rm -Rf $app_path
         fi
       fi
