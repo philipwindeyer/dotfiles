@@ -65,8 +65,3 @@ function work-platform-find-scheduled() {
   done
 }
 
-# AWS SSM and Terraform access via work VPN
-alias session-manager-plugin='HTTP_PROXY=http://production-vpn-proxy.internal_services:3128 /usr/local/sessionmanagerplugin/bin/session-manager-plugin'
-alias aws='HTTPS_PROXY=http://production-vpn-proxy.internal_services:3128 aws'
-alias awsm='HTTPS_PROXY=http://production-vpn-proxy.internal_services:3128 awsm'
-alias terraform='GIT_SSH_COMMAND="ssh -F ~/.ssh/config.qh-github" terraform'
