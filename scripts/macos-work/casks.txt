@@ -22,5 +22,6 @@ tableplus
 falcon-sql-client
 docker
 google-drive-file-stream
-miro
 aws-vpn-client
+miro
+figma
