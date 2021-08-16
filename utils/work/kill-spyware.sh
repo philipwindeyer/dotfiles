@@ -7,6 +7,12 @@ while true; do
   kill -0 "$$" || exit
 done 2>/dev/null &
 
-for zscaler_proc in $(ps -ef | grep -i "zscaler" | grep -v "grep" | awk '{print $2}'); do
-  sudo kill -9 $zscaler_proc
-done
+function kill_all_the_procs() {
+  echo "killing $1"
+  for proc in $(ps -ef | grep -i "$1" | grep -v "grep" | awk '{print $2}'); do
+    sudo kill -9 $proc
+  done
+}
+
+kill_all_the_procs zscaler
+kill_all_the_procs falcon
