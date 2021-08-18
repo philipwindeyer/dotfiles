@@ -891,8 +891,6 @@
 						<string>0</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
@@ -903,64 +901,172 @@
 			<key>isViewVisible</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array/>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.1.1</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Finder</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>appPath</key>
+					<dict>
+						<key>isPathPopUp</key>
+						<true/>
+						<key>variableUUIDsInMenu</key>
+						<array/>
+					</dict>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array/>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Launch Application.action</string>
+				<key>ActionName</key>
+				<string>Launch Application</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>appPath</key>
+					<string>/Applications/Google Meet-darwin-x64/Google Meet.app</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.OpenApplication</string>
+				<key>CFBundleVersion</key>
+				<string>1.1.1</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<true/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>AMLaunchApplicationAction</string>
+				<key>InputUUID</key>
+				<string>B35E7108-F97D-418E-8519-26A315A4F408</string>
+				<key>Keywords</key>
+				<array>
+					<string>File</string>
+					<string>Open</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>BA3A49EA-C735-4306-9A5E-926ACBDED414</string>
+				<key>UUID</key>
+				<string>C63921AA-8B6E-4E7B-B543-C05CB6BEAC90</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Finder</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>/System/Applications/Contacts.app</string>
+						<key>name</key>
+						<string>appPath</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
+				<key>isViewVisible</key>
+				<integer>1</integer>
+				<key>location</key>
+				<string>309.000000:1070.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Launch Application.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>0C0D1433-A0E0-4E1A-B35F-265CE5FDBA79</key>
+		<key>0666F1DF-BC2A-4066-B699-363166629BA1</key>
 		<dict>
 			<key>from</key>
-			<string>72793296-942F-471D-89A7-AC9438C89CD3 - 72793296-942F-471D-89A7-AC9438C89CD3</string>
-			<key>to</key>
-			<string>3D9BE9C3-3BBC-487C-94C0-BA86191E9084 - 3D9BE9C3-3BBC-487C-94C0-BA86191E9084</string>
-		</dict>
-		<key>251BA9F6-8849-405C-AAD7-FF61FF939F16</key>
-		<dict>
-			<key>from</key>
-			<string>4C47B4C1-77D9-4FEB-8CE7-3DA43851E2FB - 4C47B4C1-77D9-4FEB-8CE7-3DA43851E2FB</string>
-			<key>to</key>
 			<string>F26B0B96-F88B-463A-BC8F-3FB1333D478E - F26B0B96-F88B-463A-BC8F-3FB1333D478E</string>
+			<key>to</key>
+			<string>C63921AA-8B6E-4E7B-B543-C05CB6BEAC90 - C63921AA-8B6E-4E7B-B543-C05CB6BEAC90</string>
 		</dict>
-		<key>7204A43D-BF84-4F64-99B6-FE1403D1C0CE</key>
+		<key>06AFCE83-DBEB-4B79-82E0-7D6DE39D6121</key>
 		<dict>
 			<key>from</key>
-			<string>ED3D984F-9F04-4633-BA0E-EA75775F79D5 - ED3D984F-9F04-4633-BA0E-EA75775F79D5</string>
-			<key>to</key>
 			<string>72793296-942F-471D-89A7-AC9438C89CD3 - 72793296-942F-471D-89A7-AC9438C89CD3</string>
-		</dict>
-		<key>7F74696A-2871-4BD6-87A0-B10637893EF7</key>
-		<dict>
-			<key>from</key>
-			<string>D9F3B621-EB54-4D58-8B08-C30325C07165 - D9F3B621-EB54-4D58-8B08-C30325C07165</string>
 			<key>to</key>
-			<string>DA843245-2DEB-494A-AA03-24B4CAB6713F - DA843245-2DEB-494A-AA03-24B4CAB6713F</string>
-		</dict>
-		<key>989E245E-511D-4121-824D-688DA331B5B6</key>
-		<dict>
-			<key>from</key>
 			<string>3D9BE9C3-3BBC-487C-94C0-BA86191E9084 - 3D9BE9C3-3BBC-487C-94C0-BA86191E9084</string>
-			<key>to</key>
-			<string>D9F3B621-EB54-4D58-8B08-C30325C07165 - D9F3B621-EB54-4D58-8B08-C30325C07165</string>
 		</dict>
-		<key>A092D902-25E1-4063-853B-F35772EC849D</key>
-		<dict>
-			<key>from</key>
-			<string>DA843245-2DEB-494A-AA03-24B4CAB6713F - DA843245-2DEB-494A-AA03-24B4CAB6713F</string>
-			<key>to</key>
-			<string>4C47B4C1-77D9-4FEB-8CE7-3DA43851E2FB - 4C47B4C1-77D9-4FEB-8CE7-3DA43851E2FB</string>
-		</dict>
-		<key>C3506D64-A789-40BF-86B5-1D32C74808CE</key>
-		<dict>
-			<key>from</key>
-			<string>4874D760-958F-4C00-8B47-8B1EF8713488 - 4874D760-958F-4C00-8B47-8B1EF8713488</string>
-			<key>to</key>
-			<string>ED3D984F-9F04-4633-BA0E-EA75775F79D5 - ED3D984F-9F04-4633-BA0E-EA75775F79D5</string>
-		</dict>
-		<key>EF63BF6D-D7AB-441D-A6D8-9A13BA07FD3A</key>
+		<key>4AA87C13-11F4-4B30-AFB0-F13737E9E299</key>
 		<dict>
 			<key>from</key>
 			<string>2790E767-6FAD-444E-90F9-D15C95DE4A0B - 2790E767-6FAD-444E-90F9-D15C95DE4A0B</string>
 			<key>to</key>
 			<string>4874D760-958F-4C00-8B47-8B1EF8713488 - 4874D760-958F-4C00-8B47-8B1EF8713488</string>
+		</dict>
+		<key>4D642565-D569-4261-8974-2698F00BB7E4</key>
+		<dict>
+			<key>from</key>
+			<string>3D9BE9C3-3BBC-487C-94C0-BA86191E9084 - 3D9BE9C3-3BBC-487C-94C0-BA86191E9084</string>
+			<key>to</key>
+			<string>D9F3B621-EB54-4D58-8B08-C30325C07165 - D9F3B621-EB54-4D58-8B08-C30325C07165</string>
+		</dict>
+		<key>5A59829F-15C3-4E5C-98EF-7FBF8DA2C6BD</key>
+		<dict>
+			<key>from</key>
+			<string>DA843245-2DEB-494A-AA03-24B4CAB6713F - DA843245-2DEB-494A-AA03-24B4CAB6713F</string>
+			<key>to</key>
+			<string>4C47B4C1-77D9-4FEB-8CE7-3DA43851E2FB - 4C47B4C1-77D9-4FEB-8CE7-3DA43851E2FB</string>
+		</dict>
+		<key>BBA12421-73DF-4436-9617-E2B61F38AF2C</key>
+		<dict>
+			<key>from</key>
+			<string>ED3D984F-9F04-4633-BA0E-EA75775F79D5 - ED3D984F-9F04-4633-BA0E-EA75775F79D5</string>
+			<key>to</key>
+			<string>72793296-942F-471D-89A7-AC9438C89CD3 - 72793296-942F-471D-89A7-AC9438C89CD3</string>
+		</dict>
+		<key>C5279673-AB10-4E83-B1D7-2791AF0E4937</key>
+		<dict>
+			<key>from</key>
+			<string>D9F3B621-EB54-4D58-8B08-C30325C07165 - D9F3B621-EB54-4D58-8B08-C30325C07165</string>
+			<key>to</key>
+			<string>DA843245-2DEB-494A-AA03-24B4CAB6713F - DA843245-2DEB-494A-AA03-24B4CAB6713F</string>
+		</dict>
+		<key>EB4323CB-3723-4ABF-BE61-25ABE88666D0</key>
+		<dict>
+			<key>from</key>
+			<string>4874D760-958F-4C00-8B47-8B1EF8713488 - 4874D760-958F-4C00-8B47-8B1EF8713488</string>
+			<key>to</key>
+			<string>ED3D984F-9F04-4633-BA0E-EA75775F79D5 - ED3D984F-9F04-4633-BA0E-EA75775F79D5</string>
+		</dict>
+		<key>EC5F71BD-D492-4BDA-99B4-A7B287F38894</key>
+		<dict>
+			<key>from</key>
+			<string>4C47B4C1-77D9-4FEB-8CE7-3DA43851E2FB - 4C47B4C1-77D9-4FEB-8CE7-3DA43851E2FB</string>
+			<key>to</key>
+			<string>F26B0B96-F88B-463A-BC8F-3FB1333D478E - F26B0B96-F88B-463A-BC8F-3FB1333D478E</string>
 		</dict>
 	</dict>
 	<key>workflowMetaData</key>
