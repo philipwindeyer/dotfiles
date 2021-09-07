@@ -1,5 +1,3 @@
-https://docs.google.com "Google Docs"
 https://excalidraw.com Excalidraw
 https://soundcloud.com SoundCloud
 https://nightride.fm "Nightride FM"
-https://meet.google.com "Google Meet"
