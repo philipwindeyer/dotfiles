@@ -5,7 +5,6 @@
 /Applications/Visual Studio Code.app
 $HOME/Applications/Chrome Apps.localized/Gmail.app
 $HOME/Applications/Chrome Apps.localized/Google Calendar.app
-$HOME/Applications/Chrome Apps.localized/Clubhouse.app
 $HOME/Applications/Chrome Apps.localized/Google Meet.app
 /Applications/Sublime Text.app
 /Applications/Spotify.app
