@@ -13,3 +13,4 @@ mysql
 cmake
 nativefier
 gron
+htmlq
