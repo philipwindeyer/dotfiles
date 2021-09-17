@@ -76,6 +76,12 @@ function install_npm_global_pkgs() {
     fi
 
   done <$NPM_PKGS
+
+  if [[ -z "${NPM_REGISTRY// }" ]]; then
+    npm update -g --registry $NPM_REGISTRY
+  else
+    npm update -g
+  fi
 }
 
 function install_gems() {
