@@ -1,4 +1,6 @@
 https://docs.google.com "Google Docs"
+https://mail.google.com "Gmail"
+https://calendar.google.com "Google Calendar"
 https://excalidraw.com Excalidraw
 https://soundcloud.com SoundCloud
 https://nightride.fm "Nightride FM"
