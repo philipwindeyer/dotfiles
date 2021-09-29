@@ -1,7 +1,7 @@
 magnet
 affinity-photo
 imovie
-poolsidefm
+poolsuitefm
 messenger-facebook
 garageband
 trello

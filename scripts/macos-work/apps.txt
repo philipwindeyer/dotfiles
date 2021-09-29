@@ -1,6 +1,6 @@
 magnet
 affinity-photo
 imovie
-poolsidefm
+poolsuitefm
 trello
 xcode
