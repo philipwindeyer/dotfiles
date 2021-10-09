@@ -21,7 +21,7 @@ abstract
 tableplus
 falcon-sql-client
 docker
-google-drive-file-stream
+google-drive
 aws-vpn-client
 miro
 figma

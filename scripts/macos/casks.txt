@@ -29,7 +29,7 @@ kap
 houseparty
 noxappplayer
 signal
-google-backup-and-sync
+google-drive
 freecad
 xquartz
 playonmac
