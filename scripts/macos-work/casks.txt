@@ -4,6 +4,7 @@ google-chrome
 zoom
 visual-studio-code
 sublime-text
+sublime-merge
 firefox
 spotify
 onyx
