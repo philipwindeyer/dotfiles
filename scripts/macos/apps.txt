@@ -6,3 +6,4 @@ messenger-facebook
 garageband
 trello
 xcode
+keynote
