@@ -3,10 +3,10 @@
 /Applications/Evernote.app
 /System/Applications/Utilities/Terminal.app
 /Applications/Visual Studio Code.app
+/Applications/Sublime Text.app
 $HOME/Applications/Chrome Apps.localized/Gmail.app
 $HOME/Applications/Chrome Apps.localized/Google Calendar.app
 $HOME/Applications/Chrome Apps.localized/Google Meet.app
-/Applications/Sublime Text.app
 /Applications/Spotify.app
 /Applications/Poolsuite FM.app
 /Applications/Slack.app
