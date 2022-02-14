@@ -18,7 +18,6 @@ github
 mjml
 insomnia
 kap
-abstract
 tableplus
 falcon-sql-client
 rancher
