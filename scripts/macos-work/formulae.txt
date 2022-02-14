@@ -14,3 +14,5 @@ postgresql
 gron
 corkscrew
 htmlq
+docker-compose
+docker-credential-helper

@@ -21,7 +21,7 @@ kap
 abstract
 tableplus
 falcon-sql-client
-docker
+rancher
 google-drive
 aws-vpn-client
 miro
