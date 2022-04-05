@@ -5,14 +5,18 @@
 /System/Applications/Utilities/Terminal.app
 /Applications/Visual Studio Code.app
 /Applications/Sublime Text.app
+$HOME/Applications/Chrome Apps.localized/Excalidraw.app
 $HOME/Applications/Chrome Apps.localized/Gmail.app
 $HOME/Applications/Chrome Apps.localized/Google Calendar.app
+$HOME/Applications/Chrome Apps.localized/Google Meet.app
 /Applications/Affinity Photo.app
 /Applications/Spotify.app
+$HOME/Applications/Chrome Apps.localized/YouTube Music.app
 /Applications/Poolsuite FM.app
 /System/Applications/Messages.app
 /Applications/WhatsApp.app
 /Applications/Messenger.app
+/Applications/Slack.app
 /Applications/KeeWeb.app
 /Applications/1Password 7.app
 /System/Applications/System Preferences.app
