@@ -18,6 +18,13 @@ function manage_homebrew() {
 
   else
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+    if [[ $(uname -m) =~ arm ]]; then
+      echo "Apply supplemental steps to include brew on path for ARM based machine (i.e. Apple M1 chip)"
+
+      echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+    fi
   fi
 }
 
