@@ -1,3 +1,4 @@
+appcleaner
 evernote
 keeweb
 google-chrome
