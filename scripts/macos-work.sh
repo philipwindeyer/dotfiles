@@ -6,6 +6,8 @@
 # To log output, run like this:
 # ./scripts/macos-work.sh > >(tee -a stdout.log) 2> >(tee -a stderr.log >&2)
 
+# TODO Add log_info, log_error and log_all helper fns to make it easier to distinguish where errors are originating from
+
 cd $0:a:h
 
 source common/common-fns.sh
