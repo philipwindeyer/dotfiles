@@ -18,5 +18,5 @@ $HOME/Applications/Chrome Apps.localized/YouTube Music.app
 /Applications/Messenger.app
 /Applications/Slack.app
 /Applications/KeeWeb.app
-/Applications/1Password 7.app
+/Applications/1Password.app
 /System/Applications/System Preferences.app

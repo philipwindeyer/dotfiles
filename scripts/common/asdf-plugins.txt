@@ -2,3 +2,4 @@ nodejs
 ruby
 terraform
 yarn
+python

@@ -26,4 +26,4 @@ google-drive
 aws-vpn-client
 miro
 figma
-virtualbox
+utm

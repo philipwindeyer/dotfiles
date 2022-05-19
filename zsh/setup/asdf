@@ -1,1 +1,2 @@
+unset ASDF_DIR
 . $(brew --prefix asdf)/asdf.sh
