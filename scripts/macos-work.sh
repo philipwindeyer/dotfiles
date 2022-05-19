@@ -2,6 +2,7 @@
 
 # TODO figure out how to automatically run this script with `> >(tee -a stdout.log) 2> >(tee -a stderr.log >&2)`
 # I.e. https://stackoverflow.com/questions/692000/how-do-i-write-standard-error-to-a-file-while-using-tee-with-a-pipe
+# OR: https://ops.tips/gists/redirect-all-outputs-of-a-bash-script-to-a-file/
 
 # To log output, run like this:
 # ./scripts/macos-work.sh > >(tee -a stdout.log) 2> >(tee -a stderr.log >&2)
