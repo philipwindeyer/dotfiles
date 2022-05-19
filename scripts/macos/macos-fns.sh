@@ -35,6 +35,8 @@ function install_apps() {
 }
 
 function dock_settings() {
+  echo 'Updating dock settings'
+
   defaults write com.apple.dock autohide -bool true
   defaults write com.apple.dock mouse-over-hilite-stack -bool true
   defaults write com.apple.dock showhidden -bool false
@@ -62,9 +64,13 @@ function dock_settings() {
   done
 
   killall Dock
+
+  echo 'Dock settings update complete'
 }
 
 function finder_settings() {
+  echo 'Updating finder settings'
+
   defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
   defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
   defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
@@ -89,9 +95,12 @@ function finder_settings() {
 
   killAll cfprefsd
   killAll Finder
+  echo 'Finder settings update complete'
 }
 
 function global_settings() {
+  echo 'Updating global settings'
+
   defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
   # Disable the “Are you sure you want to open this application?” dialog
@@ -124,9 +133,12 @@ function global_settings() {
   # Terminal theme
   defaults write ~/Library/Preferences/com.apple.Terminal.plist "Default Window Settings" "Homebrew"
   defaults write ~/Library/Preferences/com.apple.Terminal.plist "Startup Window Settings" "Homebrew"
-
-  killAll Finder
+  
   killall SystemUIServer
+  sleep 2
+  killAll Finder
+
+  echo 'Global settings update complete'
 }
 
 # Run this from main script
@@ -139,4 +151,6 @@ function macos_setup() {
   dock_settings
   finder_settings
   global_settings
+
+  echo 'macOS settings and apps complete'
 }
