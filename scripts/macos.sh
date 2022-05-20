@@ -2,6 +2,12 @@
 
 cd $0:a:h
 
+if [[ ! $1 == '--with-logging' ]]; then
+  timestamp=$(date +%Y%m%d-%H%M%S)
+  ./$0:t --with-logging > >(tee -a ${timestamp}-info.log) 2> >(tee -a ${timestamp}-err.log >&2)
+  exit $?
+fi
+
 source common/common-fns.sh
 source macos/macos-fns.sh
 

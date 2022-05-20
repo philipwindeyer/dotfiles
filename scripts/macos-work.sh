@@ -1,15 +1,12 @@
 #!/bin/zsh
 
-# TODO figure out how to automatically run this script with `> >(tee -a stdout.log) 2> >(tee -a stderr.log >&2)`
-# I.e. https://stackoverflow.com/questions/692000/how-do-i-write-standard-error-to-a-file-while-using-tee-with-a-pipe
-# OR: https://ops.tips/gists/redirect-all-outputs-of-a-bash-script-to-a-file/
-
-# To log output, run like this:
-# ./scripts/macos-work.sh > >(tee -a stdout.log) 2> >(tee -a stderr.log >&2)
-
-# TODO Add log_info, log_error and log_all helper fns to make it easier to distinguish where errors are originating from
-
 cd $0:a:h
+
+if [[ ! $1 == '--with-logging' ]]; then
+  timestamp=$(date +%Y%m%d-%H%M%S)
+  ./$0:t --with-logging > >(tee -a ${timestamp}-info.log) 2> >(tee -a ${timestamp}-err.log >&2)
+  exit $?
+fi
 
 source common/common-fns.sh
 source macos/macos-fns.sh
