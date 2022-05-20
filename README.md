@@ -25,8 +25,14 @@ readonly NPM_PKGS=common/npm-global-pkgs.txt
 readonly GEMS=common/gems.txt
 readonly DOCK_APPS=macos/dock-apps.txt
 ```
+
 Inside windows.ps1
 
 ```
 $env:CHOCOLATEY_APPS = 'windows/chocolatey.txt'
 ```
+
+## Additional information (for work)
+
+- [Laptop setup](https://qantas-hotels.atlassian.net/wiki/spaces/SQADHOT/pages/2232254496/Laptop+Setup)
+- [Terraform ARM64](https://qantas-hotels.atlassian.net/wiki/spaces/infra/pages/2236547073/M1+provider+fix)
