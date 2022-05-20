@@ -3,19 +3,22 @@
 osascript -e 'tell application "System Preferences" to quit'
 
 function install_dev_tools() {
+  log_all 'Install Xcode Select and Developer tools'
   xcode-select --install
 }
 
 function install_system_updates() {
+  log_all 'Update macOS'
   softwareupdate --install --all
 }
 
 function manage_mas() {
+  log_all 'Manage App Store cmdline installation'
   if command -v mas &>/dev/null; then
-    echo "mas installed"
+    log_info 'mas installed'
 
   else
-    echo "Installing mas for App Store apps"
+    log_info 'Installing mas for App Store apps'
     brew install mas
   fi
 
@@ -23,19 +26,21 @@ function manage_mas() {
 }
 
 function install_casks() {
+  log_all 'Install Homebrew casks'
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
     brew list --cask ${LINE} || brew install --cask ${LINE}
   done <$CASKS
 }
 
 function install_apps() {
+  log_all 'Install App Store apps'
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
     mas lucky "${LINE}"
   done <$APPS
 }
 
 function dock_settings() {
-  echo 'Updating dock settings'
+  log_all 'Updating dock settings'
 
   defaults write com.apple.dock autohide -bool true
   defaults write com.apple.dock mouse-over-hilite-stack -bool true
@@ -65,11 +70,11 @@ function dock_settings() {
 
   killall Dock
 
-  echo 'Dock settings update complete'
+  log_all 'Dock settings update complete'
 }
 
 function finder_settings() {
-  echo 'Updating finder settings'
+  log_all 'Updating finder settings'
 
   defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
   defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
@@ -95,11 +100,11 @@ function finder_settings() {
 
   killAll cfprefsd
   killAll Finder
-  echo 'Finder settings update complete'
+  log_all 'Finder settings update complete'
 }
 
 function global_settings() {
-  echo 'Updating global settings'
+  log_all 'Updating global settings'
 
   defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
@@ -138,7 +143,7 @@ function global_settings() {
   sleep 2
   killAll Finder
 
-  echo 'Global settings update complete'
+  log_all 'Global settings update complete'
 }
 
 # Run this from main script
@@ -152,5 +157,5 @@ function macos_setup() {
   finder_settings
   global_settings
 
-  echo 'macOS settings and apps complete'
+  log_all 'macOS settings and apps complete'
 }
