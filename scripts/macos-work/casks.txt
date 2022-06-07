@@ -27,3 +27,4 @@ aws-vpn-client
 miro
 figma
 utm
+warp

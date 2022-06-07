@@ -2,7 +2,6 @@ magnet
 affinity-photo
 imovie
 poolsuitefm
-messenger-facebook
 garageband
 trello
 xcode

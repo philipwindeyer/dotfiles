@@ -39,3 +39,4 @@ mysqlworkbench
 dropbox
 sequel-ace
 utm
+warp
