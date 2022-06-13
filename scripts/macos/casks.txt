@@ -1,6 +1,5 @@
 appcleaner
 balenaetcher
-evernote
 keeweb
 google-chrome
 zoom
@@ -40,3 +39,5 @@ dropbox
 sequel-ace
 utm
 warp
+notion
+notion-enhanced

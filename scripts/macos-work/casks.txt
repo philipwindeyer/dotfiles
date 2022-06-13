@@ -1,5 +1,4 @@
 appcleaner
-evernote
 keeweb
 google-chrome
 zoom
@@ -28,3 +27,5 @@ miro
 figma
 utm
 warp
+notion
+notion-enhanced
