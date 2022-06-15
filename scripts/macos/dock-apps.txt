@@ -1,6 +1,6 @@
 /System/Applications/Launchpad.app
 /Applications/Google Chrome.app
-/Applications/Evernote.app
+/Applications/Notion.app
 /Applications/Trello.app
 /System/Applications/Utilities/Terminal.app
 /Applications/Visual Studio Code.app

@@ -5,7 +5,7 @@ google-backup-and-sync
 keeweb
 visualstudiocode
 googlechrome
-evernote
+notion
 steam
 origin
 epicgameslauncher

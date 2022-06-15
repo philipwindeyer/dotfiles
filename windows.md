@@ -75,7 +75,7 @@ Set up on my Windows machine (i.e. gaming rig) requires some initial manual step
 
 - Install Visual Studio Code `choco install visualstudiocode`
 - Install Chrome `choco install googlechrome`
-- Install Evernote `choco install evernote`
+- Install Notion `choco install notion`
 - Install Steam `choco install steam`
 - Install Origin `choco install -y origin`
 - Install Epic `choco install epicgameslauncher`
