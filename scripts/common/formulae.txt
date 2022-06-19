@@ -13,3 +13,4 @@ mysql
 cmake
 gron
 htmlq
+pipx

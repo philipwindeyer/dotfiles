@@ -39,6 +39,16 @@ function install_apps() {
   done <$APPS
 }
 
+function pipx_settings() {
+  log_all 'Updating pipx settings'
+  pipx ensurepath
+  brew update && brew upgrade pipx
+  
+  autoload -U bashcompinit
+  bashcompinit
+  eval "$(register-python-argcomplete pipx)"
+}
+
 function dock_settings() {
   log_all 'Updating dock settings'
 
@@ -153,6 +163,7 @@ function macos_setup() {
   manage_mas
   install_casks
   install_apps
+  pipx_settings
   dock_settings
   finder_settings
   global_settings
