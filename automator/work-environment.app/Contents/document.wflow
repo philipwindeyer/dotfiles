@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>AMApplicationBuild</key>
-	<string>509</string>
+	<string>512</string>
 	<key>AMApplicationVersion</key>
 	<string>2.10</string>
 	<key>AMDocumentVersion</key>
@@ -102,7 +102,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>449.000000:170.000000</string>
+				<string>309.000000:170.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Launch Application.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -201,7 +201,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>449.000000:270.000000</string>
+				<string>309.000000:270.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Launch Application.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -250,7 +250,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>appPath</key>
-					<string>/Applications/Utilities/Terminal.app</string>
+					<string>/Applications/Warp.app</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.OpenApplication</string>
@@ -267,16 +267,16 @@
 				<key>Class Name</key>
 				<string>AMLaunchApplicationAction</string>
 				<key>InputUUID</key>
-				<string>A24AA5B4-CF04-4209-9F84-849C20DA343E</string>
+				<string>13B750F8-645C-45DD-A66C-FE121BC07443</string>
 				<key>Keywords</key>
 				<array>
 					<string>File</string>
 					<string>Open</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>DCD48580-5C5F-4E63-874D-4F0CF4E8D153</string>
+				<string>C4B14182-F9A9-45EF-93A3-1521D5E2A75E</string>
 				<key>UUID</key>
-				<string>ED3D984F-9F04-4633-BA0E-EA75775F79D5</string>
+				<string>8A2D8F02-1DBA-48F4-A643-5C8F25B998DA</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Finder</string>
@@ -298,14 +298,14 @@
 					</dict>
 				</dict>
 				<key>isViewVisible</key>
-				<true/>
+				<integer>1</integer>
 				<key>location</key>
-				<string>449.000000:370.000000</string>
+				<string>309.000000:370.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Launch Application.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
-			<true/>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>action</key>
@@ -399,7 +399,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>449.000000:470.000000</string>
+				<string>309.000000:470.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Launch Application.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -498,7 +498,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>449.000000:570.000000</string>
+				<string>309.000000:570.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Launch Application.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -597,7 +597,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>449.000000:670.000000</string>
+				<string>309.000000:670.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Launch Application.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -696,7 +696,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>449.000000:770.000000</string>
+				<string>309.000000:770.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Launch Application.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -795,7 +795,7 @@
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>449.000000:870.000000</string>
+				<string>309.000000:870.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Launch Application.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -894,7 +894,7 @@
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>449.000000:970.000000</string>
+				<string>309.000000:970.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Launch Application.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -993,7 +993,7 @@
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>449.000000:1070.000000</string>
+				<string>309.000000:1070.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Launch Application.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -1092,106 +1092,7 @@
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>449.000000:1170.000000</string>
-				<key>nibPath</key>
-				<string>/System/Library/Automator/Launch Application.action/Contents/Resources/Base.lproj/main.nib</string>
-			</dict>
-			<key>isViewVisible</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>action</key>
-			<dict>
-				<key>AMAccepts</key>
-				<dict>
-					<key>Container</key>
-					<string>List</string>
-					<key>Optional</key>
-					<true/>
-					<key>Types</key>
-					<array/>
-				</dict>
-				<key>AMActionVersion</key>
-				<string>1.1.1</string>
-				<key>AMApplication</key>
-				<array>
-					<string>Finder</string>
-				</array>
-				<key>AMParameterProperties</key>
-				<dict>
-					<key>appPath</key>
-					<dict>
-						<key>isPathPopUp</key>
-						<true/>
-						<key>variableUUIDsInMenu</key>
-						<array/>
-					</dict>
-				</dict>
-				<key>AMProvides</key>
-				<dict>
-					<key>Container</key>
-					<string>List</string>
-					<key>Types</key>
-					<array/>
-				</dict>
-				<key>ActionBundlePath</key>
-				<string>/System/Library/Automator/Launch Application.action</string>
-				<key>ActionName</key>
-				<string>Launch Application</string>
-				<key>ActionParameters</key>
-				<dict>
-					<key>appPath</key>
-					<string>/Applications/Warp.app</string>
-				</dict>
-				<key>BundleIdentifier</key>
-				<string>com.apple.Automator.OpenApplication</string>
-				<key>CFBundleVersion</key>
-				<string>1.1.1</string>
-				<key>CanShowSelectedItemsWhenRun</key>
-				<true/>
-				<key>CanShowWhenRun</key>
-				<true/>
-				<key>Category</key>
-				<array>
-					<string>AMCategoryUtilities</string>
-				</array>
-				<key>Class Name</key>
-				<string>AMLaunchApplicationAction</string>
-				<key>InputUUID</key>
-				<string>13B750F8-645C-45DD-A66C-FE121BC07443</string>
-				<key>Keywords</key>
-				<array>
-					<string>File</string>
-					<string>Open</string>
-				</array>
-				<key>OutputUUID</key>
-				<string>C4B14182-F9A9-45EF-93A3-1521D5E2A75E</string>
-				<key>UUID</key>
-				<string>8A2D8F02-1DBA-48F4-A643-5C8F25B998DA</string>
-				<key>UnlocalizedApplications</key>
-				<array>
-					<string>Finder</string>
-				</array>
-				<key>arguments</key>
-				<dict>
-					<key>0</key>
-					<dict>
-						<key>default value</key>
-						<string>/System/Applications/Contacts.app</string>
-						<key>name</key>
-						<string>appPath</string>
-						<key>required</key>
-						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>0</string>
-					</dict>
-				</dict>
-				<key>isViewVisible</key>
-				<integer>1</integer>
-				<key>location</key>
-				<string>449.000000:1270.000000</string>
+				<string>309.000000:1170.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Launch Application.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -1201,82 +1102,75 @@
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>02A28113-2DC6-4A62-9515-BF41A8D6CB4C</key>
+		<key>0536C066-7849-4087-ADB4-D61DB5015C35</key>
+		<dict>
+			<key>from</key>
+			<string>4874D760-958F-4C00-8B47-8B1EF8713488 - 4874D760-958F-4C00-8B47-8B1EF8713488</string>
+			<key>to</key>
+			<string>8A2D8F02-1DBA-48F4-A643-5C8F25B998DA - 8A2D8F02-1DBA-48F4-A643-5C8F25B998DA</string>
+		</dict>
+		<key>31D22814-1839-442C-AB75-9C08B2868D11</key>
 		<dict>
 			<key>from</key>
 			<string>DA843245-2DEB-494A-AA03-24B4CAB6713F - DA843245-2DEB-494A-AA03-24B4CAB6713F</string>
 			<key>to</key>
 			<string>F26B0B96-F88B-463A-BC8F-3FB1333D478E - F26B0B96-F88B-463A-BC8F-3FB1333D478E</string>
 		</dict>
-		<key>0E499D41-E4F9-42F6-BE15-420DD43743D4</key>
+		<key>4A9337C2-1A3E-48DF-813A-015DB065B0EE</key>
 		<dict>
 			<key>from</key>
-			<string>4874D760-958F-4C00-8B47-8B1EF8713488 - 4874D760-958F-4C00-8B47-8B1EF8713488</string>
+			<string>72793296-942F-471D-89A7-AC9438C89CD3 - 72793296-942F-471D-89A7-AC9438C89CD3</string>
 			<key>to</key>
-			<string>ED3D984F-9F04-4633-BA0E-EA75775F79D5 - ED3D984F-9F04-4633-BA0E-EA75775F79D5</string>
+			<string>3D9BE9C3-3BBC-487C-94C0-BA86191E9084 - 3D9BE9C3-3BBC-487C-94C0-BA86191E9084</string>
 		</dict>
-		<key>12A49A71-5F0E-460A-B450-119954AE9928</key>
+		<key>6B22A895-5907-45CD-8BBA-3C948B4F9F12</key>
 		<dict>
 			<key>from</key>
-			<string>E0F2E104-F40C-4283-9A9E-59AA6C99FF1E - E0F2E104-F40C-4283-9A9E-59AA6C99FF1E</string>
-			<key>to</key>
 			<string>8A2D8F02-1DBA-48F4-A643-5C8F25B998DA - 8A2D8F02-1DBA-48F4-A643-5C8F25B998DA</string>
-		</dict>
-		<key>13523918-1DBF-4622-B710-B4A9BA9804D5</key>
-		<dict>
-			<key>from</key>
-			<string>ED3D984F-9F04-4633-BA0E-EA75775F79D5 - ED3D984F-9F04-4633-BA0E-EA75775F79D5</string>
 			<key>to</key>
 			<string>72793296-942F-471D-89A7-AC9438C89CD3 - 72793296-942F-471D-89A7-AC9438C89CD3</string>
 		</dict>
-		<key>495BFBFB-E766-4FBC-BC7D-12D3ECA15DD7</key>
-		<dict>
-			<key>from</key>
-			<string>3D9BE9C3-3BBC-487C-94C0-BA86191E9084 - 3D9BE9C3-3BBC-487C-94C0-BA86191E9084</string>
-			<key>to</key>
-			<string>D9F3B621-EB54-4D58-8B08-C30325C07165 - D9F3B621-EB54-4D58-8B08-C30325C07165</string>
-		</dict>
-		<key>6659A511-BA45-4D4F-B6B7-470A022DE39D</key>
+		<key>750C1A26-F401-4D39-975C-A256D8623E32</key>
 		<dict>
 			<key>from</key>
 			<string>2790E767-6FAD-444E-90F9-D15C95DE4A0B - 2790E767-6FAD-444E-90F9-D15C95DE4A0B</string>
 			<key>to</key>
 			<string>4874D760-958F-4C00-8B47-8B1EF8713488 - 4874D760-958F-4C00-8B47-8B1EF8713488</string>
 		</dict>
-		<key>826738D8-5886-47B8-8AAC-42BA27D7EAA7</key>
-		<dict>
-			<key>from</key>
-			<string>7AA20956-B72E-4668-975B-F5C84C67BEB8 - 7AA20956-B72E-4668-975B-F5C84C67BEB8</string>
-			<key>to</key>
-			<string>E0F2E104-F40C-4283-9A9E-59AA6C99FF1E - E0F2E104-F40C-4283-9A9E-59AA6C99FF1E</string>
-		</dict>
-		<key>997EBBC2-C92A-4053-8592-E19B980134A8</key>
+		<key>8043092D-FF6F-4A51-A82E-19D51BCA85A5</key>
 		<dict>
 			<key>from</key>
 			<string>D9F3B621-EB54-4D58-8B08-C30325C07165 - D9F3B621-EB54-4D58-8B08-C30325C07165</string>
 			<key>to</key>
 			<string>DA843245-2DEB-494A-AA03-24B4CAB6713F - DA843245-2DEB-494A-AA03-24B4CAB6713F</string>
 		</dict>
-		<key>BECE1E4D-ABBF-41F5-AE67-2C328619F4B1</key>
+		<key>C2EEE3DE-82D0-4644-9BB4-F379B8F759D5</key>
 		<dict>
 			<key>from</key>
-			<string>C63921AA-8B6E-4E7B-B543-C05CB6BEAC90 - C63921AA-8B6E-4E7B-B543-C05CB6BEAC90</string>
-			<key>to</key>
 			<string>7AA20956-B72E-4668-975B-F5C84C67BEB8 - 7AA20956-B72E-4668-975B-F5C84C67BEB8</string>
+			<key>to</key>
+			<string>E0F2E104-F40C-4283-9A9E-59AA6C99FF1E - E0F2E104-F40C-4283-9A9E-59AA6C99FF1E</string>
 		</dict>
-		<key>EC191329-FB29-4507-BAD1-12C9C5CBCDA0</key>
+		<key>CF0F8C75-B5E1-4A43-B795-C577FD946FA6</key>
+		<dict>
+			<key>from</key>
+			<string>3D9BE9C3-3BBC-487C-94C0-BA86191E9084 - 3D9BE9C3-3BBC-487C-94C0-BA86191E9084</string>
+			<key>to</key>
+			<string>D9F3B621-EB54-4D58-8B08-C30325C07165 - D9F3B621-EB54-4D58-8B08-C30325C07165</string>
+		</dict>
+		<key>D1910A08-8FB2-49CB-B743-8D6411B818BE</key>
 		<dict>
 			<key>from</key>
 			<string>F26B0B96-F88B-463A-BC8F-3FB1333D478E - F26B0B96-F88B-463A-BC8F-3FB1333D478E</string>
 			<key>to</key>
 			<string>C63921AA-8B6E-4E7B-B543-C05CB6BEAC90 - C63921AA-8B6E-4E7B-B543-C05CB6BEAC90</string>
 		</dict>
-		<key>F781E640-9AF5-4F08-BCE5-1B2BA3FD7826</key>
+		<key>D1FB014E-FA05-4494-89C5-47DD51EA6574</key>
 		<dict>
 			<key>from</key>
-			<string>72793296-942F-471D-89A7-AC9438C89CD3 - 72793296-942F-471D-89A7-AC9438C89CD3</string>
+			<string>C63921AA-8B6E-4E7B-B543-C05CB6BEAC90 - C63921AA-8B6E-4E7B-B543-C05CB6BEAC90</string>
 			<key>to</key>
-			<string>3D9BE9C3-3BBC-487C-94C0-BA86191E9084 - 3D9BE9C3-3BBC-487C-94C0-BA86191E9084</string>
+			<string>7AA20956-B72E-4668-975B-F5C84C67BEB8 - 7AA20956-B72E-4668-975B-F5C84C67BEB8</string>
 		</dict>
 	</dict>
 	<key>workflowMetaData</key>
