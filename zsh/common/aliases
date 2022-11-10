@@ -8,6 +8,7 @@ alias gd='git diff'
 alias gb='git branch'
 alias gbd='git branch -d'
 alias gfp='git fetch && git pull'
+alias git-flatten='git rebase -i HEAD~20'
 
 alias be='bundle exec'
 alias bi='bundle install'
