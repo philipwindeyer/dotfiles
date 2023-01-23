@@ -41,3 +41,4 @@ utm
 warp
 notion
 notion-enhanced
+audacity
