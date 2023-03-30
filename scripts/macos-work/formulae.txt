@@ -16,3 +16,4 @@ corkscrew
 htmlq
 docker-compose
 docker-credential-helper
+redis
