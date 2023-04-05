@@ -10,7 +10,7 @@ awscli
 jq
 aws-sam-cli
 aws-google-auth
-postgresql
+postgresql@14
 gron
 corkscrew
 htmlq
