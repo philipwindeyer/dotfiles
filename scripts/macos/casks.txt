@@ -15,7 +15,6 @@ drawio
 keka
 whatsapp
 messenger
-1password
 slack
 github
 skype
@@ -40,5 +39,5 @@ sequel-ace
 utm
 warp
 notion
-notion-enhanced
-audacity
+ocenaudio
+ytmdesktop-youtube-music

@@ -1,5 +1,4 @@
 magnet
-affinity-photo
 imovie
 poolsuitefm
 garageband

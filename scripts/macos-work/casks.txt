@@ -12,7 +12,6 @@ keybase
 drawio
 keka
 whatsapp
-1password
 slack
 github
 mjml

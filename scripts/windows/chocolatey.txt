@@ -14,4 +14,3 @@ whatsapp
 microsoft-windows-terminal
 dolphin
 sublimetext2
-1password
