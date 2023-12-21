@@ -4,7 +4,7 @@ My dotfiles, installed apps, macOS system settings, Finder settings, etc.
 
 Fork, or copy and set up as you'd like. The root scripts (i.e. `macos.sh`) can be run as often as you'd like. Subsequent runs after the first/inital execution, will ignore or appropriately handle common functions that should only run once, but will still update dependencies and apps, thus keeping everything up to date.
 
-Note: For Windows setup, see specific instructions at [windows.md](windows.md)
+Note: For Windows setup, see specific instructions at ~~[windows.md](windows.md)~~ [windows/setup.ps1](windows/setup.ps1)
 
 In `scripts/`, there is a zsh/ps1 script per environment (macOS, macOS - work machine, etc). These scripts source common functions from `scripts/common` and `scripts/macos` for macOS scripts, and `scripts/windows` for Windows.
 
@@ -31,8 +31,3 @@ Inside windows.ps1
 ```
 $env:CHOCOLATEY_APPS = 'windows/chocolatey.txt'
 ```
-
-## Additional information (for work)
-
-- [Laptop setup](https://qantas-hotels.atlassian.net/wiki/spaces/SQADHOT/pages/2232254496/Laptop+Setup)
-- [Terraform ARM64](https://qantas-hotels.atlassian.net/wiki/spaces/infra/pages/2236547073/M1+provider+fix)
