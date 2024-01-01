@@ -9,6 +9,7 @@
 winget uninstall Microsoft.Teams
 
 # Install packages (winget)
+winget install Microsoft.DotNet.Runtime.8
 winget install Git.Git
 winget install Chocolatey.Chocolatey
 winget install AutoHotkey.AutoHotkey
@@ -63,7 +64,7 @@ winget install WhatsApp -s msstore --accept-package-agreements
 # nordpass
 
 # Keep packages up to date
-winget upgrade --include-unknown
+winget upgrade --include-unknown --all --accept-package-agreements
 # TODO: figure out how to iterate over the list output from the above cmd and upgrade each one individually (is there a PowerShell awk equivalent?)
 # Or is there an --all option?
 # choco update(?)
