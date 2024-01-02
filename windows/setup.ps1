@@ -65,12 +65,12 @@ winget install WhatsApp -s msstore --accept-package-agreements
 
 # Keep packages up to date
 winget upgrade --include-unknown --all --accept-package-agreements
-# TODO: figure out how to iterate over the list output from the above cmd and upgrade each one individually (is there a PowerShell awk equivalent?)
-# Or is there an --all option?
-# choco update(?)
+choco upgrade -y all
 
-# TODO Can trigger msstore update of all apps from command line?
 # TODO Can trigger Windows update from command line?
 
 # Note: can potentially ditch entirely, for now (running node and bash in win11 directly)
 wsl --install Ubuntu
+
+# Run Windows Update
+UsoClient ScanInstallWait
