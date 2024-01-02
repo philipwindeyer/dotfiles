@@ -23,6 +23,8 @@ sudo apt install libdbusmenu-gtk4 gconf2-common libappindicator1 libgconf-2-4
 sudo apt install -f ./KeeWeb-${VER}.linux.x64.deb
 rm ./KeeWeb-${VER}.linux.x64.deb
 cd ~/
+# Note: to run, use this: `keeweb --in-process-gpu` (TODO: figure out how to update flags for running from cinnamon)
+
 
 # Install GitHub CLI (note will have to do this after grabbing SSH files, and after logging in to Github via browser)
 type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
