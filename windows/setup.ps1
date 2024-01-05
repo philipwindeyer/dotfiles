@@ -135,7 +135,7 @@ UsoClient ScanInstallWait
 
 Log-Heading "Install node and set global node version"
 Load-ReloadEnv
-$NODE_VERSION_TO_INSTALL=21.5.0 # as of 5/1/24
+$NODE_VERSION_TO_INSTALL="21.5.0" # as of 5/1/24
 nvm install $NODE_VERSION_TO_INSTALL
 nvm use $NODE_VERSION_TO_INSTALL
 
@@ -149,10 +149,14 @@ $VSCODE_PROFILE = $PROFILE.Substring(0, $PROFILE.LastIndexOf('\')) + '\Microsoft
 if (!(Test-Path -Path $PROFILE)) {
   New-Item -ItemType File -Path $PROFILE -Force
   Write-Output ". $PSScriptRoot\powershell\config.ps1" | Out-File $PROFILE -Append
+} else {
+  Write-Output "PowerShell default profile already configured"
 }
 
 if (!(Test-Path -Path $VSCODE_PROFILE)) { 
   Write-Output ". $PROFILE" | Out-File $VSCODE_PROFILE -Append
+} else {
+  Write-Output "PowerShell VS Code profile already configured"
 }
 
 Load-ReloadEnv
