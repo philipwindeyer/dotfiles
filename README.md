@@ -1,33 +1,41 @@
 # dotfiles
 
-My dotfiles, installed apps, macOS system settings, Finder settings, etc.
+# macOS
 
-Fork, or copy and set up as you'd like. The root scripts (i.e. `macos.sh`) can be run as often as you'd like. Subsequent runs after the first/inital execution, will ignore or appropriately handle common functions that should only run once, but will still update dependencies and apps, thus keeping everything up to date.
+TODO
 
-Note: For Windows setup, see specific instructions at ~~[windows.md](windows.md)~~ [windows/setup.ps1](windows/setup.ps1)
+# Linux Mint
 
-In `scripts/`, there is a zsh/ps1 script per environment (macOS, macOS - work machine, etc). These scripts source common functions from `scripts/common` and `scripts/macos` for macOS scripts, and `scripts/windows` for Windows.
+TODO
 
-For automatic management/installation of Homebrew formulae and casks, asdf plugins, etc, use the text files in each sub-directory to list your required apps etc.
+# Windows 11
 
-Set them as environment vars in the root script accordingly (where applicable)
+## Getting started (first time setup)
 
-E.g. (inside `macos.sh`)
+- Open Terminal app (defaults to PowerShell) or PowerShell session as **Administator**
+- `winget install -s winget --accept-package-agreements Git.Git` (first run will prompt you to accept terms and conditions manually)
+- `cd ~`
+- `mkdir .ssh`
+- Copy ssh keys from protected source to ~/.ssh
+  - `mv .\id_rsa ~\.ssh\`
+  - `mv .\id_rsa.pub ~\.ssh\`
+- `cd ~`
+- `mkdir workspaces`
+- `cd workspaces`
+- `mkdir personal`
+- `cd personal`
+- `git clone git@github.com:philipwindeyer/dotfiles.git`
+- `cd ~/workspaces/personal/dotfiles/windows`
+- `./setup.ps1`
+- Note: the first run will take quite some time. Allow for an hour or more, but keep an eye out for any unexpected prompts.
 
-```
-readonly TAPS=common/taps.txt
-readonly FORMULAE=common/formulae.txt
-readonly CASKS=macos/casks.txt
-readonly APPS=macos/apps.txt
-readonly ASDF_PLUGINS=common/asdf-plugins.txt
-readonly ASDF_LIBS=common/asdf-libs.txt
-readonly NPM_PKGS=common/npm-global-pkgs.txt
-readonly GEMS=common/gems.txt
-readonly DOCK_APPS=macos/dock-apps.txt
-```
+## Information
 
-Inside windows.ps1
+- `windows/setup.ps1` is written to be one of the first, and only things to run on my Windows 11 machine in that it installs and configures almost everything I need
+  - setup.ps1 can be run anytime. It only updates or makes changes when necessary
+- `windows/lib` contains shared functions and vars, and helper files that may be copied to local directories where they can be executed
+- `windows/powershell` contains PowerShell profile, aliases (like my git aliases), etc. setup.ps1 sources `windows/powershell/config.ps1` from $PROFILE
 
-```
-$env:CHOCOLATEY_APPS = 'windows/chocolatey.txt'
-```
+### TODO
+
+- Migrate remaining steps from Notion (including Magic Keyboard/Trackpad driver installation, kinto.sh, manual pkgs, windows config, notes, etc)

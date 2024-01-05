@@ -2,88 +2,148 @@
 
 # Setup and Maintenance script for Windows 11
 
+$IS_ADMIN = [bool](([System.Security.Principal.WindowsIdentity]::GetCurrent()).groups -match "S-1-5-32-544")
 
-# TODO check that script is being run as Administrator before proceeding
+if ($IS_ADMIN -eq $false) { 
+  Write-Output "Run as administrator"
+  exit
+}
 
-# Uninstall bloatware
-winget uninstall Microsoft.Teams
-winget uninstall Microsoft.OneDrive
+Function Log-Heading {
+  Write-Output "`n=================================================="
+  Write-Output "  $Args"
+  Write-Output "==================================================`n"
+}
 
-# Install packages (winget)
-winget install Microsoft.DotNet.Runtime.8
-winget install Microsoft.DotNet.DesktopRuntime.8
-winget install Git.Git
-winget install Chocolatey.Chocolatey
-winget install AutoHotkey.AutoHotkey
-winget install StrawberryPerl.StrawberryPerl
-winget install Python.Python.3.12
-winget install Google.GoogleDrive
-winget install KeeWeb.KeeWeb
-winget install Google.Chrome
-winget install Notion.Notion
-winget install Valve.Steam
-winget install Discord.Discord
-winget install Spotify.Spotify
-winget install SlackTechnologies.Slack
-winget install Facebook.Messenger
-winget install Microsoft.VisualStudioCode
-winget install SublimeHQ.SublimeText.4
-winget install VideoLAN.VLC
-winget install Keybase.Keybase
-winget install OpenWhisperSystems.Signal
-winget install Dropbox.Dropbox
-winget install JGraph.Draw
-winget install Microsoft.Skype
-winget install Zoom.Zoom
-winget install Balena.Etcher
-winget install Ryochan7.DS4Windows
-winget install stenzek.DuckStation
-winget install Brave.Brave
-winget install CoreyButler.NVMforWindows
-winget install Yarn.Yarn
+Function Log-Msg {
+  Write-Output "  $Args`n"
+}
 
-# Install packages (msstore)
-winget install Trello -s msstore --accept-package-agreements
-winget install Instagram -s msstore --accept-package-agreements
-winget install Facebook -s msstore --accept-package-agreements
-winget install PowerToys -s msstore --accept-package-agreements
-winget install iTunes -s msstore --accept-package-agreements
-winget install "Windows Subsystem for Linux" -s msstore --accept-package-agreements
+Function Load-ReloadEnv {
+  $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+  . $PROFILE
+}
 
-# Install packages (chocolatey)
-choco install mac-precision-touchpad -y
-choco install ocenaudio -y
+Function Del-WinPkg {
+  winget list $Args > $null
 
-# Install packages (from chocolatey where winget version is outdated or "Installer hash does not match")
-choco install messenger -y
-choco install ClickUp-Official -y
+  if ($? -eq $true) { 
+    winget uninstall --purge $Args
+  } else {
+    Write-Output "$Args already uninstalled"
+  }
+}
 
-# Install packages (from mssrote where winget version is outdated or "Installer hash does not match")
-winget install WhatsApp -s msstore --accept-package-agreements
+Function Get-WinPkg {
+  winget list $Args > $null
 
-# Install packages manually (where no package managed versions were installable)
-# TODO print friendly instructions guiding how to do this
-# nordvpn
-# nordpass
+  if ($? -eq $false) { 
+    winget install -s winget --accept-package-agreements $Args
+  } else {
+    Write-Output "$Args already installed"
+  }
+}
 
-# Keep packages up to date
+Function Get-MsStorePkg {
+  winget list $Args > $null
+
+  if ($? -eq $false) { 
+    winget install -s msstore --accept-package-agreements $Args
+  } else {
+    Write-Output "$Args already installed"
+  }
+}
+
+Function Get-ChocoPkg {
+  $Is_Present = (choco list -r $Args)
+
+  if ($Is_Present -eq $null) { 
+    choco install -y $Args
+  } else {
+    Write-Output "$Args already installed"
+  }
+}
+
+Log-Heading "Windows 11 Setup Script"
+Log-Msg "Work in progress (see notes and TODOs within)"
+
+Log-Heading "Uninstalling bloatware"
+Del-WinPkg Microsoft.Teams
+Del-WinPkg Microsoft.OneDrive
+Del-WinPkg Microsoft.OneDriveSync_8wekyb3d8bbwe
+Load-ReloadEnv
+
+Log-Heading "Installing winget packages"
+Get-WinPkg Microsoft.DotNet.Runtime.8
+Get-WinPkg Microsoft.DotNet.DesktopRuntime.8
+Get-WinPkg Git.Git
+Get-WinPkg Chocolatey.Chocolatey
+Get-WinPkg AutoHotkey.AutoHotkey
+Get-WinPkg StrawberryPerl.StrawberryPerl
+Get-WinPkg Python.Python.3.12
+Get-WinPkg Google.GoogleDrive
+Get-WinPkg KeeWeb.KeeWeb
+Get-WinPkg Google.Chrome
+Get-WinPkg Notion.Notion
+Get-WinPkg NordSecurity.NordVPN
+Get-WinPkg NordSecurity.NordPass
+Get-WinPkg Valve.Steam
+Get-WinPkg Discord.Discord
+Get-WinPkg Spotify.Spotify
+Get-WinPkg SlackTechnologies.Slack
+Get-WinPkg Microsoft.VisualStudioCode
+Get-WinPkg SublimeHQ.SublimeText.4
+Get-WinPkg VideoLAN.VLC
+Get-WinPkg Keybase.Keybase
+Get-WinPkg OpenWhisperSystems.Signal
+Get-WinPkg Dropbox.Dropbox
+Get-WinPkg JGraph.Draw
+Get-WinPkg Microsoft.Skype
+Get-WinPkg Zoom.Zoom
+Get-WinPkg Balena.Etcher
+Get-WinPkg Ryochan7.DS4Windows
+Get-WinPkg stenzek.DuckStation
+Get-WinPkg Brave.Brave
+Get-WinPkg CoreyButler.NVMforWindows
+Get-WinPkg Yarn.Yarn
+
+Log-Heading "Installing Microsoft Store (msstore) packages"
+Get-MsStorePkg Trello
+Get-MsStorePkg Instagram
+Get-MsStorePkg Facebook
+Get-MsStorePkg PowerToys
+Get-MsStorePkg iTunes
+
+Log-Heading "Installing Microsoft Store (msstore) packages (for outdated or `"Installer hash does not match`" winget packages)"
+Get-MsStorePkg WhatsApp
+
+Log-Heading "Installing Chocolatey packages"
+Load-ReloadEnv
+Get-ChocoPkg mac-precision-touchpad
+Get-ChocoPkg ocenaudio
+
+Log-Heading "Installing Chocolatey packages (for outdated or `"Installer hash does not match`" winget packages)"
+Get-ChocoPkg messenger
+Get-ChocoPkg ClickUp-Official
+
+Log-Heading "Keep all packages up to date"
 winget upgrade --include-unknown --all --accept-package-agreements
 choco upgrade -y all
 
-# TODO Can trigger Windows update from command line?
-
-# Note: can potentially ditch entirely, for now (running node and bash in win11 directly)
-wsl --install Ubuntu
-
-# Run Windows Update
+Log-Heading "Keep Windows up to date"
 UsoClient ScanInstallWait
 
-# TODO: Generate a kinto-start.vbs shortcut and move to home directory (so it can be searched and triggered from Start Menu)
+Log-Heading "Install node and set global node version"
+Load-ReloadEnv
+$NODE_VERSION_TO_INSTALL=21.5.0 # as of 5/1/24
+nvm install $NODE_VERSION_TO_INSTALL
+nvm use $NODE_VERSION_TO_INSTALL
 
-# Need to refetch profile OR reload env somehow before running nvm (not on path in same shell session)
-nvm install 21.5.0 # as of 5/1/24
-nvm use 21.5.0
 
+Log-Heading "Add Kinto shortcut to home directory (triggerable with Start Menu)"
+Copy-Item -Force .\lib\kinto-start.vbs.lnk $HOME
+
+Log-Heading "Link PowerShell profile to ./powershell/config.ps1"
 $VSCODE_PROFILE = $PROFILE.Substring(0, $PROFILE.LastIndexOf('\')) + '\Microsoft.VSCode_profile.ps1'
 
 if (!(Test-Path -Path $PROFILE)) {
@@ -94,3 +154,5 @@ if (!(Test-Path -Path $PROFILE)) {
 if (!(Test-Path -Path $VSCODE_PROFILE)) { 
   Write-Output ". $PROFILE" | Out-File $VSCODE_PROFILE -Append
 }
+
+Load-ReloadEnv
