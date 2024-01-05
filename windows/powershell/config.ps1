@@ -1,5 +1,5 @@
 #!/usr/bin/env pwsh
 
-# Note: this is sourced/invoked from $HOME/Documents/PowerShell/Profile.ps1
+# Note: this is sourced/invoked from $PROFILE
 
-. $HOME/workspaces/personal/dotfiles/windows/powershell/aliases.ps1
+. $PSScriptRoot\aliases.ps1
