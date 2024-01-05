@@ -39,9 +39,8 @@ winget install Balena.Etcher
 winget install Ryochan7.DS4Windows
 winget install stenzek.DuckStation
 winget install Brave.Brave
-winget install OpenJS.NodeJS
+winget install CoreyButler.NVMforWindows
 winget install Yarn.Yarn
-# Install asdf?
 
 # Install packages (msstore)
 winget install Trello -s msstore --accept-package-agreements
@@ -80,6 +79,10 @@ wsl --install Ubuntu
 UsoClient ScanInstallWait
 
 # TODO: Generate a kinto-start.vbs shortcut and move to home directory (so it can be searched and triggered from Start Menu)
+
+# Need to refetch profile OR reload env somehow before running nvm (not on path in same shell session)
+nvm install 21.5.0 # as of 5/1/24
+nvm use 21.5.0
 
 if (!(Test-Path -Path $PROFILE)) {
   New-Item -ItemType File -Path $PROFILE -Force
