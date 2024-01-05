@@ -10,6 +10,7 @@ winget uninstall Microsoft.Teams
 
 # Install packages (winget)
 winget install Microsoft.DotNet.Runtime.8
+winget install Microsoft.DotNet.DesktopRuntime.8
 winget install Git.Git
 winget install Chocolatey.Chocolatey
 winget install AutoHotkey.AutoHotkey
@@ -54,6 +55,7 @@ choco install ocenaudio -y
 
 # Install packages (from chocolatey where winget version is outdated or "Installer hash does not match")
 choco install messenger -y
+choco install ClickUp-Official -y
 
 # Install packages (from mssrote where winget version is outdated or "Installer hash does not match")
 winget install WhatsApp -s msstore --accept-package-agreements
@@ -74,3 +76,5 @@ wsl --install Ubuntu
 
 # Run Windows Update
 UsoClient ScanInstallWait
+
+# TODO Generate a kinto-start.vbs shortcut and move to home directory (so it can be searched and triggered from Start Menu)
