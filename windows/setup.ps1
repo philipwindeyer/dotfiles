@@ -7,6 +7,7 @@
 
 # Uninstall bloatware
 winget uninstall Microsoft.Teams
+winget uninstall Microsoft.OneDrive
 
 # Install packages (winget)
 winget install Microsoft.DotNet.Runtime.8
@@ -80,4 +81,7 @@ UsoClient ScanInstallWait
 
 # TODO: Generate a kinto-start.vbs shortcut and move to home directory (so it can be searched and triggered from Start Menu)
 
-# TODO: Create "~/Documents/PowerShell" dir, add "Profile.ps1" there (unless it already exists), and link to my PS config (". $HOME\workspaces\personal\dotfiles\windows\config.ps1")
+if (!(Test-Path -Path $PROFILE)) {
+  New-Item -ItemType File -Path $PROFILE -Force
+  Write-Output ". $PSScriptRoot\powershell\config.ps1" | Out-File $PROFILE -Append
+}
