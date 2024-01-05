@@ -84,7 +84,13 @@ UsoClient ScanInstallWait
 nvm install 21.5.0 # as of 5/1/24
 nvm use 21.5.0
 
+$VSCODE_PROFILE = $PROFILE.Substring(0, $PROFILE.LastIndexOf('\')) + '\Microsoft.VSCode_profile.ps1'
+
 if (!(Test-Path -Path $PROFILE)) {
   New-Item -ItemType File -Path $PROFILE -Force
   Write-Output ". $PSScriptRoot\powershell\config.ps1" | Out-File $PROFILE -Append
+}
+
+if (!(Test-Path -Path $VSCODE_PROFILE)) { 
+  Write-Output ". $PROFILE" | Out-File $VSCODE_PROFILE -Append
 }
