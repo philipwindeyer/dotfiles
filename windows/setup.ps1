@@ -40,6 +40,7 @@ winget install stenzek.DuckStation
 winget install Brave.Brave
 winget install OpenJS.NodeJS
 winget install Yarn.Yarn
+# Install asdf?
 
 # Install packages (msstore)
 winget install Trello -s msstore --accept-package-agreements
@@ -77,4 +78,6 @@ wsl --install Ubuntu
 # Run Windows Update
 UsoClient ScanInstallWait
 
-# TODO Generate a kinto-start.vbs shortcut and move to home directory (so it can be searched and triggered from Start Menu)
+# TODO: Generate a kinto-start.vbs shortcut and move to home directory (so it can be searched and triggered from Start Menu)
+
+# TODO: Create "~/Documents/PowerShell" dir, add "Profile.ps1" there (unless it already exists), and link to my PS config (". $HOME\workspaces\personal\dotfiles\windows\config.ps1")
