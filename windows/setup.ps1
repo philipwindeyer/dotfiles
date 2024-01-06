@@ -140,8 +140,12 @@ nvm install $NODE_VERSION_TO_INSTALL
 nvm use $NODE_VERSION_TO_INSTALL
 
 
-Log-Heading "Add Kinto shortcut to home directory (triggerable with Start Menu)"
+Log-Heading "Add shortcuts to home directory (triggerable via Start Menu)"
+Log-Msg "Kinto.sh"
 Copy-Item -Force .\lib\kinto-start.vbs.lnk $HOME
+
+Log-Msg "work-environment, sleep, and lock-screen"
+Copy-Item -Force .\lib\*.bat $HOME
 
 Log-Heading "Link PowerShell profile to ./powershell/config.ps1"
 $VSCODE_PROFILE = $PROFILE.Substring(0, $PROFILE.LastIndexOf('\')) + '\Microsoft.VSCode_profile.ps1'
