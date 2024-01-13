@@ -142,10 +142,13 @@ nvm use $NODE_VERSION_TO_INSTALL
 
 Log-Heading "Add shortcuts to home directory (triggerable via Start Menu)"
 Log-Msg "Kinto.sh"
-Copy-Item -Force .\lib\kinto-start.vbs.lnk $HOME
+Copy-Item -Force .\lib\helpers\kinto-start.vbs.lnk $HOME
 
 Log-Msg "work-environment, sleep, and lock-screen"
-Copy-Item -Force .\lib\*.bat $HOME
+Copy-Item -Force .\lib\helpers\*.bat $HOME
+
+Log-Msg "Add Google Chrome `"Desktop App`" shortcuts to Start Menu"
+Copy-Item -Force .\lib\chrome-apps\*.lnk "$HOME\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Chrome Apps"
 
 Log-Heading "Link PowerShell profile to ./powershell/config.ps1"
 $VSCODE_PROFILE = $PROFILE.Substring(0, $PROFILE.LastIndexOf('\')) + '\Microsoft.VSCode_profile.ps1'
