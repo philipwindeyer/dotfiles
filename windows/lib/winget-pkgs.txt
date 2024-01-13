@@ -30,3 +30,4 @@ stenzek.DuckStation
 Brave.Brave
 CoreyButler.NVMforWindows
 Yarn.Yarn
+Nvidia.GeForceExperience
