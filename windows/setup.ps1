@@ -9,122 +9,42 @@ if ($IS_ADMIN -eq $false) {
   exit
 }
 
-Function Log-Heading {
-  Write-Output "`n=================================================="
-  Write-Output "  $Args"
-  Write-Output "==================================================`n"
-}
-
-Function Log-Msg {
-  Write-Output "  $Args`n"
-}
-
-Function Load-ReloadEnv {
-  $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-  . $PROFILE
-}
-
-Function Del-WinPkg {
-  winget list $Args > $null
-
-  if ($? -eq $true) { 
-    winget uninstall --purge $Args
-  } else {
-    Write-Output "$Args already uninstalled"
-  }
-}
-
-Function Get-WinPkg {
-  winget list $Args > $null
-
-  if ($? -eq $false) { 
-    winget install -s winget --accept-package-agreements $Args
-  } else {
-    Write-Output "$Args already installed"
-  }
-}
-
-Function Get-MsStorePkg {
-  winget list $Args > $null
-
-  if ($? -eq $false) { 
-    winget install -s msstore --accept-package-agreements $Args
-  } else {
-    Write-Output "$Args already installed"
-  }
-}
-
-Function Get-ChocoPkg {
-  $Is_Present = (choco list -r $Args)
-
-  if ($Is_Present -eq $null) { 
-    choco install -y $Args
-  } else {
-    Write-Output "$Args already installed"
-  }
-}
+. $PSScriptRoot\lib\setup-fns.ps1
 
 Log-Heading "Windows 11 Setup Script"
-Log-Msg "Work in progress (see notes and TODOs within)"
+Log-Msg "Note: this is a work in progress (see notes and TODOs within)"
 
 Log-Heading "Uninstalling bloatware"
-Del-WinPkg Microsoft.Teams
-Del-WinPkg Microsoft.OneDrive
-Del-WinPkg Microsoft.OneDriveSync_8wekyb3d8bbwe
+ForEach ($Line in Get-Content $PSScriptRoot\lib\bloatware.txt) {
+  Del-WinPkg $Line
+}
 Load-ReloadEnv
 
 Log-Heading "Installing winget packages"
-Get-WinPkg Microsoft.DotNet.Runtime.8
-Get-WinPkg Microsoft.DotNet.DesktopRuntime.8
-Get-WinPkg Git.Git
-Get-WinPkg Chocolatey.Chocolatey
-Get-WinPkg AutoHotkey.AutoHotkey
-Get-WinPkg StrawberryPerl.StrawberryPerl
-Get-WinPkg Python.Python.3.12
-Get-WinPkg Google.GoogleDrive
-Get-WinPkg KeeWeb.KeeWeb
-Get-WinPkg Google.Chrome
-Get-WinPkg Notion.Notion
-Get-WinPkg NordSecurity.NordVPN
-Get-WinPkg NordSecurity.NordPass
-Get-WinPkg Valve.Steam
-Get-WinPkg Discord.Discord
-Get-WinPkg Spotify.Spotify
-Get-WinPkg SlackTechnologies.Slack
-Get-WinPkg Microsoft.VisualStudioCode
-Get-WinPkg SublimeHQ.SublimeText.4
-Get-WinPkg VideoLAN.VLC
-Get-WinPkg Keybase.Keybase
-Get-WinPkg OpenWhisperSystems.Signal
-Get-WinPkg Dropbox.Dropbox
-Get-WinPkg JGraph.Draw
-Get-WinPkg Microsoft.Skype
-Get-WinPkg Zoom.Zoom
-Get-WinPkg Balena.Etcher
-Get-WinPkg Ryochan7.DS4Windows
-Get-WinPkg stenzek.DuckStation
-Get-WinPkg Brave.Brave
-Get-WinPkg CoreyButler.NVMforWindows
-Get-WinPkg Yarn.Yarn
+ForEach ($Line in Get-Content $PSScriptRoot\lib\winget-pkgs.txt) {
+  Get-WinPkg $Line
+}
 
 Log-Heading "Installing Microsoft Store (msstore) packages"
-Get-MsStorePkg Trello
-Get-MsStorePkg Instagram
-Get-MsStorePkg Facebook
-Get-MsStorePkg PowerToys
-Get-MsStorePkg iTunes
+ForEach ($Line in Get-Content $PSScriptRoot\lib\msstore-pkgs.txt) {
+  Get-MsStorePkg $Line
+}
 
 Log-Heading "Installing Microsoft Store (msstore) packages (for outdated or `"Installer hash does not match`" winget packages)"
-Get-MsStorePkg WhatsApp
+ForEach ($Line in Get-Content $PSScriptRoot\lib\msstore-fallback-pkgs.txt) {
+  Get-MsStorePkg $Line
+}
 
 Log-Heading "Installing Chocolatey packages"
 Load-ReloadEnv
-Get-ChocoPkg mac-precision-touchpad
-Get-ChocoPkg ocenaudio
+ForEach ($Line in Get-Content $PSScriptRoot\lib\choco-pkgs.txt) {
+  Get-ChocoPkg $Line
+}
 
 Log-Heading "Installing Chocolatey packages (for outdated or `"Installer hash does not match`" winget packages)"
-Get-ChocoPkg messenger
-Get-ChocoPkg ClickUp-Official
+ForEach ($Line in Get-Content $PSScriptRoot\lib\choco-fallback-pkgs.txt) {
+  Get-ChocoPkg $Line
+}
 
 Log-Heading "Keep all packages up to date"
 winget upgrade --include-unknown --all --accept-package-agreements
@@ -135,10 +55,9 @@ UsoClient ScanInstallWait
 
 Log-Heading "Install node and set global node version"
 Load-ReloadEnv
-$NODE_VERSION_TO_INSTALL="21.5.0" # as of 5/1/24
+$NODE_VERSION_TO_INSTALL = "21.5.0" # as of 5/1/24
 nvm install $NODE_VERSION_TO_INSTALL
 nvm use $NODE_VERSION_TO_INSTALL
-
 
 Log-Heading "Add shortcuts to home directory (triggerable via Start Menu)"
 Log-Msg "Kinto.sh"
@@ -156,14 +75,18 @@ $VSCODE_PROFILE = $PROFILE.Substring(0, $PROFILE.LastIndexOf('\')) + '\Microsoft
 if (!(Test-Path -Path $PROFILE)) {
   New-Item -ItemType File -Path $PROFILE -Force
   Write-Output ". $PSScriptRoot\powershell\config.ps1" | Out-File $PROFILE -Append
-} else {
+}
+else {
   Write-Output "PowerShell default profile already configured"
 }
 
 if (!(Test-Path -Path $VSCODE_PROFILE)) { 
   Write-Output ". $PROFILE" | Out-File $VSCODE_PROFILE -Append
-} else {
+}
+else {
   Write-Output "PowerShell VS Code profile already configured"
 }
 
 Load-ReloadEnv
+
+Log-Heading "Done!"

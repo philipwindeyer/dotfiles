@@ -123,6 +123,8 @@ _Note: the first run will take quite some time. Allow for an hour or more, but k
   - File Explorer configuration
   - Windows Settings automation
   - Microsoft Store configuration
+- [ ] Figure out best way to configure and maintain automatic backups
+- [ ] Trigger Windows "clean up, and the new "optimisation" features in Windows 11
 
 ## Notes
 
