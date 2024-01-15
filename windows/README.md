@@ -59,6 +59,13 @@ Once drive is wiped, Windows 11 Pro is installed from scratch, and the initial s
     - Note: Activation key is in password manager
 - Open “Phone Link” on Windows
   - Then “Link to Windows” on iOS, and follow the instructions to pair and link my phone
+- View advanced system settings -> Start-up and Recovery -> System failure
+  - Write an event to the system log -> ON
+  - Automatically restart -> OFF
+  - Write debugging information -> Complete memory dump
+- Control Panel -> Power Options -> Choose what the power buttons do ->
+  - Turn on fast startup -> OFF
+- Restart once all complete
 
 ## Automated setup
 
@@ -132,3 +139,20 @@ _Note: the first run will take quite some time. Allow for an hour or more, but k
   - Methods for attempting to have it function correctly (all failed in my case):
     - https://allthings.how/how-to-fix-the-dynamic-lock-not-working-issue-in-windows-11/
     - https://www.digitbin.com/fix-dynamic-lock-not-working-in-windows-11/
+
+## Debugging
+
+As of 15/1/24 I semi-regularly experience abrupt restarts. Symptoms would suggest that it has something to do with either the Bluetooth driver installed, or the Bluetooth chip itself.
+
+See [Manual one-time steps](#manual-one-time-steps) for settings to prevent automatic restarts and default to a good ol' bluescreen of death instead
+(source: https://www.youtube.com/watch?v=M5I-N3ZmSr8)
+
+To view shutdown logs:
+
+- Open "Event Viewer" -> Windows Logs -> System -> Filter Current Log... ->
+  - Type "41,1074,6006,6605,6008" into "Includes/Excludes..." to filter by shutdown events
+  - (source: https://www.partitionwizard.com/partitionmanager/random-shutdowns-on-windows-11.html#method-8:-view-shutdown-log-in-event-viewer-23278)
+
+To view memory dump from previous random shutdown:
+
+- Navigate to, and open C:\Windows\MEMORY.DMP
