@@ -31,3 +31,4 @@ Brave.Brave
 CoreyButler.NVMforWindows
 Yarn.Yarn
 Nvidia.GeForceExperience
+YuzuEmu.Yuzu.Mainline
