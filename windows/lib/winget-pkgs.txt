@@ -32,3 +32,4 @@ CoreyButler.NVMforWindows
 Yarn.Yarn
 Nvidia.GeForceExperience
 YuzuEmu.Yuzu.Mainline
+7zip.7zip
