@@ -156,3 +156,30 @@ To view shutdown logs:
 To view memory dump from previous random shutdown:
 
 - Navigate to, and open C:\Windows\MEMORY.DMP
+
+### 24/1/2024 BSODs
+
+Was getting semi-regular blue screens. Diagnosis (using BlueScreenView) indicated a ntoskrnl related error.
+Followed everything in the below links and it appears to have stopped.
+
+Notably
+
+```
+dism /online /cleanup-image /restorehealth
+sfc /scannow
+chkdsk /f
+```
+
+And additionally, the memory scan tool as well.
+
+Sources:
+
+- https://answers.microsoft.com/en-us/windows/forum/all/blue-screen-caused-by-driver-ntoskrnlexe/ddfc77ec-cff3-429b-9988-01ec7d61a49c
+- https://answers.microsoft.com/en-us/windows/forum/all/bsod-ntoskrnlexe/00556a4e-f082-4043-a894-5bad34729842
+- https://www.quora.com/How-do-I-fix-an-Ntoskrnl-exe-missing-or-corrupt-error
+- https://www.sweetwater.com/sweetcare/articles/how-to-use-dism-to-repair-windows-image/
+- https://www.auslogics.com/en/articles/fix-ntoskrnl-exe-bsod/
+
+TODO:
+
+- Run a hardware test (https://www.lifewire.com/run-diagnostics-on-windows-5214801)
