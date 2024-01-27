@@ -46,6 +46,17 @@ ForEach ($Line in Get-Content $PSScriptRoot\lib\choco-fallback-pkgs.txt) {
   Get-ChocoPkg $Line
 }
 
+Log-Heading "Installing Apple Magic Keyboard 2 drivers (ensures the volume, media, brightness, and fn keys function as expected for my setup)"
+$AppleMagicKeyboard2Url = "https://github.com/AbsentForeskin/Apple-Input-Device-Drivers-Windows-10-11/releases/download/v6.1.7071/AppleKeyboardMagic2.zip"
+$AppleMagicKeyboard2File = "AppleKeyboardMagic2.zip"
+Invoke-WebRequest -Uri $AppleMagicKeyboard2Url -OutFile $AppleMagicKeyboard2File
+Expand-Archive -Force $AppleMagicKeyboard2File
+Set-Location .\AppleKeyboardMagic2\AppleKeyboardMagic2
+PNPUtil.exe /add-driver Keymagic2.inf /install
+Set-Location .\..\..
+Remove-Item -Force -Recurse .\AppleKeyboardMagic2
+Remove-Item -Force $AppleMagicKeyboard2File
+
 Log-Heading "Keep all packages up to date"
 winget upgrade --include-unknown --all --accept-package-agreements
 choco upgrade -y all
