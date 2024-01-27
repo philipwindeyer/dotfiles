@@ -47,6 +47,7 @@ ForEach ($Line in Get-Content $PSScriptRoot\lib\choco-fallback-pkgs.txt) {
 }
 
 Log-Heading "Installing Apple Magic Keyboard 2 drivers (ensures the volume, media, brightness, and fn keys function as expected for my setup)"
+# Note: v6.1.7071 is the latest version as of 27/1/24
 $AppleMagicKeyboard2Url = "https://github.com/AbsentForeskin/Apple-Input-Device-Drivers-Windows-10-11/releases/download/v6.1.7071/AppleKeyboardMagic2.zip"
 $AppleMagicKeyboard2File = "AppleKeyboardMagic2.zip"
 Invoke-WebRequest -Uri $AppleMagicKeyboard2Url -OutFile $AppleMagicKeyboard2File
@@ -56,6 +57,22 @@ PNPUtil.exe /add-driver Keymagic2.inf /install
 Set-Location .\..\..
 Remove-Item -Force -Recurse .\AppleKeyboardMagic2
 Remove-Item -Force $AppleMagicKeyboard2File
+
+Log-Heading "Installing kinto.sh (for mac keymaps)"
+if (Test-Path -Path $HOME\.kinto) {
+  Write-Output "kinto.sh already installed"
+}
+else {
+  Log-Msg "Note: you will be prompted to choose a keyboard type. Select 1 for Mac"
+  Set-ExecutionPolicy Bypass -Scope Process -Force
+  Invoke-WebRequest https://raw.githubusercontent.com/rbreaves/kinto/master/install/windows.ps1 -UseBasicParsing | Invoke-Expression
+  cmd /c "explorer shell:::{05d7b0f4-2121-4eff-bf6b-ed3f69b894d9}"
+  Log-Msg "You'll notice a kinto-master directory in ~/Downloads. You may delete this after the next restart"
+  # Note: the kinto.sh installation script sets location to ~/Downloads during it's execution
+  Set-Location .\..
+  Remove-Item -Force kinto.zip
+  Set-Location $PSScriptRoot
+}
 
 Log-Heading "Keep all packages up to date"
 winget upgrade --include-unknown --all --accept-package-agreements

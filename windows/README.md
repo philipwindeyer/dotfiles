@@ -43,9 +43,6 @@ Once drive is wiped, Windows 11 Pro is installed from scratch, and the initial s
 - Open a File Explorer -> View -> Show ->
   - File name extensions -> Turn on
   - Hidden items -> Turn on
-- Instal Kinto.sh
-  - Homepage: https://kinto.sh/
-  - Source: https://github.com/rbreaves/kinto#how-to-install-windows
 - Install the following manually (as they are not packaged managed as of 11/11/23)
   - **These can be factored in to the automated script, as prompts (first checking if already installed)**
   - Razer 7.1 Surround Sound (for my headphones)
@@ -87,7 +84,6 @@ _Note: the first run will take quite some time. Allow for an hour or more, but k
   - Perhaps remap or assign the above with PowerToys instead of AutoHotKey/Kinto
     - https://www.lifewire.com/use-magic-keyboard-on-windows-pc-5197318
     - https://arschles.com/blog/powertoys-mac/
-- Keyboard and trackpad configuration
   - [ ] Add 2 finger swipe from right of trackpad shortcut to open notification centre
 - [ ] Add Git Bash to Windows Terminal (after Git installed): https://www.timschaeps.be/post/adding-git-bash-to-windows-terminal/
 - [ ] Install ZSH
@@ -116,9 +112,6 @@ _Note: the first run will take quite some time. Allow for an hour or more, but k
   - Settings
 
 - [ ] See what else I can automate from the above, i.e.;
-  - [Kinto.sh](http://Kinto.sh) installation
-  - Magic Keyboard driver installation
-  - Fetching the Razer SS app and triggering the installation
   - File Explorer configuration
   - Windows Settings automation
   - Microsoft Store configuration
