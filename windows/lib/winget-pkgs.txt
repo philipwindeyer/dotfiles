@@ -12,7 +12,6 @@ Notion.Notion
 NordSecurity.NordVPN
 NordSecurity.NordPass
 Valve.Steam
-Discord.Discord
 Spotify.Spotify
 SlackTechnologies.Slack
 Microsoft.VisualStudioCode
@@ -26,7 +25,6 @@ Microsoft.Skype
 Zoom.Zoom
 Balena.Etcher
 Ryochan7.DS4Windows
-stenzek.DuckStation
 Brave.Brave
 CoreyButler.NVMforWindows
 Yarn.Yarn

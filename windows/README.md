@@ -29,14 +29,17 @@ Once drive is wiped, Windows 11 Pro is installed from scratch, and the initial s
       - Show my snapped windows when I hover over taskbar apps - turn off (turns off window grouping)
     - Storage -> Advanced storage settings -> Back-up options
       - Make sure OneDrive backup and sync is on
-    - Apps -> Advanced app settings ->
-      - App execution aliases ->
-        - App Installer python.exe -> OFF
-        - App Installer python3.exe -> OFF
-    - Accessibility -> Mouse pointer and touch
-      - Change to black mouse cursor
-  - Control Panel -> Back up and Restore
-    - Ensure automatic backups for Storage (D:) are on
+    - Power -> Screen and sleep
+      - When plugged in, turn off my screen after -> 15 minutes
+      - When plugged in, put my device to sleep after -> Never
+  - Apps -> Advanced app settings ->
+    - App execution aliases ->
+      - App Installer python.exe -> OFF
+      - App Installer python3.exe -> OFF
+  - Accessibility -> Mouse pointer and touch
+    - Change to black mouse cursor
+- Control Panel -> Back up and Restore
+  - Ensure automatic backups for Storage (D:) are on
 - Microsoft Store ->
   - Profile -> Settings -> App updates -> **Turn on**
   - Library -> **Get Updates** (ensure all apps are up to date)
@@ -48,12 +51,19 @@ Once drive is wiped, Windows 11 Pro is installed from scratch, and the initial s
   - Razer 7.1 Surround Sound (for my headphones)
     - Source: https://www.razer.com/au-en/71-surround-sound
     - Note: Activation key is in password manager
+  - ClickUp
+    - Source: https://clickup.com/download
 - View advanced system settings -> Start-up and Recovery -> System failure
   - Write an event to the system log -> ON
   - Automatically restart -> OFF
   - Write debugging information -> Complete memory dump
 - Control Panel -> Power Options -> Choose what the power buttons do ->
   - Turn on fast startup -> OFF
+- Edit group policy (run from Start)
+  - Computer Configuration -> Administrative Templates -> Windows Components -> Windows PowerShell ->
+    - Turn on Script Execution - double-click it
+      - Turn on Script Execution: `Enabled`
+      - Execution Policy -> `Allow local scripts and remote signed scripts`
 - Restart once all complete
 
 ## Automated setup
@@ -120,10 +130,21 @@ _Note: the first run will take quite some time. Allow for an hour or more, but k
 
 ## Notes
 
+### Dynamic Lock
+
 - I don't use "Dynamic Lock" with my phone (i.e. auto lock when leaving the vicinity based on my phone's proximity) as it caused issues with my machine and disrupted other Bluetooth connections
   - Methods for attempting to have it function correctly (all failed in my case):
     - https://allthings.how/how-to-fix-the-dynamic-lock-not-working-issue-in-windows-11/
     - https://www.digitbin.com/fix-dynamic-lock-not-working-in-windows-11/
+
+### Microsoft OneDrive Complete Uninstallation
+
+- If you intend not to use OneDrive, before running setup.ps1; sign out and "unlink this pc" unless already done so (or not signed in at all)
+  - Source: https://support.microsoft.com/en-us/office/turn-off-disable-or-uninstall-onedrive-f32a17ce-3336-40fe-9c38-6efb09f944b0
+- setup.ps1 uninstalls the OneDrive application and background services
+- Reset "default location" for `Desktop`, `Documents`, `Pictures`, etc (from ~/<user>/OneDrive/Documents to ~/<user>/Documents)
+  - Backup registry: https://support.microsoft.com/en-us/topic/how-to-back-up-and-restore-the-registry-in-windows-855140ad-e318-2a13-2829-d428a2ab0692
+  - Then Follow: https://support.microsoft.com/en-gb/topic/operation-to-change-a-personal-folder-location-fails-in-windows-ffb95139-6dbb-821d-27ec-62c9aaccd720
 
 ## Debugging
 
