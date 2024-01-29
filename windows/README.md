@@ -12,6 +12,9 @@ Once drive is wiped, Windows 11 Pro is installed from scratch, and the initial s
 - Download and install the “Armoury Crate App” (i.e. the ASUS Motherboard management app)
   - You should be prompted to download and install it automatically
 - Armoury Crate -> Device -> Update Center -> Update All
+- Install PowerShell 7+
+  - Microsoft Store -> search "PowerShell" and install (note: PowerShell on msstore is different to the stock "Windows PowerShell")
+- Install `winget` (AKA "App Installer") update [from here](https://apps.microsoft.com/detail/9NBLGGH4NNS1) ([source](https://learn.microsoft.com/en-us/windows/package-manager/winget/))
 - Settings ->
   - Windows Update -> Check for updates
     - “Update all”
@@ -27,8 +30,6 @@ Once drive is wiped, Windows 11 Pro is installed from scratch, and the initial s
     - Multi-tasking -> Snap windows
       - When I snap a window, suggest what I can snap next to it - turn off
       - Show my snapped windows when I hover over taskbar apps - turn off (turns off window grouping)
-    - Storage -> Advanced storage settings -> Back-up options
-      - Make sure OneDrive backup and sync is on
     - Power -> Screen and sleep
       - When plugged in, turn off my screen after -> 15 minutes
       - When plugged in, put my device to sleep after -> Never
@@ -145,6 +146,17 @@ _Note: the first run will take quite some time. Allow for an hour or more, but k
 - Reset "default location" for `Desktop`, `Documents`, `Pictures`, etc (from ~/<user>/OneDrive/Documents to ~/<user>/Documents)
   - Backup registry: https://support.microsoft.com/en-us/topic/how-to-back-up-and-restore-the-registry-in-windows-855140ad-e318-2a13-2829-d428a2ab0692
   - Then Follow: https://support.microsoft.com/en-gb/topic/operation-to-change-a-personal-folder-location-fails-in-windows-ffb95139-6dbb-821d-27ec-62c9aaccd720
+
+### Preliminary PowerShell and winget upgrade
+
+Before running the automated setup, some preliminary steps (detailed in [Manual one-time steps](#manual-one-time-steps)) must take place first.
+They are;
+
+- Install PowerShell 7+ via the Microsoft Store GUI
+- Install the latest winget [from here](https://apps.microsoft.com/detail/9NBLGGH4NNS1)
+
+The stock version of PowerShell that comes with Windows 11 is "Windows PowerShell v5" specifically, is outdated, and unmaintained but still the defacto version of PowerShell supplied with Windows 11 out of the box.
+The same applies to winget (or "App Installer"). The stock version is outdated and needs to be updated before it can run
 
 ## Debugging
 
