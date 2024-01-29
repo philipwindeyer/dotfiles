@@ -189,3 +189,12 @@ Sources:
 TODO:
 
 - Run a hardware test (https://www.lifewire.com/run-diagnostics-on-windows-5214801)
+- Run further tests using;
+  - `sfc`
+  - `chkdsk`
+  - MyASUS (installed as msstore pkg) - https://www.asus.com/support/FAQ/1045716
+  - Performance Monitor (preinstalled)
+  - Windows Memory Diagnostic (preinstalled)
+  - HWiNFO
+  - CPU-Z
+  - GPU-Z
