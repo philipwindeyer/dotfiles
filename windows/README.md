@@ -158,6 +158,17 @@ They are;
 The stock version of PowerShell that comes with Windows 11 is "Windows PowerShell v5" specifically, is outdated, and unmaintained but still the defacto version of PowerShell supplied with Windows 11 out of the box.
 The same applies to winget (or "App Installer"). The stock version is outdated and needs to be updated before it can run
 
+### Installing the latest NVIDIA RTX Drivers (Studio)
+
+Latest Studio driver as of 30/1/24: https://www.nvidia.co.uk/download/driverResults.aspx/218485/en-uk
+Or search for correct driver (use the Studio Driver) here: https://www.nvidia.com/download/index.aspx
+
+Once setup above is all complete, it is wise to update the NVIDIA Graphics driver. I'd done this previously by installing the GeForce Experience app (for remote play, etc), however I started seeing BSODs regularly after installing this software and using it to update drivers.
+
+Note: Opt for the "Studio" version of the driver, vs the "Game Ready" driver.
+Game Ready = Node.js edge/latest
+Studio = Nodes.js stable/LTS
+
 ## Debugging
 
 As of 15/1/24 I semi-regularly experience abrupt restarts. Symptoms would suggest that it has something to do with either the Bluetooth driver installed, or the Bluetooth chip itself.
