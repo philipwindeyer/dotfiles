@@ -12,6 +12,13 @@ Once drive is wiped, Windows 11 Pro is installed from scratch, and the initial s
 - Download and install the “Armoury Crate App” (i.e. the ASUS Motherboard management app)
   - You should be prompted to download and install it automatically
 - Armoury Crate -> Device -> Update Center -> Update All
+- Sign in to Microsoft OneDrive (via the taskbar icon or entering the OneDrive directory)
+  - In "Sync & Backup", click "manage backups" and de-select all folders (especially "Documents")
+  - In "Account", "Unlink this PC"
+- Navigate to your home directory
+  For `Desktop`, `Documents`, `Pictures`, `Music`, and `Videos`;
+  - For each directory, right-click -> Properties -> Location -> `Restore Default`, then Apply -> OK
+  - _Note_: This must be done before the automated setup script uninstall OneDrive. Windows 11 forces you into using OneDrive synchronised home directory sub directories on first install. This ensures that these directories do not break or become unwritable once OneDrive has been removed
 - Install PowerShell 7+
   - Microsoft Store -> search "PowerShell" and install (note: PowerShell on msstore is different to the stock "Windows PowerShell")
 - Install `winget` (AKA "App Installer") update [from here](https://apps.microsoft.com/detail/9NBLGGH4NNS1) ([source](https://learn.microsoft.com/en-us/windows/package-manager/winget/))
