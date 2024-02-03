@@ -13,7 +13,7 @@ Function Log-Msg {
 }
 
 Function Load-ReloadEnv {
-  $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+  $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
   . $PROFILE
 }
 
@@ -22,7 +22,8 @@ Function Del-WinPkg {
 
   if ($? -eq $true) { 
     winget uninstall --purge $Args
-  } else {
+  }
+  else {
     Write-Output "$Args already uninstalled"
   }
 }
@@ -32,7 +33,8 @@ Function Get-WinPkg {
 
   if ($? -eq $false) { 
     winget install -s winget --accept-package-agreements $Args
-  } else {
+  }
+  else {
     Write-Output "$Args already installed"
   }
 }
@@ -42,7 +44,8 @@ Function Get-MsStorePkg {
 
   if ($? -eq $false) { 
     winget install -s msstore --accept-package-agreements $Args
-  } else {
+  }
+  else {
     Write-Output "$Args already installed"
   }
 }
@@ -52,7 +55,8 @@ Function Get-ChocoPkg {
 
   if ($Is_Present -eq $null) { 
     choco install -y $Args
-  } else {
+  }
+  else {
     Write-Output "$Args already installed"
   }
 }
