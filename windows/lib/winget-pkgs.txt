@@ -31,4 +31,6 @@ Yarn.Yarn
 YuzuEmu.Yuzu.Mainline
 7zip.7zip
 NirSoft.BlueScreenView
-
+PostgreSQL.PostgreSQL
+PostgreSQL.pgAdmin
+Oracle.MySQLWorkbench

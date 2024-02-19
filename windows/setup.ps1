@@ -117,4 +117,30 @@ else {
 
 Load-ReloadEnv
 
+# TODO: Automate the installation of uru
+<#
+WIP
+  (Invoke-WebRequest -Uri 'https://bitbucket.org/jonforums/uru/wiki/Downloads').ParsedHtml.getElementsByTagName('a') | Where-Object { $_.href -like 'windows' }
+  # Download the above link
+  choco install uru -y -source $PWD
+  # Delete nupkg file
+#>
+
+Log-Heading "Install uru (requires manual intervention)"
+Log-Msg "Navigate to https://bitbucket.org/jonforums/uru/wiki/Chocolatey"
+Log-Msg 'Follow the instructions as per "Chocolatey uru Install"'
+
+Log-Heading "Install Ruby 3.0.0 (requires manual intervention)"
+$RubyInstallFile = "rubyinstaller-devkit-3.0.0-1-x64.exe"
+Invoke-WebRequest -Uri 'https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-3.0.0-1/rubyinstaller-devkit-3.0.0-1-x64.exe' -OutFile 'rubyinstaller-devkit-3.0.0-1-x64.exe'
+Log-Msg "Follow the installer prompts"
+.\$RubyInstallFile
+
+if ((choco list -r uru) -ne $null) {
+  Log-Heading "Set global Ruby version"
+  # TODO: Automate the setting of a ruby version with uru
+  
+}
+
+
 Log-Heading "Done!"
