@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# A default root password is set when the mysql-server package is installed, so a new user must be created
+
 clear
 
 echo -n "Username: "
