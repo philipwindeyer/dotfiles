@@ -34,8 +34,24 @@ add_to_bashrc ". $SCRIPT_DIR/wsl/bashrc.sh"
 add_asdf_plugin ruby
 install_asdf_package ruby latest
 install_asdf_package ruby 3.0.0
-
+asdf shell ruby 3.0.0
 asdf global ruby latest
+
+add_asdf_plugin nodejs
+install_asdf_package nodejs latest
+asdf shell nodejs latest
+asdf global nodejs latest
+
+# Not working as of 20/2/24 (404 not found)
+# add_asdf_plugin yarn
+# install_asdf_package yarn latest
+# asdf shell yarn latest
+# asdf global yarn latest
+
+# Fallback
+npm install --global yarn
+
+git config --global core.editor "vim"
 
 echo "Ensure mysql is running"
 sudo service mysql status

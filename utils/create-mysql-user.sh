@@ -16,12 +16,21 @@ while read db_pwd; do
   echo -n "Password: "
 done
 
-sudo mysql -u root -h localhost <<EOF
-CREATE USER '$db_user'@'localhost' IDENTIFIED BY '$db_pwd';
-flush privileges
+sudo mysql -uroot -p <<EOF
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost';
+CREATE USER IF NOT EXISTS '$db_user'@'localhost' IDENTIFIED BY '$db_pwd';
+CREATE DATABASE IF NOT EXISTS training_data;
+GRANT ALL PRIVILEGES ON *.* TO '$db_user'@'localhost';
 exit
 EOF
 
 sudo service mysql restart
+
+cat >~/.my.cnf <<EOL
+[client]
+user = $db_user
+password = $db_pwd
+EOL
+
 
 exit

@@ -34,3 +34,4 @@ NirSoft.BlueScreenView
 PostgreSQL.PostgreSQL
 PostgreSQL.pgAdmin
 Oracle.MySQLWorkbench
+SmartBear.SoapUI
