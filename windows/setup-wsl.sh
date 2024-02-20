@@ -10,15 +10,15 @@ install_apt_package "mysql-server"
 install_apt_package "jq"
 
 # TODO Consider removing these as most of these will be already installed, or installed during asdf installation
-# install_apt_package build-essential
-# install_apt_package libxml2
-# install_apt_package libssl-dev
-# install_apt_package libffi-dev
-# install_apt_package libffi8
-# install_apt_package libyaml-dev
-# install_apt_package libreadline-dev
-# install_apt_package checkinstall
-# install_apt_package zlib1g-dev
+install_apt_package build-essential
+install_apt_package libxml2
+install_apt_package libssl-dev
+install_apt_package libffi-dev
+install_apt_package libffi8
+install_apt_package libyaml-dev
+install_apt_package libreadline-dev
+install_apt_package checkinstall
+install_apt_package zlib1g-dev
 
 
 add_to_bashrc ". $SCRIPT_DIR/wsl/bash_aliases.sh"
