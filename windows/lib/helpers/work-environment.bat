@@ -9,17 +9,11 @@ START "Notion" "C:\Users\phili\AppData\Roaming\Microsoft\Windows\Start Menu\Prog
 START "Google Chrome" "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Google Chrome.lnk"
 START "ClickUp" "C:\Users\phili\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\ClickUp.lnk"
 START "KeeWeb" "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\KeeWeb\KeeWeb.lnk"
+START "Slack" "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Slack Technologies Inc\Slack.lnk"
+START "Gmail" "C:\Users\phili\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Chrome Apps\Gmail.lnk"
+START "Google Calendar" "C:\Users\phili\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Chrome Apps\Google Calendar.lnk"
+START "MySQLWorkbench" "C:\Users\phili\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Chrome Apps\Google Calendar.lnk"
 @REM Terminal
 wt
-
-@REM TODO: Supplemental (not in regular use currently):
-@REM START "Slack" "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Slack Technologies Inc\Slack.lnk"
-@REM MySQLWorkbench
-@REM Trello
-
-@REM TODO: After I install dedicated app containers:
-@REM Gmail
-@REM Calendar
-@REM Google Meet
 
 endlocal
