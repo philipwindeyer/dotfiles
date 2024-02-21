@@ -117,6 +117,15 @@ else {
 
 Load-ReloadEnv
 
+Log-Heading "Alias python to py globally"
+$PythonExecutable = Get-Item (Get-Command py.exe).Path
+if ($PythonExecutable) {
+  $PythonSymlink = Join-Path -Path $PythonExecutable.DirectoryName -ChildPath 'python.exe'
+  if (!(Test-Path -Path $PythonSymlink)) {
+    cmd /c mklink $PythonSymlink $PythonExecutable.FullName
+  }
+}
+
 Log-Heading "Install WSL and Ubuntu"
 wsl --install Ubuntu
 wsl --set-default-version 2
