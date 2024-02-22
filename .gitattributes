@@ -1,0 +1,6 @@
+# Set default line endings to Unix
+* text eol=lf
+
+# Set Windows line endings for files in the windows/ directory
+/windows/* text eol=crlf
+/windows/*.sh text eol=lf
