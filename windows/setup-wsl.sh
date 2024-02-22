@@ -53,5 +53,16 @@ npm install --global yarn
 
 git config --global core.editor "vim"
 
+WIN_USER=$(powershell.exe '$env:USERNAME' | tr -d '\r')
+WIN_WORKSPACES="/mnt/c/Users/$WIN_USER/workspacees"
+if [ ! -d $WIN_WORKSPACES ]; then
+  mkdir $WIN_WORKSPACES
+  if [ ! -e "$1" ]; then
+    ln -s $WIN_WORKSPACES ~/workspaces
+  fi
+else
+  echo "Workspaces directory already exists"
+fi
+
 echo "Ensure mysql is running"
 sudo service mysql status

@@ -135,6 +135,7 @@ Log-Msg 'IMPORTANT: WSL requires virtualization to be enabled in the BIOS. If yo
 
 Log-Heading 'Almost there!'
 Log-Msg 'If this is the first time running this script, you will need to restart your computer for everything to complete, then either run setup.ps1 again, or "wsl ./setup-wsl.sh" directly'
+Log-Msg "Btw, if you're having trouble finding the setup-wsl.sh script in WSL, it's located at /mnt/c/Users/$env:USERNAME/<wherever-you-checked-out-this-repo>/setup-wsl.sh"
 wsl ./setup-wsl.sh
 
 Log-Heading "Done!"
