@@ -19,7 +19,7 @@ install_apt_package libyaml-dev
 install_apt_package libreadline-dev
 install_apt_package checkinstall
 install_apt_package zlib1g-dev
-
+install_apt_package net-tools
 
 add_to_bashrc ". $SCRIPT_DIR/wsl/bash_aliases.sh"
 
@@ -54,7 +54,7 @@ npm install --global yarn
 git config --global core.editor "vim"
 
 WIN_USER=$(powershell.exe '$env:USERNAME' | tr -d '\r')
-WIN_WORKSPACES="/mnt/c/Users/$WIN_USER/workspacees"
+WIN_WORKSPACES="/mnt/c/Users/$WIN_USER/workspaces"
 if [ ! -d $WIN_WORKSPACES ]; then
   mkdir $WIN_WORKSPACES
   if [ ! -e "$1" ]; then
