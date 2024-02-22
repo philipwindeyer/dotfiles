@@ -26,7 +26,7 @@ Once drive is wiped, Windows 11 Pro is installed from scratch, and the initial s
   - Windows Update -> Check for updates
     - “Update all”
     - PLUS optional updates EXCEPT for drivers
-    - _Note: IIRC the latest NVIDIA graphics drivers, and the `NVIDIA Settings` app are installed during this process_
+    - _Note: IIRC the current NVIDIA graphics driver Microsoft offers (which may not be the most recent), and the `NVIDIA Settings` app are installed during this process_
   - System ->
     - Display -> Night light
       - Turn on
@@ -85,12 +85,21 @@ Assuming you cloned this repo into a desired location locally already;
 
 _Note: the first run will take quite some time. Allow for an hour or more, but keep an eye out for any unexpected prompts._
 
+- Restart (if required)
+- Open a WSL terminal (if first time running, follow the setup prompts)
+- navigate to cd /mnt/c/Users/<your-windows-home-dir>/workspaces/dotfiles/windows
+- `./setup-wsl.sh`
+
+_Note: this is still a WIP and may require multiple executions for it to complete._
+
 ## Information
 
 - `windows/setup.ps1` is written to be one of the first, and only things to run on my Windows 11 machine in that it installs and configures almost everything I need
   - setup.ps1 can be run anytime. It only updates or makes changes when necessary
 - `windows/lib` contains shared functions and vars, and helper files that may be copied to local directories where they can be executed
-- `windows/powershell` contains PowerShell profile, aliases (like my git aliases), etc. setup.ps1 sources `windows/powershell/config.ps1` from $PROFILE
+- `windows/powershell` contains PowerShell profile, aliases (like my git aliases), etc. $PROFILE sources `windows/powershell/config.ps1` and `windows/powershell/aliases.ps1`
+- `windows/setup-wsl.sh` is written to setup a WSL environment with my bare minimum for developing in a _nix environemnt_
+- `windows/wsl` contains bash profile, aliases (like my git aliases), etc. ~/.bashrc sources `windows/powershell/config.bashrc.sh` and `windows/powershell/config.bash_aliases.sh`
 
 ## TODO
 
@@ -138,6 +147,18 @@ _Note: the first run will take quite some time. Allow for an hour or more, but k
 
 ## Notes
 
+### Maintenance
+
+In the event of an issue with machine, in Powershell, run:
+
+```
+dism /online /cleanup-image /restorehealth
+sfc /scannow
+chkdsk /f
+```
+
+For further ways to diagnose, see the [debugging](#debugging) section.
+
 ### Dynamic Lock
 
 - I don't use "Dynamic Lock" with my phone (i.e. auto lock when leaving the vicinity based on my phone's proximity) as it caused issues with my machine and disrupted other Bluetooth connections
@@ -176,55 +197,21 @@ Note: Opt for the "Studio" version of the driver, vs the "Game Ready" driver.
 Game Ready = Node.js edge/latest
 Studio = Nodes.js stable/LTS
 
-## Debugging
+### Debugging
 
-As of 15/1/24 I semi-regularly experience abrupt restarts. Symptoms would suggest that it has something to do with either the Bluetooth driver installed, or the Bluetooth chip itself.
+_Note: run the tasks described in [this section](#maintenance). If they don't solve your issue, read on_
 
-See [Manual one-time steps](#manual-one-time-steps) for settings to prevent automatic restarts and default to a good ol' bluescreen of death instead
-(source: https://www.youtube.com/watch?v=M5I-N3ZmSr8)
+#### Disable automatic restart (i.e. enable Blue Screen)
 
-To view shutdown logs:
+- See [Manual one-time steps](#manual-one-time-steps) `> View advanced system settings -> Start-up and Recovery -> System failure` for settings to prevent automatic restarts and default to a good ol' bluescreen of death instead (source: https://www.youtube.com/watch?v=M5I-N3ZmSr8)
+
+#### View shutdown logs
 
 - Open "Event Viewer" -> Windows Logs -> System -> Filter Current Log... ->
   - Type "41,1074,6006,6605,6008" into "Includes/Excludes..." to filter by shutdown events
   - (source: https://www.partitionwizard.com/partitionmanager/random-shutdowns-on-windows-11.html#method-8:-view-shutdown-log-in-event-viewer-23278)
 
-To view memory dump from previous random shutdown:
+#### View system crash details (i.e. when blue screens occur)
 
-- Navigate to, and open C:\Windows\MEMORY.DMP
-
-### 24/1/2024 BSODs
-
-Was getting semi-regular blue screens. Diagnosis (using BlueScreenView) indicated a ntoskrnl related error.
-Followed everything in the below links and it appears to have stopped.
-
-Notably
-
-```
-dism /online /cleanup-image /restorehealth
-sfc /scannow
-chkdsk /f
-```
-
-And additionally, the memory scan tool as well.
-
-Sources:
-
-- https://answers.microsoft.com/en-us/windows/forum/all/blue-screen-caused-by-driver-ntoskrnlexe/ddfc77ec-cff3-429b-9988-01ec7d61a49c
-- https://answers.microsoft.com/en-us/windows/forum/all/bsod-ntoskrnlexe/00556a4e-f082-4043-a894-5bad34729842
-- https://www.quora.com/How-do-I-fix-an-Ntoskrnl-exe-missing-or-corrupt-error
-- https://www.sweetwater.com/sweetcare/articles/how-to-use-dism-to-repair-windows-image/
-- https://www.auslogics.com/en/articles/fix-ntoskrnl-exe-bsod/
-
-TODO:
-
-- Run a hardware test (https://www.lifewire.com/run-diagnostics-on-windows-5214801)
-- Run further tests using;
-  - `sfc`
-  - `chkdsk`
-  - MyASUS (installed as msstore pkg) - https://www.asus.com/support/FAQ/1045716
-  - Performance Monitor (preinstalled)
-  - Windows Memory Diagnostic (preinstalled)
-  - HWiNFO
-  - CPU-Z
-  - GPU-Z
+- Install "BlueScreenView" unless already installed
+- Run "BlueScreenView" and observe the top-most (latest) crash record
