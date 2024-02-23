@@ -14,6 +14,7 @@ function install_apt_package() {
 function add_to_bashrc() {
   echo "Adding $1 to ~/.bashrc unless it already exists"
   grep -qxF "$1" ~/.bashrc || echo "$1" >> ~/.bashrc
+  $1
 }
 
 function install_asdf() {

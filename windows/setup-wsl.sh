@@ -29,9 +29,6 @@ install_asdf
 add_to_bashrc ". $SCRIPT_DIR/wsl/bash_aliases.sh"
 add_to_bashrc ". $SCRIPT_DIR/wsl/bashrc.sh"
 
-source $SCRIPT_DIR/wsl/bash_aliases.sh
-source $SCRIPT_DIR/wsl/bashrc.sh
-
 add_asdf_plugin ruby
 install_asdf_package ruby latest
 install_asdf_package ruby 3.0.0
