@@ -12,7 +12,7 @@ START "KeeWeb" "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\KeeWeb\KeeW
 START "Slack" "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Slack Technologies Inc\Slack.lnk"
 START "Gmail" "C:\Users\phili\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Chrome Apps\Gmail.lnk"
 START "Google Calendar" "C:\Users\phili\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Chrome Apps\Google Calendar.lnk"
-START "MySQLWorkbench" "C:\Users\phili\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Chrome Apps\Google Calendar.lnk"
+START "MySQLWorkbench" "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\MySQL\MySQL Workbench 8.0 CE.lnk"
 @REM Terminal
 wt
 
