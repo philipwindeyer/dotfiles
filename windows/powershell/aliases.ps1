@@ -20,3 +20,9 @@ Set-Alias -Name gb -Value Get-GitBranch
 
 Function Get-FullDir { Get-ChildItem -Force $Args }
 Set-Alias -Name ll -Value Get-FullDir
+
+Function Invoke-SSHPersonalServer { ssh -i $PERSONAL_SERVER_KEY $PERSONAL_SERVER }
+Set-Alias -Name ssh-personal-server -Value Invoke-SSHPersonalServer
+
+Function Invoke-SSHPersonalServerDBTunnel { ssh -i $PERSONAL_SERVER_KEY -N -L 3336:127.0.0.1:3306 $PERSONAL_SERVER }
+Set-Alias -Name ssh-personal-server-db-tunnel -Value Invoke-SSHPersonalServer

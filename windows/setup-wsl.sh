@@ -29,7 +29,6 @@ add_to_bashrc ". $SCRIPT_DIR/wsl/bash_aliases.sh"
 install_asdf
 
 add_to_bashrc ". $SCRIPT_DIR/wsl/bashrc.sh"
-. $HOME/.bashrc
 
 add_asdf_plugin ruby
 install_asdf_package ruby latest
@@ -62,6 +61,15 @@ if [ ! -d $WIN_WORKSPACES ]; then
   fi
 else
   echo "Workspaces directory already exists"
+fi
+
+echo "copy WIN_HOME/.ssh to WSL_HOME/.ssh"
+WIN_HOME=$(powershell.exe '$env:USERPROFILE' | tr -d '\r')
+cp -R $WIN_HOME/.ssh ~/
+chmod -R 400 ~/.ssh/*
+KNOWN_HOSTS_FILE=~/.ssh/known_hosts
+if [ -f "$KNOWN_HOSTS_FILE" ]; then
+  chmod 600 "$KNOWN_HOSTS_FILE"
 fi
 
 echo "Ensure mysql is running"
