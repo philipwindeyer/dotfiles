@@ -9,7 +9,6 @@ sudo apt upgrade -y
 install_apt_package "mysql-server"
 install_apt_package "jq"
 
-# TODO Consider removing these as most of these will be already installed, or installed during asdf installation
 install_apt_package build-essential
 install_apt_package libxml2
 install_apt_package libssl-dev
@@ -22,13 +21,11 @@ install_apt_package zlib1g-dev
 install_apt_package net-tools
 
 add_to_bashrc ". $SCRIPT_DIR/wsl/bash_aliases.sh"
-
-# TODO: Consider ditching this - was only for the ruby installation. The python alias above did the trick
-# install_openssl_1-1-1
+add_to_bashrc ". $SCRIPT_DIR/wsl/bashrc.sh"
 
 install_asdf
 
-add_to_bashrc ". $SCRIPT_DIR/wsl/bashrc.sh"
+. $HOME/.bashrc
 
 add_asdf_plugin ruby
 install_asdf_package ruby latest
@@ -53,19 +50,23 @@ npm install --global yarn
 git config --global core.editor "vim"
 
 WIN_USER=$(powershell.exe '$env:USERNAME' | tr -d '\r')
-WIN_WORKSPACES="/mnt/c/Users/$WIN_USER/workspaces"
-if [ ! -d $WIN_WORKSPACES ]; then
-  mkdir $WIN_WORKSPACES
+WIN_HOME="/mnt/c/Users/$WIN_USER"
+
+if [ ! -d $WIN_HOME/workspaces ]; then
+  mkdir $WIN_HOME/workspaces
   if [ ! -e "$1" ]; then
-    ln -s $WIN_WORKSPACES ~/workspaces
+    ln -s $WIN_HOME/workspaces ~/workspaces
   fi
 else
   echo "Workspaces directory already exists"
 fi
 
-echo "copy WIN_HOME/.ssh to WSL_HOME/.ssh"
-WIN_HOME=$(powershell.exe '$env:USERPROFILE' | tr -d '\r')
-cp -R $WIN_HOME/.ssh ~/
+if [ ! -d ~/.ssh ]; then
+  mkdir ~/.ssh
+fi
+
+echo "copy $WIN_HOME/.ssh to $HOME/.ssh"
+cp -Rn $WIN_HOME/.ssh/* ~/.ssh/
 chmod -R 400 ~/.ssh/*
 KNOWN_HOSTS_FILE=~/.ssh/known_hosts
 if [ -f "$KNOWN_HOSTS_FILE" ]; then
