@@ -19,13 +19,18 @@ install_apt_package libreadline-dev
 install_apt_package checkinstall
 install_apt_package zlib1g-dev
 install_apt_package net-tools
+install_apt_package git
+
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
+
+install_asdf
 
 add_to_bashrc ". $SCRIPT_DIR/wsl/bash_aliases.sh"
 add_to_bashrc ". $SCRIPT_DIR/wsl/bashrc.sh"
 
-install_asdf
-
-. $HOME/.bashrc
+source $SCRIPT_DIR/wsl/bash_aliases.sh
+source $SCRIPT_DIR/wsl/bashrc.sh
 
 add_asdf_plugin ruby
 install_asdf_package ruby latest
@@ -49,16 +54,16 @@ npm install --global yarn
 
 git config --global core.editor "vim"
 
-WIN_USER=$(powershell.exe '$env:USERNAME' | tr -d '\r')
-WIN_HOME="/mnt/c/Users/$WIN_USER"
-
 if [ ! -d $WIN_HOME/workspaces ]; then
   mkdir $WIN_HOME/workspaces
-  if [ ! -e "$1" ]; then
-    ln -s $WIN_HOME/workspaces ~/workspaces
-  fi
 else
-  echo "Workspaces directory already exists"
+  echo "Windows workspaces directory already exists"
+fi
+
+if [ ! -e "$1" ]; then
+  ln -s $WIN_HOME/workspaces $HOME/workspaces
+else
+  ~/workspaces symlink already exists
 fi
 
 if [ ! -d ~/.ssh ]; then

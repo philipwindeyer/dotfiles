@@ -14,7 +14,6 @@ function install_apt_package() {
 function add_to_bashrc() {
   echo "Adding $1 to ~/.bashrc unless it already exists"
   grep -qxF "$1" ~/.bashrc || echo "$1" >> ~/.bashrc
-  . $HOME/.bashrc
 }
 
 function install_asdf() {
@@ -24,7 +23,6 @@ function install_asdf() {
     ASDF_VERSION_TO_INSTALL=$(curl --silent "https://api.github.com/repos/asdf-vm/asdf/releases/latest" | jq -r '.tag_name')
     echo "Installing asdf ($ASDF_VERSION_TO_INSTALL)"
     git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch $ASDF_VERSION_TO_INSTALL
-    . $HOME/.bashrc
   fi
 }
 
