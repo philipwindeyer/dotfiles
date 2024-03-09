@@ -35,3 +35,4 @@ PostgreSQL.PostgreSQL
 PostgreSQL.pgAdmin
 Oracle.MySQLWorkbench
 SmartBear.SoapUI
+Canva.Canva
