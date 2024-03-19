@@ -7,3 +7,6 @@
 $Env:Path += [IO.Path]::PathSeparator + "C:\Program Files\Git\usr\bin"
 $Env:Path += [IO.Path]::PathSeparator + "C:\Program Files\Git\bin"
 $Env:Path += [IO.Path]::PathSeparator + "C:\Program Files\Git\cmd"
+
+$env:PYTHONIOENCODING = "utf-8"
+Invoke-Expression "$(thefuck --alias)"
