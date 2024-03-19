@@ -2,22 +2,22 @@
 
 # Note: this is sourced from ../setup.ps1
 
-Function Log-Heading {
+Function Write-Heading {
   Write-Output "`n=================================================="
   Write-Output "  $Args"
   Write-Output "==================================================`n"
 }
 
-Function Log-Msg {
+Function Write-Message {
   Write-Output "  $Args`n"
 }
 
-Function Load-ReloadEnv {
+Function Invoke-ReloadEnv {
   $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
   . $PROFILE
 }
 
-Function Del-WinPkg {
+Function Remove-WinPkg {
   winget list $Args > $null
 
   if ($? -eq $true) { 
@@ -53,7 +53,7 @@ Function Get-MsStorePkg {
 Function Get-ChocoPkg {
   $Is_Present = (choco list -r $Args)
 
-  if ($Is_Present -eq $null) { 
+  if ($null -eq $Is_Present) { 
     choco install -y $Args
   }
   else {
