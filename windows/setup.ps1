@@ -117,17 +117,6 @@ else {
 
 Load-ReloadEnv
 
-Log-Heading "Alias python to py globally"
-$PythonExecutable = Get-Item (Get-Command py.exe).Path
-if ($PythonExecutable) {
-  $PythonSymlink = Join-Path -Path $PythonExecutable.DirectoryName -ChildPath 'python.exe'
-  if (!(Test-Path -Path $PythonSymlink)) {
-    cmd /c mklink $PythonSymlink $PythonExecutable.FullName
-  }
-}
-
-Load-ReloadEnv
-
 Log-Heading "Installing pip packages"
 ForEach ($Line in Get-Content $PSScriptRoot\lib\pip-pkgs.txt) {
   Get-PipPkg $Line
