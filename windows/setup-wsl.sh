@@ -19,10 +19,15 @@ install_apt_package libreadline-dev
 install_apt_package checkinstall
 install_apt_package zlib1g-dev
 install_apt_package net-tools
+install_apt_package python3-dev
+install_apt_package python3-pip
+install_apt_package python3-setuptools
 install_apt_package git
 
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
+
+pip install thefuck --user
 
 install_asdf
 

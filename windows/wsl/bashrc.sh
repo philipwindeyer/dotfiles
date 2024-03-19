@@ -11,3 +11,6 @@ fi
 if [ -f $HOME/git-prompt.sh ]; then
   . $HOME/git-prompt.sh
 fi
+
+export PATH="$HOME/.local/bin:$PATH"
+eval "$(thefuck --alias)"
