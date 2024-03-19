@@ -60,3 +60,14 @@ Function Get-ChocoPkg {
     Write-Output "$Args already installed"
   }
 }
+
+Function Get-PipPkg {
+  pip show $Args > $null
+
+  if ($? -eq $false) { 
+    pip install $Args
+  }
+  else {
+    Write-Output "$Args already installed"
+  }
+}

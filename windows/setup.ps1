@@ -126,6 +126,13 @@ if ($PythonExecutable) {
   }
 }
 
+Load-ReloadEnv
+
+Log-Heading "Installing pip packages"
+ForEach ($Line in Get-Content $PSScriptRoot\lib\pip-pkgs.txt) {
+  Get-PipPkg $Line
+}
+
 Log-Heading "Install WSL and Ubuntu"
 wsl --install Ubuntu
 wsl --set-default-version 2
