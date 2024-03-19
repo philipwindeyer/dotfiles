@@ -4,7 +4,7 @@ Git.Git
 Chocolatey.Chocolatey
 AutoHotkey.AutoHotkey
 StrawberryPerl.StrawberryPerl
-Python.Python.3.12
+Python.Python.3.11
 Google.GoogleDrive
 KeeWeb.KeeWeb
 Google.Chrome
