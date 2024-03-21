@@ -28,7 +28,6 @@ Ryochan7.DS4Windows
 Brave.Brave
 CoreyButler.NVMforWindows
 Yarn.Yarn
-YuzuEmu.Yuzu.Mainline
 7zip.7zip
 NirSoft.BlueScreenView
 PostgreSQL.PostgreSQL

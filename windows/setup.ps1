@@ -35,6 +35,11 @@ ForEach ($Line in Get-Content $PSScriptRoot\lib\msstore-fallback-pkgs.txt) {
   Get-MsStorePkg $Line
 }
 
+Write-Heading "Pinning / Version-locking winget packages"
+ForEach ($Line in Get-Content $PSScriptRoot\lib\winget-pins.txt) {
+  Set-WinPkgPin $Line
+}
+
 Write-Heading "Installing Chocolatey packages"
 Invoke-ReloadEnv
 ForEach ($Line in Get-Content $PSScriptRoot\lib\choco-pkgs.txt) {

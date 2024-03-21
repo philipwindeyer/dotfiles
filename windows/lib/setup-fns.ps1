@@ -50,6 +50,17 @@ Function Get-MsStorePkg {
   }
 }
 
+Function Set-WinPkgPin {
+  winget list $Args > $null
+
+  if ($? -eq $true) { 
+    winget pin add --id $Args --blocking
+  }
+  else {
+    Write-Output "Cannot pin/lock $Args because it is not installed"
+  }
+}
+
 Function Get-ChocoPkg {
   $Is_Present = (choco list -r $Args)
 
