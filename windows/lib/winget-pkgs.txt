@@ -36,3 +36,4 @@ Oracle.MySQLWorkbench
 SmartBear.SoapUI
 Canva.Canva
 RubyInstallerTeam.Ruby.3.0
+Adobe.Acrobat.Reader.64-bit
