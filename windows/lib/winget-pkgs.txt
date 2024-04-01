@@ -35,5 +35,6 @@ PostgreSQL.pgAdmin
 Oracle.MySQLWorkbench
 SmartBear.SoapUI
 Canva.Canva
+RubyInstallerTeam.RubyWithDevKit.3.0
 RubyInstallerTeam.RubyWithDevKit.3.2
 Adobe.Acrobat.Reader.64-bit
