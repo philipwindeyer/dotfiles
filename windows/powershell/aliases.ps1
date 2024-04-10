@@ -21,6 +21,9 @@ Set-Alias -Name gb -Value Get-GitBranch
 Function Get-FullDir { Get-ChildItem -Force $Args }
 Set-Alias -Name ll -Value Get-FullDir
 
+Function Invoke-Python { python $Args }
+Set-Alias -Name py -Value Invoke-Python
+
 Function Invoke-SSHPersonalServer { ssh -i $PERSONAL_SERVER_KEY $PERSONAL_SERVER }
 Set-Alias -Name ssh-personal-server -Value Invoke-SSHPersonalServer
 
