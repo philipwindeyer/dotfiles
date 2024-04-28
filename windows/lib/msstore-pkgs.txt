@@ -2,3 +2,4 @@ Trello
 MyASUS
 "MSI Center"
 SoundCloud
+"Apple Devices"
