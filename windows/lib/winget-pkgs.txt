@@ -40,3 +40,5 @@ RubyInstallerTeam.RubyWithDevKit.3.2
 Adobe.Acrobat.Reader.64-bit
 Safing.Portmaster
 GIMP.GIMP
+KDE.Kdenlive
+OpenShot.OpenShot
