@@ -42,3 +42,4 @@ Safing.Portmaster
 GIMP.GIMP
 KDE.Kdenlive
 OpenShot.OpenShot
+ByteDance.CapCut
