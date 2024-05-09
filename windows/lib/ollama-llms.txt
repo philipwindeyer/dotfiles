@@ -1,0 +1,7 @@
+llama3
+codellama
+starcoder2:15b
+# phi3
+# gemma
+# mistral
+# codegemma

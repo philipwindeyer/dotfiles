@@ -82,3 +82,14 @@ Function Get-PipPkg {
     Write-Output "$Args already installed"
   }
 }
+
+Function Get-OllamaLlm {
+  ollama show $Args --modelfile > $null
+
+  if ($? -eq $false) { 
+    ollama pull $Args
+  }
+  else {
+    Write-Output "$Args already installed"
+  }
+}

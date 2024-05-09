@@ -127,6 +127,13 @@ ForEach ($Line in Get-Content $PSScriptRoot\lib\pip-pkgs.txt) {
   Get-PipPkg $Line
 }
 
+Invoke-ReloadEnv
+
+Write-Heading "Installing local LLMs (ollama)"
+ForEach ($Line in Get-Content $PSScriptRoot\lib\ollama-llms.txt) {
+  Get-OllamaLlm $Line
+}
+
 Write-Heading "Install WSL and Ubuntu"
 wsl --install Ubuntu
 wsl --set-default-version 2
