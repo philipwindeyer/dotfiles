@@ -62,10 +62,22 @@ else
   echo "Windows workspaces directory already exists"
 fi
 
-if [ ! -e "$1" ]; then
+if [ ! -e "$HOME/workspaces" ]; then
   ln -s $WIN_HOME/workspaces $HOME/workspaces
 else
-  ~/workspaces symlink already exists
+  echo "~/workspaces symlink already exists"
+fi
+
+if [ ! -e "$HOME/Downloads" ]; then
+  ln -s $WIN_HOME/Downloads $HOME/Downloads
+else
+  echo "~/Downloads symlink already exists"
+fi
+
+if [ ! -e "$HOME/Desktop" ]; then
+  ln -s $WIN_HOME/Desktop $HOME/Desktop
+else
+  echo "~/Desktop symlink already exists"
 fi
 
 if [ ! -d ~/.ssh ]; then

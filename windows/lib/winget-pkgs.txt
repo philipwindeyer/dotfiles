@@ -44,3 +44,4 @@ KDE.Kdenlive
 OpenShot.OpenShot
 ByteDance.CapCut
 Ollama.Ollama
+Oracle.VirtualBox

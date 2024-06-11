@@ -1,2 +1,3 @@
 mac-precision-touchpad
 ocenaudio
+dmg2img
