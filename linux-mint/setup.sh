@@ -1,7 +1,18 @@
 #!/bin/bash
 
-# Install kinto.sh (note: can't currently remap Cmd+Space; set to Cmd+Shift+Space for now)
-/bin/bash -c "$(wget -qO- https://raw.githubusercontent.com/rbreaves/kinto/HEAD/install/linux.sh || curl -fsSL https://raw.githubusercontent.com/rbreaves/kinto/HEAD/install/linux.sh)"
+# sudo apt upgrade
+# sudo apt install git
+# 0d -/Downloads
+# git clone https://github.com/ RedbearAK/ toshy.git
+# cd in, chmod +x, then run install PRINT MESSAGE STATING REBOOT REQUIRED
+# Open "Configure..." from LM Menu right-click (i.e. right-click the LM menu in bottom right)
+# Menu Panel > Behaviour -> Keyboard shortcut to open and close the menu ->
+# Click one and set as Cmd+Space (will render as Ctrl+Escape due to Toshy remapping)
+# https://github.com/philipwindeyer/dotfiles
+# #sudo apt install libdbusmenu-gtk4 gconf2-common libappindicatori libgconf-2-4
+
+# # Install kinto.sh (note: can't currently remap Cmd+Space; set to Cmd+Shift+Space for now)
+# /bin/bash -c "$(wget -qO- https://raw.githubusercontent.com/rbreaves/kinto/HEAD/install/linux.sh || curl -fsSL https://raw.githubusercontent.com/rbreaves/kinto/HEAD/install/linux.sh)"
 
 flatpak install -y com.google.Chrome
 flatpak install -y com.visualstudio.code
