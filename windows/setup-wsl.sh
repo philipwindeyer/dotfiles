@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
-. $SCRIPT_DIR/lib/setup-fns.sh
+. $SCRIPT_DIR/../shared/lib/setup-fns.sh
 
 sudo apt update -y
 sudo apt upgrade -y
@@ -31,7 +31,7 @@ pip install thefuck --user
 
 install_asdf
 
-add_to_bashrc ". $SCRIPT_DIR/wsl/bash_aliases.sh"
+add_to_bashrc ". $SCRIPT_DIR/../shared/dotfiles/bash_aliases.sh" # TODO: update to shared
 add_to_bashrc ". $SCRIPT_DIR/wsl/bashrc.sh"
 
 add_asdf_plugin ruby
