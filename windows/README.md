@@ -112,10 +112,6 @@ _Note: this is still a WIP and may require multiple executions for it to complet
     - https://www.lifewire.com/use-magic-keyboard-on-windows-pc-5197318
     - https://arschles.com/blog/powertoys-mac/
   - [ ] Add 2 finger swipe from right of trackpad shortcut to open notification centre
-- [ ] Add Git Bash to Windows Terminal (after Git installed): https://www.timschaeps.be/post/adding-git-bash-to-windows-terminal/
-- [ ] Install ZSH
-  - https://walterteng.com/using-zsh-on-windows#replace-git-bash-with-zsh
-  - https://dev.to/equiman/zsh-on-windows-without-wsl-4ah9
 - [ ] Figure out how to automate pinning apps to the taskbar
 
   - File Explorer
