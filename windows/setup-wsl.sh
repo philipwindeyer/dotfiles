@@ -31,7 +31,8 @@ pip install thefuck --user
 
 install_asdf
 
-add_to_bashrc ". $SCRIPT_DIR/../shared/dotfiles/bash_aliases.sh" # TODO: update to shared
+add_to_bashrc ". $SCRIPT_DIR/../shared/dotfiles/bash_aliases.sh"
+add_to_bashrc ". $SCRIPT_DIR/../shared/dotfiles/bashrc.sh"
 add_to_bashrc ". $SCRIPT_DIR/wsl/bashrc.sh"
 
 add_asdf_plugin ruby
