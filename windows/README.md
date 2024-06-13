@@ -46,6 +46,9 @@ Once drive is wiped, Windows 11 Pro is installed from scratch, and the initial s
       - App Installer python3.exe -> OFF
   - Accessibility -> Mouse pointer and touch
     - Change to black mouse cursor
+  - Privacy & security -> Activity history
+    - Store my activity history on this device -> OFF
+    - (Existing history can also be cleared here)
 - Control Panel -> Back up and Restore
   - Ensure automatic backups for Storage (D:) are on
 - Microsoft Store ->
