@@ -1,49 +1,57 @@
 #!/bin/bash
 
-# sudo apt upgrade
-# sudo apt install git
-# 0d -/Downloads
-# git clone https://github.com/ RedbearAK/ toshy.git
-# cd in, chmod +x, then run install PRINT MESSAGE STATING REBOOT REQUIRED
-# Open "Configure..." from LM Menu right-click (i.e. right-click the LM menu in bottom right)
-# Menu Panel > Behaviour -> Keyboard shortcut to open and close the menu ->
-# Click one and set as Cmd+Space (will render as Ctrl+Escape due to Toshy remapping)
-# https://github.com/philipwindeyer/dotfiles
-# #sudo apt install libdbusmenu-gtk4 gconf2-common libappindicatori libgconf-2-4
+SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
+. $SCRIPT_DIR/../shared/lib/setup-fns.sh
+. $SCRIPT_DIR/../shared/lib/debian-fns.sh
+. $SCRIPT_DIR/lib/setup-fns.sh
 
-# # Install kinto.sh (note: can't currently remap Cmd+Space; set to Cmd+Shift+Space for now)
-# /bin/bash -c "$(wget -qO- https://raw.githubusercontent.com/rbreaves/kinto/HEAD/install/linux.sh || curl -fsSL https://raw.githubusercontent.com/rbreaves/kinto/HEAD/install/linux.sh)"
+log_heading "Linux Mint (Cinnamon Edition) Setup Script"
+log_message "Note: this is a work in progress (see notes and TODOs within)"
 
-flatpak install -y com.google.Chrome
-flatpak install -y com.visualstudio.code
+sudo apt update -y
+sudo apt upgrade -y
 
-# Install GDrive (https://github.com/astrada/google-drive-ocamlfuse)
-sudo add-apt-repository ppa:alessandro-strada/ppa
-sudo apt update
-sudo apt install google-drive-ocamlfuse
-google-drive-ocamlfuse
-# Await auth token exhange
-mkdir ~/GoogleDrive
-google-drive-ocamlfuse ~/GoogleDrive
+log_heading "Adding APT repositories"
+add_apt_repos $SCRIPT_DIR/lib/apt-repos.txt
 
-# Install Keeweb
-VER=$(curl -s https://api.github.com/repos/keeweb/keeweb/releases/latest|grep tag_name|cut -d '"' -f 4|sed 's/v//')
-cd ~/Downloads
-wget https://github.com/keeweb/keeweb/releases/download/v${VER}/KeeWeb-${VER}.linux.x64.deb
-sudo apt install libdbusmenu-gtk4 gconf2-common libappindicator1 libgconf-2-4
-sudo apt install -f ./KeeWeb-${VER}.linux.x64.deb
-rm ./KeeWeb-${VER}.linux.x64.deb
-cd ~/
-# Note: to run, use this: `keeweb --in-process-gpu` (TODO: figure out how to update flags for running from cinnamon)
+log_heading "Installing APT packages"
+install_apt_packages $SCRIPT_DIR/lib/apt-pkgs.txt
 
+log_heading "Installing pip packages"
+install_pip_packages $SCRIPT_DIR/lib/pip-pkgs.txt
 
-# Install GitHub CLI (note will have to do this after grabbing SSH files, and after logging in to Github via browser)
-type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
-curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
-&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
-&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
-&& sudo apt update \
-&& sudo apt install gh -y
+log_heading "Installing Flatpaks packages"
+install_flatpaks $SCRIPT_DIR/lib/flatpaks.txt
 
-sudo apt install steam
+add_git_completion
+install_asdf
 
+add_to_bashrc ". $SCRIPT_DIR/../shared/dotfiles/bash_aliases.sh"
+add_to_bashrc ". $SCRIPT_DIR/../shared/dotfiles/bashrc.sh"
+
+reload_env
+
+add_asdf_plugins $SCRIPT_DIR/lib/asdf-plugins.txt
+install_asdf_packages $SCRIPT_DIR/lib/asdf-pkgs.txt
+set_asdf_global_versions $SCRIPT_DIR/lib/asdf-globals.txt
+
+configure_git
+
+if [ ! -d $HOME/workspaces ]; then
+  mkdir $HOME/workspaces
+else
+  log_message "workspaces directory already exists"
+fi
+
+install_toshy
+
+# TODO organise and complete all of the below
+
+# # Install Keeweb
+# VER=$(curl -s https://api.github.com/repos/keeweb/keeweb/releases/latest|grep tag_name|cut -d '"' -f 4|sed 's/v//')
+# cd ~/Downloads
+# wget https://github.com/keeweb/keeweb/releases/download/v${VER}/KeeWeb-${VER}.linux.x64.deb
+# sudo apt install libdbusmenu-gtk4 gconf2-common libappindicator1 libgconf-2-4
+# sudo apt install -f ./KeeWeb-${VER}.linux.x64.deb
+# rm ./KeeWeb-${VER}.linux.x64.deb
+# cd ~/
