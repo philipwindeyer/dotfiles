@@ -5,6 +5,10 @@ libffi-dev
 libffi8
 libyaml-dev
 libreadline-dev
+libdbusmenu-gtk4
+gconf2-common
+libappindicator1
+libgconf-2-4
 checkinstall
 zlib1g-dev
 net-tools
@@ -14,3 +18,4 @@ python3-setuptools
 mysql-server
 jq
 git
+spotify-client

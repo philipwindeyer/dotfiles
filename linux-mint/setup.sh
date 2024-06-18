@@ -23,6 +23,9 @@ install_pip_packages $SCRIPT_DIR/lib/pip-pkgs.txt
 log_heading "Installing Flatpaks packages"
 install_flatpaks $SCRIPT_DIR/lib/flatpaks.txt
 
+log_heading "Installing other (manual .deb) packages"
+install_manual_debs $SCRIPT_DIR/lib/manual-pkgs.txt
+
 add_git_completion
 install_asdf
 
@@ -43,15 +46,7 @@ else
   log_message "workspaces directory already exists"
 fi
 
+
 install_toshy
+install_keeweb
 
-# TODO organise and complete all of the below
-
-# # Install Keeweb
-# VER=$(curl -s https://api.github.com/repos/keeweb/keeweb/releases/latest|grep tag_name|cut -d '"' -f 4|sed 's/v//')
-# cd ~/Downloads
-# wget https://github.com/keeweb/keeweb/releases/download/v${VER}/KeeWeb-${VER}.linux.x64.deb
-# sudo apt install libdbusmenu-gtk4 gconf2-common libappindicator1 libgconf-2-4
-# sudo apt install -f ./KeeWeb-${VER}.linux.x64.deb
-# rm ./KeeWeb-${VER}.linux.x64.deb
-# cd ~/

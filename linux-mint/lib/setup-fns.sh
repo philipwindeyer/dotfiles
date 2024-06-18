@@ -20,3 +20,8 @@ function install_toshy() {
   log_message "Menu Panel > Behaviour -> Keyboard shortcut to open and close the menu -> Click one and set as Cmd+Space"
   log_message "(will render as Ctrl+Escape due to Toshy remapping)"
 }
+
+function install_keeweb() {
+  KEEWEB_VERSION=$(curl --silent "https://api.github.com/repos/keeweb/keeweb/releases/latest" | jq -r '.tag_name')
+  install_manual_deb https://github.com/keeweb/keeweb/releases/download/v${KEEWEB_VERSION}/KeeWeb-${KEEWEB_VERSION}.linux.x64.deb
+}
