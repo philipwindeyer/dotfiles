@@ -27,7 +27,8 @@ Once drive is wiped, Linux Mint is installed from scratch, and the initial setup
 #### Applets
 
 - Corner bar -> "Peek at the desktop on hover": ON
-- TODO (after toshy installation): Menu -> Behaviour -> Keyboard shortcut to open and close the menu -> Super+Space (with toshy running this remaps to Ctrl+Escape)
+- Menu -> Panel -> Behaviour -> Keyboard shortcut to open and close the menu -> Super+Space (with toshy running this remaps to Ctrl+Escape)
+  - Note: do this only AFTER `./setup.sh` has been run successfully. I.e. after toshy has been installed
 
 #### Desktop
 
@@ -105,10 +106,11 @@ _Note: this is still a WIP and may require multiple executions (and reboots duri
 
 ## TODO
 
+- Gather and finalise all the apps I'd like to install
+- Search project for "TODO" and action accordingly
 - Automate VS Code installation: https://code.visualstudio.com/Download
   - Needs to be downloaded manually, but once the repo is in, updates always
 - Automate KeeWeb installation - it's not package managed
-- Prompt terminal restart after asdf install (if not installed / first-time run)
 - Pin Applets to task bar
 
   - File Explorer
