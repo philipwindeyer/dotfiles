@@ -17,5 +17,17 @@ python3-pip
 python3-setuptools
 mysql-server
 jq
+wget
+gpg
+apt-transport-https
 git
+vim
+ifuse
+heif-gdk-pixbuf
+curl
 spotify-client
+qbittorrent
+mysql-server
+mysql-client
+slack
+mysql-workbench-community

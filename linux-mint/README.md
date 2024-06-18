@@ -88,7 +88,19 @@ _Note: this is necessary for any files that are automatically updated or saved b
 - Run `ln -s <path-to-hosted-file> <path-to-symlink>`
   - E.g. `ln -s /run/user/1001/gvfs/google-drive:host=gmail.com,user=old-mate/1234abcd/1234abcd ~/file.txt`
 
-### SSH Setup
+### Install Manual APT Repositories and Pkgs (that cannot be automatically installed)
+
+#### MySQL APT Repository (for Workbench)
+
+- Visit https://dev.mysql.com/downloads/repo/apt/ and download the latest APT repo file
+- Double click in file explorer, and run through the process to add the repository
+
+_Note: this is manual due to Oracle's dynamic links and checkboxes during the download process_
+
+#### Zoom
+
+- Download the correct installer via https://zoom.us/download
+- Double click in file explorer, and run through the process to install it
 
 ## Automated setup
 

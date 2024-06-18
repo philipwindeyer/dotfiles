@@ -25,3 +25,7 @@ function install_keeweb() {
   KEEWEB_VERSION=$(curl --silent "https://api.github.com/repos/keeweb/keeweb/releases/latest" | jq -r '.tag_name')
   install_manual_deb https://github.com/keeweb/keeweb/releases/download/v${KEEWEB_VERSION}/KeeWeb-${KEEWEB_VERSION}.linux.x64.deb
 }
+
+function install_nordvpn() {
+  sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
+}

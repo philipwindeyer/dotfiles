@@ -1,2 +1,3 @@
 https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb google-chrome-stable
 https://go.microsoft.com/fwlink/?LinkID=760868 code/stable
+https://www.ocenaudio.com/start_download/ocenaudio_mint64.deb
