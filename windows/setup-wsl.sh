@@ -2,6 +2,7 @@
 
 SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
 . $SCRIPT_DIR/../shared/lib/setup-fns.sh
+. $SCRIPT_DIR/../shared/lib/debian-fns.sh
 
 log_heading "WSL2 (Ubuntu) Setup Script"
 log_message "Note: this is a work in progress (see notes and TODOs within)"
@@ -21,6 +22,8 @@ install_asdf
 add_to_bashrc ". $SCRIPT_DIR/../shared/dotfiles/bash_aliases.sh"
 add_to_bashrc ". $SCRIPT_DIR/../shared/dotfiles/bashrc.sh"
 add_to_bashrc ". $SCRIPT_DIR/wsl/bashrc.sh"
+
+reload_env
 
 add_asdf_plugin ruby
 install_asdf_package ruby latest
@@ -42,37 +45,37 @@ asdf global nodejs latest
 # Fallback
 npm install --global yarn
 
-git config --global core.editor "vim"
+configure_git
 
 if [ ! -d $WIN_HOME/workspaces ]; then
   mkdir $WIN_HOME/workspaces
 else
-  echo "Windows workspaces directory already exists"
+  log_message "Windows workspaces directory already exists"
 fi
 
 if [ ! -e "$HOME/workspaces" ]; then
   ln -s $WIN_HOME/workspaces $HOME/workspaces
 else
-  echo "~/workspaces symlink already exists"
+  log_message "~/workspaces symlink already exists"
 fi
 
 if [ ! -e "$HOME/Downloads" ]; then
   ln -s $WIN_HOME/Downloads $HOME/Downloads
 else
-  echo "~/Downloads symlink already exists"
+  log_message "~/Downloads symlink already exists"
 fi
 
 if [ ! -e "$HOME/Desktop" ]; then
   ln -s $WIN_HOME/Desktop $HOME/Desktop
 else
-  echo "~/Desktop symlink already exists"
+  log_message "~/Desktop symlink already exists"
 fi
 
 if [ ! -d ~/.ssh ]; then
   mkdir ~/.ssh
 fi
 
-echo "copy $WIN_HOME/.ssh to $HOME/.ssh"
+log_message "copy $WIN_HOME/.ssh to $HOME/.ssh"
 cp -Rn $WIN_HOME/.ssh/* ~/.ssh/
 chmod -R 400 ~/.ssh/*
 KNOWN_HOSTS_FILE=~/.ssh/known_hosts
@@ -80,5 +83,5 @@ if [ -f "$KNOWN_HOSTS_FILE" ]; then
   chmod 600 "$KNOWN_HOSTS_FILE"
 fi
 
-echo "Ensure mysql is running"
+log_message "Ensure mysql is running"
 sudo service mysql status
