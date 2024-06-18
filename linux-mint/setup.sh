@@ -51,3 +51,4 @@ install_toshy
 install_keeweb
 install_nordvpn
 
+sudo apt autoremove -y

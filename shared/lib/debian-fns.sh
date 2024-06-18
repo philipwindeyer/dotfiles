@@ -25,6 +25,23 @@ function install_apt_packages() {
   done <$1
 }
 
+function install_flatpak() {
+  flatpak list | grep $1 >/dev/null 2>&1
+
+  if [ $? -eq 0 ]; then
+    log_message "$1 is already installed"
+  else
+    log_message "Installing $1"
+    flatpak install flathub $1 -y
+  fi
+}
+
+function install_flatpaks() {
+  while IFS='' read -r LINE || [ -n "${LINE}" ]; do
+    install_flatpak ${LINE}
+  done <$1
+}
+
 function install_manual_deb() {
   DEB_FILE=$(basename $1)
 
