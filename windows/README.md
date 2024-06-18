@@ -93,7 +93,7 @@ _Note: the first run will take quite some time. Allow for an hour or more, but k
 - navigate to cd /mnt/c/Users/<your-windows-home-dir>/workspaces/dotfiles/windows
 - `./setup-wsl.sh`
 
-_Note: this is still a WIP and may require multiple executions for it to complete._
+_Note: this is still a WIP and may require multiple executions (and reboots during first installation) for it to complete._
 
 ## Information
 
@@ -102,7 +102,9 @@ _Note: this is still a WIP and may require multiple executions for it to complet
 - `windows/lib` contains shared functions and vars, and helper files that may be copied to local directories where they can be executed
 - `windows/powershell` contains PowerShell profile, aliases (like my git aliases), etc. $PROFILE sources `windows/powershell/config.ps1` and `windows/powershell/aliases.ps1`
 - `windows/setup-wsl.sh` is written to setup a WSL environment with my bare minimum for developing in a _nix environemnt_
-- `windows/wsl` contains bash profile, aliases (like my git aliases), etc. ~/.bashrc sources `windows/powershell/config.bashrc.sh` and `windows/powershell/config.bash_aliases.sh`
+- `windows/wsl` contains a WSL-specific bash profile, aliases
+- `shared/dotfiles` contains bash profile (`bashrc.sh`) and bash aliases (`bash_aliases.sh`)
+- `shared/lib` contains shared functions and vars common across all my \*nix environments
 
 ## TODO
 
@@ -130,7 +132,6 @@ _Note: this is still a WIP and may require multiple executions for it to complet
   - Spotify
   - YT Music
   - Poolsuite.fm
-  - Phone Link
   - WhatsApp
   - FB Messenger
   - Slack

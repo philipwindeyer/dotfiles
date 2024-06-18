@@ -20,8 +20,9 @@ _If cloning over SSH, AND/OR have write-access wish to contribute, follow these 
 - `mkdir .ssh`
 - Copy ssh keys from protected source to ~/.ssh
 
-  - `mv .\id_rsa ~\.ssh\`
-  - `mv .\id_rsa.pub ~\.ssh\`
+  - `mv ./id_rsa ~/.ssh/`
+  - `mv ./id_rsa.pub ~/.ssh/`
+  - `chmod 400 ~/.ssh/*`
 
 ---
 
