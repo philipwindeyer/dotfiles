@@ -1,13 +1,13 @@
 #!/bin/bash
 
 function log_heading() {
-  echo "\n=================================================="
+  echo -e "\n=================================================="
   echo "  $@"
-  echo "==================================================\n"
+  echo -e "==================================================\n"
 }
 
 function log_message() {
-  echo "  $@\n"
+  echo -e "  $@\n"
 }
 
 function reload_env() {
@@ -17,12 +17,13 @@ function reload_env() {
 function add_apt_repos() {
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
     # TODO: add repos here - i.e. needs to do key exchange and add to sources.list.d
-    # sudo add-apt-repository $LINE -y
+    # sudo add-apt-repository ${LINE} -y
+    echo ${LINE}
   done <$1
 }
 
 function install_apt_package() {
-  apt list $1 --installed | grep $1 >/dev/null 2>&1
+  apt list $1 --installed 2>/dev/null | grep $1 >/dev/null 2>&1
   
   if [ $? -eq 0 ]; then
     echo "$1 is already installed"
