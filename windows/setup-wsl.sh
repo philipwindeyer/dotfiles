@@ -3,32 +3,19 @@
 SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
 . $SCRIPT_DIR/../shared/lib/setup-fns.sh
 
+log_heading "WSL2 (Ubuntu) Setup Script"
+log_message "Note: this is a work in progress (see notes and TODOs within)"
+
 sudo apt update -y
 sudo apt upgrade -y
 
-install_apt_package "mysql-server"
-install_apt_package "jq"
+log_heading "Installing APT packages"
+install_apt_packages $SCRIPT_DIR/lib/apt-pkgs.txt
 
-install_apt_package build-essential
-install_apt_package libxml2
-install_apt_package libssl-dev
-install_apt_package libffi-dev
-install_apt_package libffi8
-install_apt_package libyaml-dev
-install_apt_package libreadline-dev
-install_apt_package checkinstall
-install_apt_package zlib1g-dev
-install_apt_package net-tools
-install_apt_package python3-dev
-install_apt_package python3-pip
-install_apt_package python3-setuptools
-install_apt_package git
+log_heading "Installing pip packages"
+install_pip_packages $SCRIPT_DIR/lib/wsl-pip-pkgs.txt
 
-curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
-curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
-
-pip install thefuck --user
-
+add_git_completion
 install_asdf
 
 add_to_bashrc ". $SCRIPT_DIR/../shared/dotfiles/bash_aliases.sh"
