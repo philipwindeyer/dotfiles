@@ -67,13 +67,18 @@ Once drive is wiped, Linux Mint is installed from scratch, and the initial setup
   - Name appropriately
   - "Find icons online" to get the correct app icon
   - Category: N/A
-  - Browser: Firefox
+  - Browser: Firefox, or Chrome after it is installed
 
 - Install the following, using the steps above;
   - Notion: https://www.notion.so
   - Gmail: https://mail.google.com
   - Google Calendar: https://calendar.google.com
   - Google Contacts: https://contacts.google.com
+  - Facebook Messenger: https://www.messenger.com
+  - WhatsApp: https://web.whatsapp.com
+  - Canva: https://www.canva.com/?continue_in_browser=true
+  - Poolsuite FM: https://poolsuite.net
+  - SoundCloud: https://soundcloud.com
 
 ### Symlink Online Files
 
@@ -118,20 +123,7 @@ _Note: this is still a WIP and may require multiple executions (and reboots duri
 
 ## TODO
 
-- Install;
-  - VLC
-  - Slack
-  - Keybase
-  - Signal
-  - FB Messenger
-  - WhatsApp
-  - Balena Etcher
-  - Canva
-  - Gimp
-  - PoolSuiteFM
-  - SoundCloud
-  - Sublime
-  - YT Music
+- Automate installations from Github releases (i.e. for KeeWeb and YT Music) - e.g. github-pkgs.txt with the repo name and the <file>.deb file name pattern (with $VER in there)
 - Pin Applets to task bar
   - File Explorer
   - Chrome

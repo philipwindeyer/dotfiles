@@ -29,3 +29,18 @@ function install_keeweb() {
 function install_nordvpn() {
   sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
 }
+
+function install_signal() {
+  wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
+  cat signal-desktop-keyring.gpg | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
+
+  echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' |\
+    sudo tee /etc/apt/sources.list.d/signal-xenial.list
+
+  sudo apt update && sudo apt install signal-desktop
+}
+
+function install_youtube_music() {
+  YT_VERSION=$(curl --silent "https://api.github.com/repos/ytmdesktop/ytmdesktop/releases/latest" | jq -r '.tag_name')
+  install_manual_deb https://github.com/ytmdesktop/ytmdesktop/releases/download/v${YT_VERSION}/youtube-music-desktop-app_${YT_VERSION}_amd64.deb
+}

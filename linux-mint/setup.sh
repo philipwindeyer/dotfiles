@@ -49,5 +49,8 @@ fi
 install_toshy
 install_keeweb
 install_nordvpn
+install_signal
+install_youtube_music
+run_keybase
 
 sudo apt autoremove -y
