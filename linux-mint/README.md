@@ -119,12 +119,7 @@ _Note: this is still a WIP and may require multiple executions (and reboots duri
 ## TODO
 
 - Gather and finalise all the apps I'd like to install
-- Search project for "TODO" and action accordingly
-- Automate VS Code installation: https://code.visualstudio.com/Download
-  - Needs to be downloaded manually, but once the repo is in, updates always
-- Automate KeeWeb installation - it's not package managed
 - Pin Applets to task bar
-
   - File Explorer
   - Chrome
   - Notion
@@ -145,7 +140,6 @@ _Note: this is still a WIP and may require multiple executions (and reboots duri
   - KeeWeb
   - Settings
   - Google Contacts
-
 - Finish Timeshift set-up to backup to NAS
 - Keyboard and trackpad configuration
   - [ ] Add F3 → Expose / “Mission Control” / Show all windows and workspaces
@@ -153,4 +147,3 @@ _Note: this is still a WIP and may require multiple executions (and reboots duri
   - [ ] Cmd+Tilda shortcut to cycle between common app windows
   - [ ] Figure out how to map Cmd+Shift+F3 to show or hide desktop
   - [ ] Add 2 finger swipe from right of trackpad shortcut to open notification centre
-- [ ] Figure out how to automate pinning applets to the taskbar

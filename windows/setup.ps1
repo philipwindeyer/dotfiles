@@ -12,7 +12,6 @@ if ($IS_ADMIN -eq $false) {
 . $PSScriptRoot\lib\setup-fns.ps1
 
 Write-Heading "Windows 11 Setup Script"
-Write-Message "Note: this is a work in progress (see notes and TODOs within)"
 
 Write-Heading "Uninstalling bloatware"
 ForEach ($Line in Get-Content $PSScriptRoot\lib\bloatware.txt) {

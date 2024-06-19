@@ -1,4 +1,4 @@
-## TODO
+# TODO
 
 - Create macOS setup process, here and in a macOS specific setup.sh
 - Seek inspiration from ../linux-mint and ./deprecated

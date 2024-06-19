@@ -6,7 +6,6 @@ SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
 . $SCRIPT_DIR/lib/setup-fns.sh
 
 log_heading "Linux Mint (Cinnamon Edition) Setup Script"
-log_message "Note: this is a work in progress (see notes and TODOs within)"
 
 sudo apt update -y
 sudo apt upgrade -y
