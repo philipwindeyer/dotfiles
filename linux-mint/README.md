@@ -118,14 +118,26 @@ _Note: this is still a WIP and may require multiple executions (and reboots duri
 
 ## TODO
 
-- Gather and finalise all the apps I'd like to install
+- Install;
+  - VLC
+  - Slack
+  - Keybase
+  - Signal
+  - FB Messenger
+  - WhatsApp
+  - Balena Etcher
+  - Canva
+  - Gimp
+  - PoolSuiteFM
+  - SoundCloud
+  - Sublime
+  - YT Music
 - Pin Applets to task bar
   - File Explorer
   - Chrome
   - Notion
   - Gmail
   - GCalendar
-  - Google Meet
   - Terminal
   - VS Code
   - Sublime
