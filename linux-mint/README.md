@@ -79,6 +79,8 @@ Once drive is wiped, Linux Mint is installed from scratch, and the initial setup
   - Canva: https://www.canva.com/?continue_in_browser=true
   - Poolsuite FM: https://poolsuite.net
   - SoundCloud: https://soundcloud.com
+  - ClickUp: https://app.clickup.com
+  - Excalidraw: https://excalidraw.com
 
 ### Symlink Online Files
 
@@ -121,29 +123,32 @@ _Note: the first run will take quite some time. Allow for an hour or more, but k
 
 _Note: this is still a WIP and may require multiple executions (and reboots during first installation) for it to complete._
 
+## Pin Apps to Panel (taskbar)
+
+- File Explorer
+- Chrome
+- Notion
+- Gmail
+- GCalendar
+- Terminal
+- VS Code
+- Sublime
+- ClickUp
+- Excalidraw
+- Spotify
+- YT Music
+- Poolsuite.fm
+- WhatsApp
+- FB Messenger
+- Signal
+- Slack
+- KeeWeb
+- Settings
+- Google Contacts
+
 ## TODO
 
 - Automate installations from Github releases (i.e. for KeeWeb and YT Music) - e.g. github-pkgs.txt with the repo name and the <file>.deb file name pattern (with $VER in there)
-- Pin Applets to task bar
-  - File Explorer
-  - Chrome
-  - Notion
-  - Gmail
-  - GCalendar
-  - Terminal
-  - VS Code
-  - Sublime
-  - ClickUp
-  - Excalidraw
-  - Spotify
-  - YT Music
-  - Poolsuite.fm
-  - WhatsApp
-  - FB Messenger
-  - Slack
-  - KeeWeb
-  - Settings
-  - Google Contacts
 - Finish Timeshift set-up to backup to NAS
 - Keyboard and trackpad configuration
   - [ ] Add F3 → Expose / “Mission Control” / Show all windows and workspaces
