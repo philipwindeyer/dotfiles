@@ -6,6 +6,7 @@ libffi8
 libyaml-dev
 libreadline-dev
 libdbusmenu-gtk4
+libmysqlclient-dev
 gconf2-common
 libappindicator1
 libgconf-2-4
