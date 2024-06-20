@@ -130,6 +130,7 @@ _Note: this is still a WIP and may require multiple executions (and reboots duri
 - Notion
 - Gmail
 - GCalendar
+- JungleCat Email (Ionos)
 - Terminal
 - VS Code
 - Sublime
@@ -138,6 +139,7 @@ _Note: this is still a WIP and may require multiple executions (and reboots duri
 - Spotify
 - YT Music
 - Poolsuite.fm
+- SoundCloud
 - WhatsApp
 - FB Messenger
 - Signal

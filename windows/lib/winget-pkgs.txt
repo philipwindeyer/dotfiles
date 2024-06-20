@@ -45,3 +45,4 @@ OpenShot.OpenShot
 ByteDance.CapCut
 Ollama.Ollama
 Oracle.VirtualBox
+Ytmdesktop.Ytmdesktop

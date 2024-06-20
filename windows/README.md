@@ -95,6 +95,32 @@ _Note: the first run will take quite some time. Allow for an hour or more, but k
 
 _Note: this is still a WIP and may require multiple executions (and reboots during first installation) for it to complete._
 
+## Pin Apps to Panel (taskbar)
+
+- File Explorer
+- Chrome
+- Edge
+- Notion
+- Gmail
+- GCalendar
+- JungleCat Email (Ionos)
+- Terminal
+- VS Code
+- Sublime
+- ClickUp
+- Excalidraw
+- Spotify
+- YT Music
+- Poolsuite.fm
+- SoundCloud
+- WhatsApp
+- FB Messenger
+- Signal
+- Slack
+- KeeWeb
+- Settings
+- Google Contacts
+
 ## Information
 
 - `windows/setup.ps1` is written to be one of the first, and only things to run on my Windows 11 machine in that it installs and configures almost everything I need
@@ -117,27 +143,6 @@ _Note: this is still a WIP and may require multiple executions (and reboots duri
     - https://www.lifewire.com/use-magic-keyboard-on-windows-pc-5197318
     - https://arschles.com/blog/powertoys-mac/
   - [ ] Add 2 finger swipe from right of trackpad shortcut to open notification centre
-- [ ] Figure out how to automate pinning apps to the taskbar
-
-  - File Explorer
-  - Chrome
-  - Notion
-  - Gmail
-  - GCalendar
-  - Terminal
-  - VS Code
-  - Sublime
-  - ClickUp
-  - Excalidraw
-  - Spotify
-  - YT Music
-  - Poolsuite.fm
-  - WhatsApp
-  - FB Messenger
-  - Slack
-  - KeeWeb
-  - Settings
-
 - [ ] See what else I can automate from the above, i.e.;
   - File Explorer configuration
   - Windows Settings automation
