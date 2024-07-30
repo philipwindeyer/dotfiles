@@ -64,6 +64,8 @@ Once drive is wiped, Windows 11 Pro is installed from scratch, and the initial s
     - Note: Activation key is in password manager
   - ClickUp
     - Source: https://clickup.com/download
+  - IM-Magic Partition Resizer
+    - Source: https://www.resize-c.com/
 - View advanced system settings -> Start-up and Recovery -> System failure
   - Write an event to the system log -> ON
   - Automatically restart -> OFF
