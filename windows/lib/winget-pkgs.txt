@@ -39,10 +39,10 @@ RubyInstallerTeam.RubyWithDevKit.3.0
 RubyInstallerTeam.RubyWithDevKit.3.2
 Adobe.Acrobat.Reader.64-bit
 Safing.Portmaster
-GIMP.GIMP
 KDE.Kdenlive
 OpenShot.OpenShot
 ByteDance.CapCut
 Ollama.Ollama
 Oracle.VirtualBox
 Ytmdesktop.Ytmdesktop
+TheBrowserCompany.Arc

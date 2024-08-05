@@ -34,5 +34,4 @@ slack
 mysql-workbench-community
 vlc
 dropbox
-gimp
 sublime-text
