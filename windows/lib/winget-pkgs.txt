@@ -7,7 +7,6 @@ StrawberryPerl.StrawberryPerl
 Python.Python.3.11
 Google.GoogleDrive
 KeeWeb.KeeWeb
-Google.Chrome
 Notion.Notion
 NordSecurity.NordVPN
 NordSecurity.NordPass
@@ -38,7 +37,6 @@ Canva.Canva
 RubyInstallerTeam.RubyWithDevKit.3.0
 RubyInstallerTeam.RubyWithDevKit.3.2
 Adobe.Acrobat.Reader.64-bit
-Safing.Portmaster
 KDE.Kdenlive
 OpenShot.OpenShot
 ByteDance.CapCut

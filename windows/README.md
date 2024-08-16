@@ -97,31 +97,47 @@ _Note: the first run will take quite some time. Allow for an hour or more, but k
 
 _Note: this is still a WIP and may require multiple executions (and reboots during first installation) for it to complete._
 
+## Install Web Apps (PWAs - via MS Edge)
+
+| App                | Web URL                                               |
+| ------------------ | ----------------------------------------------------- |
+| Gmail              | [Gmail](https://mail.google.com/)                     |
+| Google Calendar    | [Google Calendar](https://calendar.google.com/)       |
+| Ionos              | [Ionos](https://email.ionos.co.uk)                    |
+| Excalidraw         | [Excalidraw](https://excalidraw.com/)                 |
+| Microsoft Designer | [Microsoft Designer](https://designer.microsoft.com/) |
+| Google Contacts    | [Google Contacts](https://contacts.google.com/)       |
+| World Salsa Radio  | [World Salsa Radio](https://www.worldsalsaradio.com/) |
+| Poolsuite          | [Poolsuite](https://poolsuite.net/)                   |
+| BetterMe           | [BetterMe](https://app.betterme.world/)               |
+
 ## Pin Apps to Panel (taskbar)
 
+- Settings
 - File Explorer
-- Chrome
-- Edge
+- Arc
 - Notion
 - Gmail
-- GCalendar
-- JungleCat Email (Ionos)
+- Google Calendar
 - Terminal
 - VS Code
 - Sublime
 - ClickUp
 - Excalidraw
+- Microsoft Office (Online)
+- Microsoft Designer
+- KeeWeb
+- Google Contacts
 - Spotify
 - YT Music
 - Poolsuite.fm
 - SoundCloud
+- World Salsa Radio
 - WhatsApp
 - FB Messenger
 - Signal
 - Slack
-- KeeWeb
-- Settings
-- Google Contacts
+- BetterMe
 
 ## Information
 
