@@ -53,3 +53,21 @@ _Note: this is still a WIP and may require multiple executions (and reboots duri
 - Finish setup.sh, seeking inspiration from ../linux-mint and ./deprecated
 - Install Lulu https://github.com/objective-see/LuLu/ (like PortMaster)
 - Add apps to dock
+
+- To install
+  - Keybase
+  - Postgres
+  - pgAdmin
+  - Spotify
+  - wget
+  - Sublime
+  - YouTube Music
+  - Poolsuite
+  - Ollama and a local coding LLM?
+  - Airclap
+  - VLC
+  - Balena Etcher? (don't think i'll ever need it here tbh)
+  - Zoom
+  - Keka
+  - Canva
+  - Virtual box
