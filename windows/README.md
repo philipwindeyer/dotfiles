@@ -147,7 +147,7 @@ _Note: this is still a WIP and may require multiple executions (and reboots duri
 - `windows/powershell` contains PowerShell profile, aliases (like my git aliases), etc. $PROFILE sources `windows/powershell/config.ps1` and `windows/powershell/aliases.ps1`
 - `windows/setup-wsl.sh` is written to setup a WSL environment with my bare minimum for developing in a _nix environemnt_
 - `windows/wsl` contains a WSL-specific bash profile, aliases
-- `shared/dotfiles` contains bash profile (`bashrc.sh`) and bash aliases (`bash_aliases.sh`)
+- `shared/dotfiles` contains bash profile (`bashrc`) and bash aliases (`aliases`)
 - `shared/lib` contains shared functions and vars common across all my \*nix environments
 
 ## TODO

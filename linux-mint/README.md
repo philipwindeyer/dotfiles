@@ -81,6 +81,7 @@ Once drive is wiped, Linux Mint is installed from scratch, and the initial setup
   - SoundCloud: https://soundcloud.com
   - ClickUp: https://app.clickup.com
   - Excalidraw: https://excalidraw.com
+  - YT Music: https://music.youtube.com/
 
 ### Symlink Online Files
 

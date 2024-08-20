@@ -18,9 +18,9 @@ install_pip_packages $SCRIPT_DIR/lib/wsl-pip-pkgs.txt
 add_git_completion
 install_asdf
 
-add_to_bashrc ". $SCRIPT_DIR/../shared/dotfiles/bash_aliases.sh"
-add_to_bashrc ". $SCRIPT_DIR/../shared/dotfiles/bashrc.sh"
-add_to_bashrc ". $SCRIPT_DIR/wsl/bashrc.sh"
+add_to_bashrc ". $SCRIPT_DIR/../shared/dotfiles/aliases"
+add_to_bashrc ". $SCRIPT_DIR/../shared/dotfiles/bashrc"
+add_to_bashrc ". $SCRIPT_DIR/wsl/bashrc"
 
 reload_env
 

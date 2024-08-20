@@ -1,3 +1,4 @@
+# shellcheck disable=SC2148
 . "$HOME/.asdf/asdf.sh"
 . "$HOME/.asdf/completions/asdf.bash"
 

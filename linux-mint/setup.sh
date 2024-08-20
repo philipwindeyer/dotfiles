@@ -28,8 +28,8 @@ install_manual_debs $SCRIPT_DIR/lib/manual-pkgs.txt
 add_git_completion
 install_asdf
 
-add_to_bashrc ". $SCRIPT_DIR/../shared/dotfiles/bash_aliases.sh"
-add_to_bashrc ". $SCRIPT_DIR/../shared/dotfiles/bashrc.sh"
+add_to_bashrc ". $SCRIPT_DIR/../shared/dotfiles/aliases"
+add_to_bashrc ". $SCRIPT_DIR/../shared/dotfiles/bashrc"
 
 reload_env
 
