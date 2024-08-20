@@ -40,6 +40,10 @@ _Note: the first run will take quite some time. Allow for an hour or more, but k
 
 _Note: this is still a WIP and may require multiple executions (and reboots during first installation) for it to complete._
 
+## Install PWAs (via Safari "Add to Dock" button)
+
+- Gmail
+
 ## Pin Apps to Dock (TODO: automate/script)
 
 - TODO: add apps to dock

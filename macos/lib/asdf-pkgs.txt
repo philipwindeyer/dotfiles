@@ -1,0 +1,3 @@
+ruby latest
+nodejs latest
+yarn latest
