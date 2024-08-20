@@ -33,7 +33,7 @@ add_to_bashrc "source $SCRIPT_DIR/../shared/dotfiles/bashrc"
 
 reload_env
 
-add_asdf_plugins $SCRIPT_DIR/lib/asdf-plugins.txt
+add_asdf_plugins $SCRIPT_DIR/../shared/lib/asdf-plugins.txt
 install_asdf_packages $SCRIPT_DIR/lib/asdf-pkgs.txt
 set_asdf_global_versions $SCRIPT_DIR/lib/asdf-globals.txt
 
