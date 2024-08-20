@@ -6,3 +6,4 @@ rectangle
 slack
 visual-studio-code
 google-drive
+1password
