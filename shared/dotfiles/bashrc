@@ -1,14 +1,23 @@
 # shellcheck disable=SC2148
-. "$HOME/.asdf/asdf.sh"
-. "$HOME/.asdf/completions/asdf.bash"
+source "$HOME/.asdf/asdf.sh"
+source "$HOME/.asdf/completions/asdf.bash"
 
 if [ -f $HOME/.git-completion.bash ]; then
-  . $HOME/.git-completion.bash
+  source $HOME/.git-completion.bash
 fi
 
 if [ -f $HOME/git-prompt.sh ]; then
-  . $HOME/git-prompt.sh
+  source $HOME/git-prompt.sh
 fi
 
-export PATH="$HOME/.local/bin:$PATH"
+if [ -f $HOME/git-completion.zsh ]; then
+  # source $HOME/git-completion.zsh
+  fpath=(~/.zsh $fpath)
+  # TODO: source this file from macos zprofile IF all the other sources here are valid in a zsh environment
+fi
+
+if [ -d "$HOME/.local/bin" ]; then
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+
 eval "$(thefuck --alias)"

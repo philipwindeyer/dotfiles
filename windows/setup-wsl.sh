@@ -1,8 +1,8 @@
 #!/bin/bash
 
 SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
-. $SCRIPT_DIR/../shared/lib/setup-fns.sh
-. $SCRIPT_DIR/../shared/lib/debian-fns.sh
+source $SCRIPT_DIR/../shared/lib/setup-fns.sh
+source $SCRIPT_DIR/../shared/lib/debian-fns.sh
 
 log_heading "WSL2 (Ubuntu) Setup Script"
 
@@ -18,9 +18,9 @@ install_pip_packages $SCRIPT_DIR/lib/wsl-pip-pkgs.txt
 add_git_completion
 install_asdf
 
-add_to_bashrc ". $SCRIPT_DIR/../shared/dotfiles/aliases"
-add_to_bashrc ". $SCRIPT_DIR/../shared/dotfiles/bashrc"
-add_to_bashrc ". $SCRIPT_DIR/wsl/bashrc"
+add_to_bashrc "source $SCRIPT_DIR/../shared/dotfiles/aliases"
+add_to_bashrc "source $SCRIPT_DIR/../shared/dotfiles/bashrc"
+add_to_bashrc "source $SCRIPT_DIR/wsl/bashrc"
 
 reload_env
 

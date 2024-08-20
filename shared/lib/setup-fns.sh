@@ -29,6 +29,14 @@ function install_pip_packages() {
 function add_git_completion() {
   curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
   curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
+
+  chmod +x ~/.git-completion.bash
+  chmod +x ~/.git-prompt.sh
+
+  if [ -n "$ZSH_VERSION" ]; then
+    curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh -o ~/.git-completion.zsh
+    chmod +x ~/.git-completion.zsh
+  fi
 }
 
 function install_asdf() {
