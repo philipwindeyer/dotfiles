@@ -11,7 +11,13 @@ function log_message() {
 }
 
 function reload_env() {
-  source ~/.bashrc
+  if [ -f ~/.bashrc ]; then
+    source ~/.bashrc
+  fi
+
+  if [ -f ~/.zprofile ]; then
+    source ~/.zprofile
+  fi
 }
 
 function install_pip_packages() {
