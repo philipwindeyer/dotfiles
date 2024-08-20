@@ -1,19 +1,18 @@
 # shellcheck disable=SC2148
 source "$HOME/.asdf/asdf.sh"
-source "$HOME/.asdf/completions/asdf.bash"
 
-if [ -f $HOME/.git-completion.bash ]; then
-  source $HOME/.git-completion.bash
+if [ "$SHELL" != "/bin/zsh" ]; then
+  source "$HOME/.asdf/completions/asdf.bash"
+fi
+
+if [ "$SHELL" = "/bin/zsh" ] && [ -f "$HOME/.git-completion.zsh" ]; then
+  fpath=(~/.git-completion.zsh $fpath)
+elif [ -f "$HOME/.git-completion.bash" ]; then
+  source "$HOME/.git-completion.bash"
 fi
 
 if [ -f $HOME/git-prompt.sh ]; then
   source $HOME/git-prompt.sh
-fi
-
-if [ -f $HOME/git-completion.zsh ]; then
-  # source $HOME/git-completion.zsh
-  fpath=(~/.zsh $fpath)
-  # TODO: source this file from macos zprofile IF all the other sources here are valid in a zsh environment
 fi
 
 if [ -d "$HOME/.local/bin" ]; then
