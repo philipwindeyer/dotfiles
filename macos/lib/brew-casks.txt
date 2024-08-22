@@ -7,3 +7,4 @@ slack
 visual-studio-code
 google-drive
 1password
+sublime-text

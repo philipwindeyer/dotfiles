@@ -21,6 +21,15 @@ _TODO: Add manual one-time settings steps here_
 Point & Click -> Tap to click -> ON
 _TODO: see if this can be scripted_
 
+#### Displays
+
+Night Shift... ->
+
+- Schedule -> Sunset to Sunrise
+- Color temperature -> 75%
+
+_TODO: see if this can be scripted_
+
 ### Terminal
 
 - Open Terminal
