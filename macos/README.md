@@ -14,7 +14,7 @@ Once drive is wiped, macOS is installed from scratch, and the initial setup is c
 
 ### System Settings
 
-_TODO: Add manual one-time settings steps here_
+Open System Settings app and complete the following;
 
 #### Trackpad
 
@@ -35,6 +35,16 @@ _TODO: see if this can be scripted_
 - Open Terminal
 - Settings -> Profiles -> Homebrew -> Set as default
 
+### Finder
+
+- Open Finder
+- View (menu bar) ->
+  - Show Tab Bar
+  - Show Sidebar
+  - Show Toolbar
+  - Show Path Bar
+  - Show Status Bar
+
 ## Automated setup
 
 Assuming you cloned this repo into a desired location locally already;
@@ -51,7 +61,12 @@ _Note: this is still a WIP and may require multiple executions (and reboots duri
 
 ## Install PWAs (via Safari "Add to Dock" button)
 
+_TODO: Automate adding this_
+
 - Gmail
+- Google Calendar
+- Google Meet (Note: not installed currently as GMeet running as an isolated Safari app has permissions and authentication issues)
+- Google Contacts
 
 ## Pin Apps to Dock (TODO: automate/script)
 
@@ -60,23 +75,6 @@ _Note: this is still a WIP and may require multiple executions (and reboots duri
 ## TODO
 
 - Finish setup.sh, seeking inspiration from ../linux-mint and ./deprecated
-- Install Lulu https://github.com/objective-see/LuLu/ (like PortMaster)
 - Add apps to dock
-
-- To install
-  - Keybase
-  - Postgres
-  - pgAdmin
-  - Spotify
-  - wget
-  - Sublime
-  - YouTube Music
-  - Poolsuite
-  - Ollama and a local coding LLM?
-  - Airclap
-  - VLC
-  - Balena Etcher? (don't think i'll ever need it here tbh)
-  - Zoom
-  - Keka
-  - Canva
-  - Virtual box
+- Setup mistral and codellama local llms (ollama)
+- Clean up "deprecated" dir (and pluck additional apps I haven't installed but might stil want from there)

@@ -8,3 +8,13 @@ visual-studio-code
 google-drive
 1password
 sublime-text
+keybase
+pgadmin4
+spotify
+ytmdesktop-youtube-music
+vlc
+balenaetcher
+zoom
+keka
+canva
+utm

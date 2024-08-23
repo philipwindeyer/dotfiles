@@ -16,6 +16,15 @@ function install_homebrew() {
   eval "$(/opt/homebrew/bin/brew shellenv)"
 }
 
+function install_mas() {
+  if ! command -v mas &> /dev/null; then
+    log_message "Installing mas"
+    brew install mas
+  else
+    log_message "mas is already installed"
+  fi
+}
+
 function install_homebrew_cask() {
   brew list --cask $1 >/dev/null 2>&1
   
@@ -47,5 +56,33 @@ function install_homebrew_package() {
 function install_homebrew_packages() {
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
     install_homebrew_package ${LINE}
+  done <$1
+}
+
+function install_mas_app() {
+  mas list | grep -q "$1"
+  
+  if [ $? -eq 0 ]; then
+    log_message "$1 is already installed"
+  else
+    log_message "Installing $1"
+    mas lucky "$1"
+  fi
+}
+
+function install_mas_apps() {
+  while IFS='' read -r LINE || [ -n "${LINE}" ]; do
+    install_mas_app "${LINE}"
+  done <$1
+}
+
+function install_nvm() {
+  NVM_VERSION=$(curl --silent "https://api.github.com/repos/nvm-sh/nvm/releases/latest" | jq -r '.tag_name')
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | bash
+}
+
+function install_nvm_node_versions() {
+  while IFS='' read -r LINE || [ -n "${LINE}" ]; do
+    nvm install ${LINE}
   done <$1
 }

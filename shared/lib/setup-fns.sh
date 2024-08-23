@@ -69,13 +69,17 @@ function install_asdf_package() {
 
 function install_asdf_packages() {
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
-    install_asdf_package ${LINE}
+    PACKAGE=$(echo ${LINE} | cut -d ' ' -f 1)
+    VERSION=$(echo ${LINE} | cut -d ' ' -f 2)
+    install_asdf_package ${PACKAGE} ${VERSION}
   done <$1
 }
 
 function set_asdf_global_versions() {
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
-    asdf global ${LINE}
+    PACKAGE=$(echo ${LINE} | cut -d ' ' -f 1)
+    VERSION=$(echo ${LINE} | cut -d ' ' -f 2)
+    asdf global ${PACKAGE} ${VERSION}
   done <$1
 }
 
