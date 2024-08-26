@@ -5,6 +5,5 @@ thefuck
 jq
 postgresql@13
 wget2
-ollama
 docker
 docker-compose

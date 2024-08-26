@@ -18,3 +18,4 @@ zoom
 keka
 canva
 utm
+ollama
