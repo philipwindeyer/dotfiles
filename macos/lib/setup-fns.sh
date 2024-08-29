@@ -5,6 +5,19 @@ function add_to_zprofile() {
   grep -qxF "$1" ~/.zprofile || echo "$1" >> ~/.zprofile
 }
 
+function install_rosetta() {
+  if [[ "$(sysctl -n machdep.cpu.brand_string)" == *'Apple'* ]]; then
+    if ! arch -x86_64 /usr/bin/true 2> /dev/null; then
+      log_message "Installing Rosetta"
+      sudo softwareupdate --install-rosetta --agree-to-license
+    else
+      log_message "Rosetta is already installed"
+    fi
+  else
+    log_message "Rosetta will not be installed. This is not an Apple Silicon Mac"
+  fi
+}
+
 function install_homebrew() {
   if ! command -v brew &> /dev/null; then
     log_message "Installing Homebrew"

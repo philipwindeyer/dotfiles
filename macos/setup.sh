@@ -12,6 +12,7 @@ add_to_zprofile "source $SCRIPT_DIR/dotfiles/zprofile"
 add_to_zprofile "source $SCRIPT_DIR/../shared/dotfiles/aliases"
 add_to_zprofile "source $SCRIPT_DIR/../shared/dotfiles/bashrc"
 
+install_rosetta
 install_homebrew
 install_mas
 
