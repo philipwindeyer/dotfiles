@@ -9,7 +9,6 @@ docker
 docker-compose
 redis
 with-readline
-mysql
 gnupg
 ctop
 telnet
@@ -18,7 +17,6 @@ awscli
 aws-sam-cli
 aws-google-auth
 cmake
-mysql
 gron
 corkscrew
 htmlq
