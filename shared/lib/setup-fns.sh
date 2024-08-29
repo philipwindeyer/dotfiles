@@ -15,6 +15,8 @@ function log_message() {
 }
 
 function reload_env() {
+  log_heading "Reloading environment"
+
   if [ -f ~/.bashrc ]; then
     source ~/.bashrc
   fi
@@ -31,6 +33,8 @@ function install_pip_packages() {
 }
 
 function add_git_completion() {
+  log_heading "Adding git completion"
+
   curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
   curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
 
@@ -44,6 +48,8 @@ function add_git_completion() {
 }
 
 function install_asdf() {
+  log_heading "asdf"
+
   if [ -d ~/.asdf ]; then
     log_message "asdf is already installed"
   else
@@ -61,6 +67,8 @@ function add_asdf_plugin() {
 }
 
 function add_asdf_plugins() {
+  log_heading "Adding asdf plugins"
+
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
     add_asdf_plugin ${LINE}
   done <$1
@@ -72,6 +80,8 @@ function install_asdf_package() {
 }
 
 function install_asdf_packages() {
+  log_heading "Installing asdf packages"
+
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
     PACKAGE=$(echo "${LINE}" | cut -d ' ' -f 1)
     VERSION=$(echo "${LINE}" | cut -d ' ' -f 2)
@@ -80,6 +90,8 @@ function install_asdf_packages() {
 }
 
 function set_asdf_global_versions() {
+  log_heading "Setting asdf global versions"
+
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
     PACKAGE=$(echo ${LINE} | cut -d ' ' -f 1)
     VERSION=$(echo ${LINE} | cut -d ' ' -f 2)
@@ -88,6 +100,8 @@ function set_asdf_global_versions() {
 }
 
 function configure_git() {
+  log_heading "Configuring git"
+
   git config --global core.editor "vim"
 }
 
@@ -99,4 +113,14 @@ function add_to_vimrc() {
   fi
 
   grep -qxF "$1" ~/.vimrc || echo "$1" >> ~/.vimrc
+}
+
+function create_directories() {
+  log_heading "Creating directories"
+
+  if [ ! -d $HOME/workspaces ]; then
+    mkdir $HOME/workspaces
+  else
+    log_message "workspaces directory already exists"
+  fi
 }

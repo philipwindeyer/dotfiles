@@ -5,7 +5,25 @@ function add_to_zprofile() {
   grep -qxF "$1" ~/.zprofile || echo "$1" >> ~/.zprofile
 }
 
+function install_software_updates() {
+  log_heading "Installing macOS software updates"
+  sudo softwareupdate --install --all
+}
+
+function install_xcode_command_line_tools() {
+  log_heading "Xcode Command Line Tools"
+
+  if ! command -v xcode-select &> /dev/null; then
+    log_message "Installing Xcode Command Line Tools"
+    xcode-select --install
+  else
+    log_message "Xcode Command Line Tools are already installed"
+  fi
+}
+
 function install_rosetta() {
+  log_heading "Rosetta"
+
   if [[ "$(sysctl -n machdep.cpu.brand_string)" == *'Apple'* ]]; then
     if ! arch -x86_64 /usr/bin/true 2> /dev/null; then
       log_message "Installing Rosetta"
@@ -19,6 +37,8 @@ function install_rosetta() {
 }
 
 function install_homebrew() {
+  log_heading "Homebrew"
+
   if ! command -v brew &> /dev/null; then
     log_message "Installing Homebrew"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -28,6 +48,7 @@ function install_homebrew() {
 
   eval "$(/opt/homebrew/bin/brew shellenv)"
 
+  log_message "Updating Homebrew"
   brew doctor
   brew update
   brew upgrade
@@ -35,6 +56,8 @@ function install_homebrew() {
 }
 
 function install_mas() {
+  log_heading "Mac App Store CLI"
+
   if ! command -v mas &> /dev/null; then
     log_message "Installing mas"
     brew install mas
@@ -46,6 +69,8 @@ function install_mas() {
 }
 
 function install_homebrew_taps() {
+  log_heading "Adding Homebrew taps"
+
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
     brew tap "${LINE}"
   done <$1
@@ -63,6 +88,8 @@ function install_homebrew_cask() {
 }
 
 function install_homebrew_casks() {
+  log_heading "Installing Homebrew casks"
+
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
     install_homebrew_cask "${LINE}"
   done <$1
@@ -80,6 +107,8 @@ function install_homebrew_package() {
 }
 
 function install_homebrew_packages() {
+  log_heading "Installing Homebrew packages (formulae)"
+
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
     install_homebrew_package "${LINE}"
   done <$1
@@ -97,17 +126,23 @@ function install_mas_app() {
 }
 
 function install_mas_apps() {
+  log_heading "Installing Mac App Store apps"
+
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
     install_mas_app "${LINE}"
   done <$1
 }
 
 function install_nvm() {
+  log_heading "Node Version Manager (nvm)"
+
   NVM_VERSION=$(curl --silent "https://api.github.com/repos/nvm-sh/nvm/releases/latest" | jq -r '.tag_name')
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | bash
 }
 
 function install_nvm_node_versions() {
+  log_heading "Installing Node.js versions with nvm"
+
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
     nvm install ${LINE}
   done <$1
@@ -116,7 +151,7 @@ function install_nvm_node_versions() {
 
 
 function configure_dock() {
-  log_message "Configuring macOS Dock"
+  log_heading "Configuring macOS Dock"
 
   # TODO: ensure these are still valid (test individually)
   defaults write com.apple.dock autohide -bool true
@@ -136,7 +171,7 @@ function configure_dock() {
 }
 
 function set_dock_apps() {
-  log_message "Setting Dock Apps"
+  log_heading "Setting Dock Apps"
 
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
     defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>$(eval echo "${LINE}")</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
@@ -155,7 +190,7 @@ function set_dock_apps() {
 }
 
 function configure_finder() {
-  log_message "Configuring Finder"
+  log_heading "Configuring Finder"
 
   # TODO: ensure these are still valid (test individually)
   defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
@@ -185,7 +220,7 @@ function configure_finder() {
 }
 
 function configure_macos_settings() {
-  log_message 'Updating global macOS settings'
+  log_heading 'Updating global macOS settings'
   # TODO: test all of these before rolling into setup script
 
   defaults write NSGlobalDomain AppleShowAllExtensions -bool true

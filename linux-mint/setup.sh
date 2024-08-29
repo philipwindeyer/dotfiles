@@ -40,13 +40,7 @@ install_asdf_packages $SCRIPT_DIR/lib/asdf-pkgs.txt
 set_asdf_global_versions $SCRIPT_DIR/lib/asdf-globals.txt
 
 configure_git
-
-if [ ! -d $HOME/workspaces ]; then
-  mkdir $HOME/workspaces
-else
-  log_message "workspaces directory already exists"
-fi
-
+create_directories
 
 install_toshy
 install_keeweb
@@ -56,3 +50,5 @@ install_youtube_music
 run_keybase
 
 sudo apt autoremove -y
+
+echo "Done ✨"

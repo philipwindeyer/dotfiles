@@ -69,7 +69,7 @@ fi
 if [ ! -e "$HOME/Desktop" ]; then
   ln -s $WIN_HOME/Desktop $HOME/Desktop
 else
-  log_message "~/Desktop symlink already exists"
+  log_message "$HOME/Desktop symlink already exists"
 fi
 
 if [ ! -d ~/.ssh ]; then
@@ -86,3 +86,5 @@ fi
 
 log_message "Ensure mysql is running"
 sudo service mysql status
+
+echo "Done ✨"
