@@ -1,2 +1,0 @@
-unset ASDF_DIR
-. $(brew --prefix asdf)/libexec/asdf.sh

@@ -1,2 +1,0 @@
-export AWS_PROFILE=services
-export TF_LOG=INFO

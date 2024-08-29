@@ -1,6 +1,0 @@
-create-react-app
-prettier
-serve
-@qga/gimme-user https://repositories.services.jqdev.net/repository/npm/
-@qga/hammer https://repositories.services.jqdev.net/repository/npm/
-@qga/ted https://repositories.services.jqdev.net/repository/npm/

@@ -1,5 +1,0 @@
-magnet
-imovie
-poolsuitefm
-trello
-xcode

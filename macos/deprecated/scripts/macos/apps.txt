@@ -1,7 +1,0 @@
-magnet
-imovie
-poolsuitefm
-garageband
-trello
-xcode
-keynote

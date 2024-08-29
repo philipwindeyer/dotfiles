@@ -1,3 +1,0 @@
-create-react-app
-prettier
-serve

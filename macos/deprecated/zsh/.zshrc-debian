@@ -1,9 +1,0 @@
-#!/bin/zsh
-
-# Env vars, settings and aliases
-source ${0%/*}/common/aliases
-source ${0%/*}/common/env
-source ${0%/*}/common/vim_settings
-
-alias http-server='sudo python3 -m http.server 80'
-eval $(thefuck --alias)
