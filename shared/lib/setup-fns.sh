@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# These 2 lines for sudo keep-alive are from https://gist.github.com/cowboy/3118588
+sudo -v
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
 function log_heading() {
   echo -e "\n=================================================="
   echo "  $@"
@@ -69,8 +73,8 @@ function install_asdf_package() {
 
 function install_asdf_packages() {
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
-    PACKAGE=$(echo ${LINE} | cut -d ' ' -f 1)
-    VERSION=$(echo ${LINE} | cut -d ' ' -f 2)
+    PACKAGE=$(echo "${LINE}" | cut -d ' ' -f 1)
+    VERSION=$(echo "${LINE}" | cut -d ' ' -f 2)
     install_asdf_package ${PACKAGE} ${VERSION}
   done <$1
 }

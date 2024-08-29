@@ -2,8 +2,7 @@
 
 function add_apt_repos() {
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
-    sudo add-apt-repository ${LINE} -y
-    echo ${LINE}
+    sudo add-apt-repository "${LINE}" -y
   done <$1
 }
 
@@ -20,7 +19,7 @@ function install_apt_package() {
 
 function install_apt_packages() {
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
-    install_apt_package ${LINE}
+    install_apt_package "${LINE}"
   done <$1
 }
 
@@ -37,7 +36,7 @@ function install_flatpak() {
 
 function install_flatpaks() {
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
-    install_flatpak ${LINE}
+    install_flatpak "${LINE}"
   done <$1
 }
 
@@ -70,7 +69,7 @@ function install_manual_deb() {
 
 function install_manual_debs() {
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
-    install_manual_deb ${LINE}
+    install_manual_deb "${LINE}"
   done <$1
 }
 
