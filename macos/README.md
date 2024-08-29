@@ -73,5 +73,4 @@ _TODO: Automate adding PWAs from Safari_
 - Install PWAs from Safari (i.e. "Add to Dock")
 - Add apps (ordered) to Dock
 - Script trackpad and display settings (manually described above)
-- Clean up "deprecated" dir
 - Uncomment and invoke final settings fns in setup.sh
