@@ -61,20 +61,17 @@ _Note: this is still a WIP and may require multiple executions (and reboots duri
 
 ## Install PWAs (via Safari "Add to Dock" button)
 
-_TODO: Automate adding this_
+_TODO: Automate adding PWAs from Safari_
 
 - Gmail
 - Google Calendar
 - Google Meet (Note: not installed currently as GMeet running as an isolated Safari app has permissions and authentication issues)
 - Google Contacts
 
-## Pin Apps to Dock (TODO: automate/script)
-
-- TODO: add apps to dock
-
 ## TODO
 
-- Finish setup.sh, seeking inspiration from ../linux-mint and ./deprecated
-- Add apps to dock
-- Setup mistral and codellama local llms (ollama)
-- Clean up "deprecated" dir (and pluck additional apps I haven't installed but might stil want from there)
+- Install PWAs from Safari (i.e. "Add to Dock")
+- Add apps (ordered) to Dock
+- Script trackpad and display settings (manually described above)
+- Clean up "deprecated" dir
+- Uncomment and invoke final settings fns in setup.sh

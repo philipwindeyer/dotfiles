@@ -1,0 +1,18 @@
+/System/Applications/Launchpad.app
+/System/Applications/System Settings.app
+/Applications/Arc.app
+/Applications/Notion.app
+$HOME/Applications/Gmail.app
+$HOME/Applications/Calendar.app
+/Applications/Slack.app
+$HOME/Applications/Google Contacts.app
+/Applications/Visual Studio Code.app
+/Applications/Sublime Text.app
+/System/Applications/Utilities/Terminal.app
+/Applications/Warp.app
+/System/Applications/App Store.app 
+/Applications/KeeWeb.app
+/Applications/Enchanted.app
+/Applications/Spotify.app
+/Applications/YouTube Music Desktop App.app
+/Applications/Poolsuite FM.app

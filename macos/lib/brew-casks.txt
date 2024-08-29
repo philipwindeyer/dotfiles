@@ -17,7 +17,6 @@ balenaetcher
 zoom
 keka
 canva
-utm
 ollama
 appcleaner
 onyx
@@ -30,3 +29,4 @@ warp
 rancher
 miro
 figma
+aws-vpn-client
