@@ -19,3 +19,14 @@ keka
 canva
 utm
 ollama
+appcleaner
+onyx
+drawio
+github
+mjml
+insomnia
+kap
+warp
+rancher
+miro
+figma

@@ -1,3 +1,5 @@
 Poolsuite FM
 Airclap
 Enchanted LLM
+Xcode
+Trello
