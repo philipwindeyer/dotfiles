@@ -35,3 +35,4 @@ mysql-workbench-community
 vlc
 dropbox
 sublime-text
+libreadline6

@@ -1,2 +1,5 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 autoload -Uz compinit && compinit
+
+export AWS_PROFILE=services
+export TF_LOG=INFO

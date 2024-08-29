@@ -8,3 +8,4 @@ wget2
 docker
 docker-compose
 redis
+with-readline

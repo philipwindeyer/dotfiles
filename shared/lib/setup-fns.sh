@@ -86,3 +86,13 @@ function set_asdf_global_versions() {
 function configure_git() {
   git config --global core.editor "vim"
 }
+
+function add_to_vimrc() {
+  log_message "Adding $1 to ~/.vimrc unless it already exists"
+
+  if [ ! -f ~/.vimrc ]; then
+    touch ~/.vimrc
+  fi
+
+  grep -qxF "$1" ~/.vimrc || echo "$1" >> ~/.vimrc
+}

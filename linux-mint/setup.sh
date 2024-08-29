@@ -31,6 +31,8 @@ install_asdf
 add_to_bashrc "source $SCRIPT_DIR/../shared/dotfiles/aliases"
 add_to_bashrc "source $SCRIPT_DIR/../shared/dotfiles/bashrc"
 
+add_to_vimrc "source $SCRIPT_DIR/../shared/dotfiles/vimrc"
+
 reload_env
 
 add_asdf_plugins $SCRIPT_DIR/../shared/lib/asdf-plugins.txt

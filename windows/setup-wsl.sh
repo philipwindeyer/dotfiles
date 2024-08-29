@@ -22,6 +22,8 @@ add_to_bashrc "source $SCRIPT_DIR/../shared/dotfiles/aliases"
 add_to_bashrc "source $SCRIPT_DIR/../shared/dotfiles/bashrc"
 add_to_bashrc "source $SCRIPT_DIR/wsl/bashrc"
 
+add_to_vimrc "source $SCRIPT_DIR/../shared/dotfiles/vimrc"
+
 reload_env
 
 add_asdf_plugin ruby

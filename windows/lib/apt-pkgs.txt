@@ -14,3 +14,4 @@ python3-setuptools
 git
 mysql-server
 jq
+libreadline6
