@@ -2,7 +2,7 @@
 
 function add_to_zprofile() {
   log_message "Adding $1 to ~/.zprofile unless it already exists"
-  grep -qxF "$1" ~/.zprofile || echo "$1" >> ~/.zprofile
+  grep -qxF "$1" ~/.zprofile || echo "$1" >>~/.zprofile
 }
 
 function install_software_updates() {
@@ -13,7 +13,7 @@ function install_software_updates() {
 function install_xcode_command_line_tools() {
   log_heading "Xcode Command Line Tools"
 
-  if ! command -v xcode-select &> /dev/null; then
+  if ! command -v xcode-select &>/dev/null; then
     log_message "Installing Xcode Command Line Tools"
     xcode-select --install
   else
@@ -25,7 +25,7 @@ function install_rosetta() {
   log_heading "Rosetta"
 
   if [[ "$(sysctl -n machdep.cpu.brand_string)" == *'Apple'* ]]; then
-    if ! arch -x86_64 /usr/bin/true 2> /dev/null; then
+    if ! arch -x86_64 /usr/bin/true 2>/dev/null; then
       log_message "Installing Rosetta"
       sudo softwareupdate --install-rosetta --agree-to-license
     else
@@ -39,7 +39,7 @@ function install_rosetta() {
 function install_homebrew() {
   log_heading "Homebrew"
 
-  if ! command -v brew &> /dev/null; then
+  if ! command -v brew &>/dev/null; then
     log_message "Installing Homebrew"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   else
@@ -58,7 +58,7 @@ function install_homebrew() {
 function install_mas() {
   log_heading "Mac App Store CLI"
 
-  if ! command -v mas &> /dev/null; then
+  if ! command -v mas &>/dev/null; then
     log_message "Installing mas"
     brew install mas
   else
@@ -78,7 +78,7 @@ function install_homebrew_taps() {
 
 function install_homebrew_cask() {
   brew list --cask $1 >/dev/null 2>&1
-  
+
   if [ $? -eq 0 ]; then
     log_message "$1 is already installed"
   else
@@ -97,7 +97,7 @@ function install_homebrew_casks() {
 
 function install_homebrew_package() {
   brew list $1 >/dev/null 2>&1
-  
+
   if [ $? -eq 0 ]; then
     log_message "$1 is already installed"
   else
@@ -116,7 +116,7 @@ function install_homebrew_packages() {
 
 function install_mas_app() {
   mas list | grep -q "$1"
-  
+
   if [ $? -eq 0 ]; then
     log_message "$1 is already installed"
   else
@@ -147,8 +147,6 @@ function install_nvm_node_versions() {
     nvm install ${LINE}
   done <$1
 }
-
-
 
 function configure_dock() {
   log_heading "Configuring macOS Dock"
@@ -181,11 +179,11 @@ function set_dock_apps() {
     "$HOME/"
     "$HOME/Downloads/"
   )
-  
+
   for dir in "${dirs[@]}"; do
     defaults write com.apple.dock persistent-others -array-add "<dict><key>tile-data</key><dict><key>arrangement</key><integer>1</integer><key>displayas</key><integer>1</integer><key>file-data</key><dict><key>_CFURLString</key><string>file://$dir</string><key>_CFURLStringType</key><integer>15</integer></dict><key>showas</key><integer>2</integer></dict><key>tile-type</key><string>directory-tile</string></dict>"
   done
-  
+
   killall Dock
 }
 
@@ -211,7 +209,7 @@ function configure_finder() {
   /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
   /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
   /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-  
+
   chflags nohidden ~/Library
   sudo chflags nohidden /Volumes
 
@@ -227,7 +225,7 @@ function configure_macos_settings() {
 
   # Disable the “Are you sure you want to open this application?” dialog
   defaults write com.apple.LaunchServices LSQuarantine -bool false
-  
+
   # Resets audio out controller
   killall coreaudiod
 
@@ -255,9 +253,8 @@ function configure_macos_settings() {
   # Terminal theme
   defaults write ~/Library/Preferences/com.apple.Terminal.plist "Default Window Settings" "Homebrew"
   defaults write ~/Library/Preferences/com.apple.Terminal.plist "Startup Window Settings" "Homebrew"
-  
+
   killall SystemUIServer
   sleep 2
   killAll Finder
 }
-

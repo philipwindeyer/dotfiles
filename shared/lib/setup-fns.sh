@@ -2,7 +2,11 @@
 
 # These 2 lines for sudo keep-alive are from https://gist.github.com/cowboy/3118588
 sudo -v
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+while true; do
+  sudo -n true
+  sleep 60
+  kill -0 "$$" || exit
+done 2>/dev/null &
 
 function log_heading() {
   echo -e "\n=================================================="
@@ -11,7 +15,7 @@ function log_heading() {
 }
 
 function log_message() {
-  echo -e "  $@\n"
+  echo -e "  $*\n"
 }
 
 function reload_env() {
@@ -76,16 +80,25 @@ function add_asdf_plugins() {
 
 function install_asdf_package() {
   asdf update
-  asdf install $1 $2
+  if [ -z "$2" ]; then
+    asdf install $1
+  else
+    asdf install $1 $2
+  fi
 }
 
 function install_asdf_packages() {
   log_heading "Installing asdf packages"
 
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
-    PACKAGE=$(echo "${LINE}" | cut -d ' ' -f 1)
-    VERSION=$(echo "${LINE}" | cut -d ' ' -f 2)
-    install_asdf_package ${PACKAGE} ${VERSION}
+    if [[ $LINE =~ " " ]]; then
+      PACKAGE=$(echo "${LINE}" | cut -d ' ' -f 1)
+      VERSION=$(echo "${LINE}" | cut -d ' ' -f 2)
+      install_asdf_package ${PACKAGE} ${VERSION}
+    else
+      PACKAGE=$LINE
+      install_asdf_package ${PACKAGE}
+    fi
   done <$1
 }
 
@@ -112,7 +125,7 @@ function add_to_vimrc() {
     touch ~/.vimrc
   fi
 
-  grep -qxF "$1" ~/.vimrc || echo "$1" >> ~/.vimrc
+  grep -qxF "$1" ~/.vimrc || echo "$1" >>~/.vimrc
 }
 
 function create_directories() {
