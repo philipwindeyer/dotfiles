@@ -28,6 +28,10 @@ function reload_env() {
   if [ -f ~/.zprofile ]; then
     source ~/.zprofile
   fi
+
+  if [ -f ~/.zshrc ]; then
+    source ~/.zshrc
+  fi
 }
 
 function install_pip_packages() {

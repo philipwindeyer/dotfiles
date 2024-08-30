@@ -10,10 +10,10 @@ install_software_updates
 install_xcode_command_line_tools
 
 log_heading "Setting up dotfiles"
-add_to_zprofile "source $SCRIPT_DIR/dotfiles/zprofile"
-add_to_zprofile "source $SCRIPT_DIR/dotfiles/aliases"
-add_to_zprofile "source $SCRIPT_DIR/../shared/dotfiles/aliases"
-add_to_zprofile "source $SCRIPT_DIR/../shared/dotfiles/bashrc"
+add_to_zshrc "source $SCRIPT_DIR/dotfiles/zshrc"
+add_to_zshrc "source $SCRIPT_DIR/dotfiles/aliases"
+add_to_zshrc "source $SCRIPT_DIR/../shared/dotfiles/aliases"
+add_to_zshrc "source $SCRIPT_DIR/../shared/dotfiles/bashrc"
 add_to_vimrc "source $SCRIPT_DIR/../shared/dotfiles/vimrc"
 
 install_rosetta

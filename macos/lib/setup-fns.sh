@@ -1,8 +1,8 @@
 #!/bin/zsh
 
-function add_to_zprofile() {
-  log_message "Adding $1 to ~/.zprofile unless it already exists"
-  grep -qxF "$1" ~/.zprofile || echo "$1" >>~/.zprofile
+function add_to_zshrc() {
+  log_message "Adding $1 to ~/.zshrc unless it already exists"
+  grep -qxF "$1" ~/.zshrc || echo "$1" >>~/.zshrc
 }
 
 function install_software_updates() {
@@ -144,7 +144,7 @@ function install_nvm_node_versions() {
   log_heading "Installing Node.js versions with nvm"
 
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
-    nvm install ${LINE}
+    nvm install "${LINE}"
   done <$1
 }
 
