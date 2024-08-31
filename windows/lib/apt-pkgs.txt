@@ -15,3 +15,5 @@ git
 mysql-server
 jq
 libreadline6
+gparted
+tldr

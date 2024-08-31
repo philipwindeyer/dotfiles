@@ -18,10 +18,10 @@ install_pip_packages $SCRIPT_DIR/lib/wsl-pip-pkgs.txt
 add_git_completion
 install_asdf
 
+log_heading "Setting up dotfiles"
 add_to_bashrc "source $SCRIPT_DIR/../shared/dotfiles/aliases"
 add_to_bashrc "source $SCRIPT_DIR/../shared/dotfiles/bashrc"
 add_to_bashrc "source $SCRIPT_DIR/wsl/bashrc"
-
 add_to_vimrc "source $SCRIPT_DIR/../shared/dotfiles/vimrc"
 
 reload_env
@@ -47,6 +47,8 @@ asdf global nodejs latest
 npm install --global yarn
 
 configure_git
+
+install_warp
 
 if [ ! -d $WIN_HOME/workspaces ]; then
   mkdir $WIN_HOME/workspaces

@@ -141,3 +141,11 @@ function create_directories() {
     log_message "workspaces directory already exists"
   fi
 }
+
+function install_warp() {
+  log_heading "Installing warp"
+  curl -L -o warp.deb https://app.warp.dev/download?package=deb
+  sudo apt install ./warp.deb -y
+  rm warp.deb
+  log_message "Warp installed!"
+}

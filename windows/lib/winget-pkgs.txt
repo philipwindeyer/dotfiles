@@ -45,3 +45,4 @@ Oracle.VirtualBox
 Ytmdesktop.Ytmdesktop
 TheBrowserCompany.Arc
 Bin-Huang.Chatbox
+Rufus.Rufus

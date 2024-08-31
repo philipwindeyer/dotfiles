@@ -120,6 +120,7 @@ _Note: this is still a WIP and may require multiple executions (and reboots duri
 - Gmail
 - Google Calendar
 - Terminal
+- Warp (Ubuntu)
 - VS Code
 - Sublime
 - Chatbox

@@ -47,6 +47,7 @@ install_keeweb
 install_nordvpn
 install_signal
 install_youtube_music
+install_warp
 run_keybase
 
 sudo apt autoremove -y

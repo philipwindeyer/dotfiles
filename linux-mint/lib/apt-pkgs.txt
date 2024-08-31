@@ -36,3 +36,4 @@ vlc
 dropbox
 sublime-text
 libreadline6
+tldr
