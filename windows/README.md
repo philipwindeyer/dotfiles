@@ -122,6 +122,7 @@ _Note: this is still a WIP and may require multiple executions (and reboots duri
 - Terminal
 - VS Code
 - Sublime
+- Chatbox
 - ClickUp
 - Excalidraw
 - Microsoft Office (Online)

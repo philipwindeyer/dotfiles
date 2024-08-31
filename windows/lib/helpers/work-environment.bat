@@ -13,6 +13,8 @@ START "Slack" "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Slack Techno
 START "Gmail" "C:\Users\phili\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Chrome Apps\Gmail.lnk"
 START "Google Calendar" "C:\Users\phili\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Chrome Apps\Google Calendar.lnk"
 START "MySQLWorkbench" "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\MySQL\MySQL Workbench 8.0 CE.lnk"
+START "Chatbox" "C:\Users\phili\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Chatbox.lnk"
+
 @REM Terminal
 wt
 

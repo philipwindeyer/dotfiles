@@ -44,3 +44,4 @@ Ollama.Ollama
 Oracle.VirtualBox
 Ytmdesktop.Ytmdesktop
 TheBrowserCompany.Arc
+Bin-Huang.Chatbox
