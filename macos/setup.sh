@@ -36,6 +36,7 @@ install_asdf_packages $SCRIPT_DIR/lib/asdf-pkgs.txt
 set_asdf_global_versions $SCRIPT_DIR/lib/asdf-globals.txt
 
 install_nvm_node_versions $SCRIPT_DIR/lib/nvm-node-versions.txt
+install_ollama_llms $SCRIPT_DIR/lib/ollama-llms.txt
 
 configure_git
 create_directories

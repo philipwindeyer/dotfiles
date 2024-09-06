@@ -149,3 +149,21 @@ function install_warp() {
   rm warp.deb
   log_message "Warp installed!"
 }
+
+function install_ollama_llm() {
+  ollama show "$@" --modelfile >/dev/null
+
+  if [ $? -eq 1 ]; then
+    ollama pull "$@"
+  else
+    echo "$@ already installed"
+  fi
+}
+
+function install_ollama_llms() {
+  log_heading "Installing Ollama LLMs"
+
+  while IFS='' read -r LINE || [ -n "${LINE}" ]; do
+    install_ollama_llm "${LINE}"
+  done <$1
+}
