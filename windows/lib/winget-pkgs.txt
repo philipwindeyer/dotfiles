@@ -8,6 +8,7 @@ Python.Python.3.11
 Google.GoogleDrive
 KeeWeb.KeeWeb
 Notion.Notion
+Notion.NotionCalendar
 NordSecurity.NordVPN
 NordSecurity.NordPass
 Valve.Steam
@@ -46,3 +47,4 @@ Ytmdesktop.Ytmdesktop
 TheBrowserCompany.Arc
 Bin-Huang.Chatbox
 Rufus.Rufus
+Anysphere.Cursor
