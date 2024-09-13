@@ -30,3 +30,4 @@ rancher
 miro
 figma
 aws-vpn-client
+redisinsight
