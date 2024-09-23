@@ -2,7 +2,6 @@ lulu
 arc
 notion
 keeweb
-rectangle
 slack
 visual-studio-code
 google-drive
