@@ -67,10 +67,12 @@ _TODO: Automate adding PWAs from Safari_
 - Google Calendar
 - Google Meet (Note: not installed currently as GMeet running as an isolated Safari app has permissions and authentication issues)
 - Google Contacts
+- Gemini
+- Google Chat
 
 ## TODO
 
-- Install PWAs from Safari (i.e. "Add to Dock")
+- Install PWAs from Safari (i.e. "Add to Dock") - can this be automated?
 - Add apps (ordered) to Dock
 - Script trackpad and display settings (manually described above)
 - Uncomment and invoke final settings fns in setup.sh
