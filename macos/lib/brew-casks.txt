@@ -2,7 +2,6 @@ lulu
 arc
 notion
 keeweb
-rectangle
 slack
 visual-studio-code
 google-drive
@@ -30,3 +29,5 @@ rancher
 miro
 figma
 aws-vpn-client
+redisinsight
+macmediakeyforwarder
