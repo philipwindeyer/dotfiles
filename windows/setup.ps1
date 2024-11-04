@@ -132,7 +132,7 @@ ForEach ($Line in Get-Content $PSScriptRoot\lib\ollama-llms.txt) {
 
 Write-Heading "Installing rbenv for Windows"
 $env:RBENV_ROOT = "C:\Ruby-on-Windows"
-iwr -useb "https://github.com/RubyMetric/rbenv-for-windows/raw/main/tool/install.ps1" | iex
+Invoke-WebRequest -useb "https://github.com/RubyMetric/rbenv-for-windows/raw/main/tool/install.ps1" | Invoke-Expression
 Invoke-ReloadEnv
 
 Write-Heading "Installing Ruby 3.0.0-1"
