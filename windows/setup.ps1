@@ -130,6 +130,15 @@ ForEach ($Line in Get-Content $PSScriptRoot\lib\ollama-llms.txt) {
   Get-OllamaLlm $Line
 }
 
+Write-Heading "Installing rbenv for Windows"
+$env:RBENV_ROOT = "C:\Ruby-on-Windows"
+iwr -useb "https://github.com/RubyMetric/rbenv-for-windows/raw/main/tool/install.ps1" | iex
+Invoke-ReloadEnv
+
+Write-Heading "Installing Ruby 3.0.0-1"
+rbenv install 3.0.0-1-with-devkit
+rbenv global 3.0.0-1
+
 Write-Heading "Install WSL and Ubuntu"
 wsl --install Ubuntu
 wsl --set-default-version 2

@@ -10,3 +10,6 @@ $Env:Path += [IO.Path]::PathSeparator + "C:\Program Files\Git\cmd"
 
 $env:PYTHONIOENCODING = "utf-8"
 Invoke-Expression "$(thefuck --alias)"
+
+$env:RBENV_ROOT = "C:\Ruby-on-Windows"
+& "$env:RBENV_ROOT\rbenv\bin\rbenv.ps1" init
