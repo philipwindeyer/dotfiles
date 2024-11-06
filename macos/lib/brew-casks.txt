@@ -31,3 +31,4 @@ figma
 aws-vpn-client
 redisinsight
 macmediakeyforwarder
+rectangle
