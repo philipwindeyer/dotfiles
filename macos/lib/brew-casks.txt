@@ -8,7 +8,6 @@ google-drive
 1password
 sublime-text
 keybase
-pgadmin4
 spotify
 ytmdesktop-youtube-music
 vlc
@@ -25,10 +24,5 @@ mjml
 insomnia
 kap
 warp
-rancher
-miro
-figma
-aws-vpn-client
-redisinsight
 macmediakeyforwarder
 rectangle
