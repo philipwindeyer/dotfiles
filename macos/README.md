@@ -62,6 +62,7 @@ _Note: this is still a WIP and may require multiple executions (and reboots duri
 ## Install PWAs (via Safari "Add to Dock" button)
 
 _TODO: Automate adding PWAs from Safari_
+_TODO: Exclude this README from work fork then update this list accordingly (i.e. no Meet or Gemini)_
 
 - Gmail
 - Google Calendar
