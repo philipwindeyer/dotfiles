@@ -8,7 +8,7 @@ function add_apt_repos() {
 
 function install_apt_package() {
   apt list $1 --installed 2>/dev/null | grep $1 >/dev/null 2>&1
-  
+
   if [ $? -eq 0 ]; then
     log_message "$1 is already installed"
   else
@@ -25,7 +25,7 @@ function install_apt_packages() {
 
 function install_flatpak() {
   flatpak list | grep $1 >/dev/null 2>&1
-  
+
   if [ $? -eq 0 ]; then
     log_message "$1 is already installed"
   else
@@ -42,26 +42,26 @@ function install_flatpaks() {
 
 function install_manual_deb() {
   DEB_FILE=$(basename $1)
-  
+
   if [ -z "$2" ]; then
     PACKAGE_NAME=${DEB_FILE%%[_.]*}
     PACKAGE_NAME=${PACKAGE_NAME%-*}
   else
     PACKAGE_NAME=$2
   fi
-  
+
   apt list --installed 2>/dev/null | grep -i $PACKAGE_NAME >/dev/null 2>&1
-  
+
   if [ $? -eq 0 ]; then
     log_message "$PACKAGE_NAME is already installed"
   else
     log_message "Installing $PACKAGE_NAME from $1"
     curl -JLO $1
-    
+
     if [[ $DEB_FILE != *.deb ]]; then
       DEB_FILE=$(ls -t | grep .deb | head -1)
     fi
-    
+
     sudo apt install -f ./$DEB_FILE -y
     rm ./$DEB_FILE
   fi
@@ -75,5 +75,13 @@ function install_manual_debs() {
 
 function add_to_bashrc() {
   log_message "Adding $1 to ~/.bashrc unless it already exists"
-  grep -qxF "$1" ~/.bashrc || echo "$1" >> ~/.bashrc
+  grep -qxF "$1" ~/.bashrc || echo "$1" >>~/.bashrc
+}
+
+function install_warp() {
+  log_heading "Installing warp"
+  curl -L -o warp.deb https://app.warp.dev/download?package=deb
+  sudo apt install ./warp.deb -y
+  rm warp.deb
+  log_message "Warp installed!"
 }
