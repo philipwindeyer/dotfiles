@@ -4,7 +4,7 @@ SCRIPT_DIR="$(dirname $0:a)"
 source $SCRIPT_DIR/../shared/lib/setup-fns.sh
 source $SCRIPT_DIR/lib/setup-fns.sh
 
-log_heading "Apple macOS 14 Sonoma Setup Script"
+log_heading "Apple macOS 14 Sequoia Setup Script"
 
 install_software_updates
 install_xcode_command_line_tools
@@ -24,6 +24,7 @@ install_homebrew_taps $SCRIPT_DIR/lib/brew-taps.txt
 install_homebrew_packages $SCRIPT_DIR/lib/brew-pkgs.txt
 install_homebrew_casks $SCRIPT_DIR/lib/brew-casks.txt
 install_mas_apps $SCRIPT_DIR/lib/mas-apps.txt
+install_web_apps $SCRIPT_DIR/lib/web-apps.txt
 
 add_git_completion
 install_asdf
