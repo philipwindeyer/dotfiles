@@ -1,3 +1,4 @@
+#!/usr/bin/osascript
 
 on getDomainFromUrl(urlString)
   set domainString to urlString
@@ -15,6 +16,10 @@ on getDomainFromUrl(urlString)
   
   return domainString
 end getDomainFromUrl
+
+on isAuthenticationUrl(currentURL)
+  return (currentURL contains "accounts" or currentURL contains "login" or currentURL contains "auth" or currentURL contains "id")
+end isAuthenticationUrl
 
 on run argv
   if (count of argv) is 0 then
@@ -42,16 +47,18 @@ on run argv
     open location websiteURL
     
     -- Wait for authentication and proper redirect
-    repeat maxAttempts times
+    repeat with attempt from 0 to maxAttempts
       delay 1
       set currentURL to URL of current tab of window 1
       set currentDomain to my getDomainFromUrl(currentURL)
       
-      -- TODO: instead of checking domain, assert if "accounts", "login", "auth" in URL and prompt user to login first
-      -- Check if we're on a Google auth page
-      if currentDomain contains "accounts.google.com" then
-        -- TODO: prompt user to login using a macOS prompt instead of a cmd log here
-        log "⚠️  Waiting for Google authentication..."
+      if my isAuthenticationUrl(currentURL) then
+        log "⚠️  Waiting for authentication..."
+        if attempt is 0 then
+          display dialog "login to continue..." buttons {"OK"} with icon caution
+        end if
+
+        log "Please authenticate/login to continue..."
         log "Current URL: " & currentURL
       end if
       
