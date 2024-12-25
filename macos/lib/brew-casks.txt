@@ -26,3 +26,5 @@ kap
 warp
 macmediakeyforwarder
 rectangle
+steam
+whisky
