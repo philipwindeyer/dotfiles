@@ -1,0 +1,5 @@
+"https://mail.google.com" "Gmail"
+"https://calendar.google.com" "Google Calendar"
+"https://apps.abacus.ai/chatllm" "Abacus ChatLLM"
+"https://email.ionos.co.uk" "Ionos Mail"
+"https://worldsalsaradio.com" "World Salsa Radio"
