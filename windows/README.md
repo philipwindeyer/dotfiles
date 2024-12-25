@@ -117,6 +117,7 @@ _Note: this is still a WIP and may require multiple executions (and reboots duri
 
 - Settings
 - File Explorer
+- Abacus ChatLLM
 - Arc
 - Notion
 - Gmail
