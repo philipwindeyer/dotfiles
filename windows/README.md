@@ -155,7 +155,7 @@ _Note: this is still a WIP and may require multiple executions (and reboots duri
 - `shared/dotfiles` contains bash profile (`bashrc`) and bash aliases (`aliases`)
 - `shared/lib` contains shared functions and vars common across all my \*nix environments
 
-## TODO
+## Nice-to-haves
 
 - Keyboard and trackpad configuration
   - [ ] Add F3 → Expose / “Mission Control” / Show all windows and workspaces

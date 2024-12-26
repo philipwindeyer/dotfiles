@@ -148,7 +148,7 @@ _Note: this is still a WIP and may require multiple executions (and reboots duri
 - Settings
 - Google Contacts
 
-## TODO
+## Nice-to-haves
 
 - Automate installations from Github releases (i.e. for KeeWeb and YT Music) - e.g. github-pkgs.txt with the repo name and the <file>.deb file name pattern (with $VER in there)
 - Finish Timeshift set-up to backup to NAS
