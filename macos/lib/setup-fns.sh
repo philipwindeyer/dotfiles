@@ -171,7 +171,6 @@ function install_nvm_node_versions() {
 function configure_dock() {
   log_heading "Configuring macOS Dock"
 
-  # TODO: ensure these are still valid (test individually)
   defaults write com.apple.dock autohide -bool true
   defaults write com.apple.dock mouse-over-hilite-stack -bool true
   defaults write com.apple.dock showhidden -bool false
@@ -192,8 +191,9 @@ function set_dock_apps() {
   log_heading "Setting Dock Apps"
 
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
+    echo ${LINE}
     defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>$(eval echo "${LINE}")</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
-  done <$DOCK_APPS
+  done <$1
 
   local dirs=(
     "$HOME/"
@@ -210,7 +210,6 @@ function set_dock_apps() {
 function configure_finder() {
   log_heading "Configuring Finder"
 
-  # TODO: ensure these are still valid (test individually)
   defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
   defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
   defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
@@ -220,6 +219,7 @@ function configure_finder() {
   defaults write com.apple.finder ShowTabView -bool true
   defaults write com.apple.finder ShowPathbar -bool true
   defaults write com.apple.finder ShowToolbar -bool true
+  defaults write com.apple.finder ShowSidebar -bool true
   defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
   defaults write com.apple.finder NewWindowTarget -string "PfHm"
   defaults write com.apple.finder AppleShowAllFiles false
@@ -239,7 +239,6 @@ function configure_finder() {
 
 function configure_macos_settings() {
   log_heading 'Updating global macOS settings'
-  # TODO: test all of these before rolling into setup script
 
   defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
@@ -254,7 +253,7 @@ function configure_macos_settings() {
 
   # Enable "Tap to click"
   defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
-  sudo defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+  defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
   sudo defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
   sudo defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
@@ -273,6 +272,15 @@ function configure_macos_settings() {
   # Terminal theme
   defaults write ~/Library/Preferences/com.apple.Terminal.plist "Default Window Settings" "Homebrew"
   defaults write ~/Library/Preferences/com.apple.Terminal.plist "Startup Window Settings" "Homebrew"
+  defaults write com.apple.Terminal "Default Window Settings" -string "Homebrew"
+  defaults write com.apple.Terminal "Startup Window Settings" -string "Homebrew"
+
+  # Enable Night Shift from sunset to sunrise
+  defaults write com.apple.CoreBrightness CBBlueReductionStatus -int 1
+  defaults write com.apple.CoreBrightness CBScheduleType -int 1
+
+  # Set Night Shift color temperature (75% warm)
+  defaults write com.apple.CoreBrightness CBColorTemperature -float 0.75
 
   killall SystemUIServer
   sleep 2

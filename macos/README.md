@@ -14,39 +14,6 @@ Once drive is wiped, macOS is installed from scratch, and the initial setup is c
 - Open a terminal and run `sudo xcodebuild -license`
   - Agree to the terms
 
-### System Settings
-
-Open System Settings app and complete the following;
-
-#### Trackpad
-
-Point & Click -> Tap to click -> ON
-_TODO: see if this can be scripted_
-
-#### Displays
-
-Night Shift... ->
-
-- Schedule -> Sunset to Sunrise
-- Color temperature -> 75%
-
-_TODO: see if this can be scripted_
-
-### Terminal
-
-- Open Terminal
-- Settings -> Profiles -> Homebrew -> Set as default
-
-### Finder
-
-- Open Finder
-- View (menu bar) ->
-  - Show Tab Bar
-  - Show Sidebar
-  - Show Toolbar
-  - Show Path Bar
-  - Show Status Bar
-
 ## Automated setup
 
 Assuming you cloned this repo into a desired location locally already;
@@ -76,8 +43,9 @@ _Note: this is still a WIP and may require multiple executions (and reboots duri
   - System Settings -> General -> Login Items & Extensions -> Network Extensions -> LuLu.app -> ON
 - Once enabled and running, open LuLu settings -> Mode, and check "No Icon Mode"
 
-## TODO
+### NordVPN
 
-- Add apps (ordered) to Dock
-- Script trackpad and display settings (manually described above)
-- Uncomment and invoke final settings fns in setup.sh
+- Run NordVPN
+- Login and setup as normal
+- Turn on Meshnet
+- Set to run on startup

@@ -45,10 +45,9 @@ install_ollama_llms $SCRIPT_DIR/lib/ollama-llms.txt
 configure_git
 create_directories
 
-# TODO: Uncomment and invoke these fns once confirmed to be functioning correctly
-# configure_dock
-# set_dock_apps $SCRIPT_DIR/lib/dock-apps.txt #TODO: confirm the final apps I'd like to list here once tested and working
-# configure_finder
-# configure_macos_settings
+configure_dock
+set_dock_apps $SCRIPT_DIR/lib/dock-apps.txt
+configure_finder
+configure_macos_settings
 
 echo "Done ✨"
