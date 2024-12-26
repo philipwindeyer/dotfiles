@@ -16,3 +16,4 @@ corkscrew
 htmlq
 mysql
 lima
+libyaml

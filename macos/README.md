@@ -11,6 +11,8 @@ Once drive is wiped, macOS is installed from scratch, and the initial setup is c
 - Ensure you have a connection to the internet established
 - Follow the guided "Welcome" screen
 - Run Software Update and ensure OS is up to date
+- Open a terminal and run `sudo xcodebuild -license`
+  - Agree to the terms
 
 ### System Settings
 
@@ -58,6 +60,21 @@ _Note: the first run will take quite some time. Allow for an hour or more, but k
 - Restart (if required)
 
 _Note: this is still a WIP and may require multiple executions (and reboots during first installation) for it to complete._
+
+## Post Installation App Configuration
+
+### Rectangle
+
+- Run Rectangle
+- Enable Rectangle and set it to start with computer on startup
+- Disable native macOS window snapping (in System Settings)
+
+### LuLu
+
+- Run LuLu
+- You will be prompted to enable the LuLu extension in System Settings;
+  - System Settings -> General -> Login Items & Extensions -> Network Extensions -> LuLu.app -> ON
+- Once enabled and running, open LuLu settings -> Mode, and check "No Icon Mode"
 
 ## TODO
 

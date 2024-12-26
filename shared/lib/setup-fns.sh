@@ -69,7 +69,6 @@ function install_asdf() {
 }
 
 function add_asdf_plugin() {
-  asdf update
   asdf plugin update --all
   asdf plugin add $1
 }
@@ -83,7 +82,6 @@ function add_asdf_plugins() {
 }
 
 function install_asdf_package() {
-  asdf update
   if [ -z "$2" ]; then
     asdf install $1
   else

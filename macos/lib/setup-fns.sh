@@ -49,7 +49,6 @@ function install_homebrew() {
   eval "$(/opt/homebrew/bin/brew shellenv)"
 
   log_message "Updating Homebrew"
-  brew doctor
   brew update
   brew upgrade
   brew cleanup
