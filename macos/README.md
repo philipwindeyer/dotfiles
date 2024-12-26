@@ -59,17 +59,6 @@ _Note: the first run will take quite some time. Allow for an hour or more, but k
 
 _Note: this is still a WIP and may require multiple executions (and reboots during first installation) for it to complete._
 
-## Install PWAs (via Safari "Add to Dock" button)
-
-_TODO: Exclude this README from work fork then update web-apps to install (this list), then delete this section of the README (i.e. no Meet or Gemini on personal laptop)_
-
-- Gmail
-- Google Calendar
-- Google Meet (Note: not installed currently as GMeet running as an isolated Safari app has permissions and authentication issues)
-- Google Contacts
-- Gemini
-- Google Chat
-
 ## TODO
 
 - Add apps (ordered) to Dock

@@ -28,15 +28,18 @@ install_web_apps $SCRIPT_DIR/lib/web-apps.txt
 
 add_git_completion
 install_asdf
-install_nvm
-
 reload_env
 
 add_asdf_plugins $SCRIPT_DIR/../shared/lib/asdf-plugins.txt
 install_asdf_packages $SCRIPT_DIR/lib/asdf-pkgs.txt
 set_asdf_global_versions $SCRIPT_DIR/lib/asdf-globals.txt
 
-install_nvm_node_versions $SCRIPT_DIR/lib/nvm-node-versions.txt
+if [ -f "$SCRIPT_DIR/lib/nvm-node-versions.txt" ]; then
+  install_nvm
+  reload_env
+  install_nvm_node_versions $SCRIPT_DIR/lib/nvm-node-versions.txt
+fi
+
 install_ollama_llms $SCRIPT_DIR/lib/ollama-llms.txt
 
 configure_git

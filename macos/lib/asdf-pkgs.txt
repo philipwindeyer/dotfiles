@@ -1,7 +1,7 @@
+nodejs latest
 ruby latest
-ruby 3.1.3
-ruby 3.0.5
+ruby 3.0.0
+ruby truffleruby-24.1.1
 yarn latest
 pnpm latest
-terraform latest
 python latest

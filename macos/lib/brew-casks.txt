@@ -5,7 +5,6 @@ keeweb
 slack
 visual-studio-code
 google-drive
-1password
 sublime-text
 keybase
 spotify
@@ -28,3 +27,12 @@ macmediakeyforwarder
 rectangle
 steam
 whisky
+whatsapp
+messenger
+skype
+qbittorrent
+handbrake
+signal
+mysqlworkbench
+ocenaudio
+nordvpn
