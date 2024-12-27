@@ -30,6 +30,10 @@ _Note: this is still a WIP and may require multiple executions (and reboots duri
 
 ## Post Installation App Configuration
 
+### Abacus CodeLLM (27/12/24)
+
+There is no homebrew formula for CodeLLM yet, so download it from https://codellm.abacus.ai/ and install manually
+
 ### Rectangle
 
 - Run Rectangle
