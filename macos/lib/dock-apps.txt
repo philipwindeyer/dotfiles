@@ -8,6 +8,7 @@ $HOME/Applications/Gmail.app
 $HOME/Applications/Google Calendar.app
 $HOME/Applications/Ionos Mail.app
 /Applications/Visual Studio Code.app
+/Applications/CodeLLM.app
 /Applications/Sublime Text.app
 /Applications/Warp.app
 /Applications/KeeWeb.app
