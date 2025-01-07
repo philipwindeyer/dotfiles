@@ -175,10 +175,10 @@ function configure_dock() {
   defaults write com.apple.dock mouse-over-hilite-stack -bool true
   defaults write com.apple.dock showhidden -bool false
   defaults write com.apple.dock show-recents -bool false
-  defaults write com.apple.dock mineffect suck
   defaults write com.apple.dock tilesize 52
   defaults write com.apple.dock orientation bottom
   defaults write com.apple.dock ResetLaunchPad -bool true
+  defaults write com.apple.dock show-recents -bool true
 
   # Dock apps/directories
   defaults write com.apple.dock persistent-apps -array
