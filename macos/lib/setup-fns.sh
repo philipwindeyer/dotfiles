@@ -233,6 +233,8 @@ function set_dock_apps() {
   # Check for extra apps
   while IFS='' read -r CURRENT_APP; do
     [ -z "$CURRENT_APP" ] && continue
+    # Remove trailing slash if it exists
+    CURRENT_APP="${CURRENT_APP%/}"
     FOUND=false
     while IFS='' read -r DESIRED_APP || [ -n "${DESIRED_APP}" ]; do
       if [ "$(eval echo "${DESIRED_APP}")" = "$CURRENT_APP" ]; then
