@@ -174,24 +174,40 @@ function configure_dock() {
   defaults write com.apple.dock autohide -bool true
   defaults write com.apple.dock mouse-over-hilite-stack -bool true
   defaults write com.apple.dock showhidden -bool false
-  defaults write com.apple.dock show-recents -bool false
   defaults write com.apple.dock tilesize 52
   defaults write com.apple.dock orientation bottom
   defaults write com.apple.dock ResetLaunchPad -bool true
   defaults write com.apple.dock show-recents -bool true
 
-  # Dock apps/directories
-  defaults write com.apple.dock persistent-apps -array
-  defaults write com.apple.dock persistent-others -array
-
   killall Dock
 }
 
+function process_dock_items() {
+  grep '_CFURLString' | grep -v '_CFURLStringType' | sed -E 's/.*= "(.*)";/\1/' | sed 's|file://||g' | sed 's|%20| |g'
+}
+
+function list_dock_apps() {
+  CURRENT_DOCK_APPS=$(defaults read com.apple.dock persistent-apps | process_dock_items)
+}
+
+function list_dock_dirs() {
+  CURRENT_DOCK_DIRS=$(defaults read com.apple.dock persistent-others | process_dock_items)
+}
+
 function set_dock_apps() {
+  list_dock_apps
+  list_dock_dirs
+
   log_heading "Setting Dock Apps"
 
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
-    defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>$(eval echo "${LINE}")</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+    APP_PATH=$(eval echo "${LINE}")
+    if echo "$CURRENT_DOCK_APPS" | grep -q "$APP_PATH"; then
+      log_message "App already exists in Dock: $APP_PATH"
+    else
+      log_message "Adding app to Dock: $APP_PATH"
+      defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>$APP_PATH</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+    fi
   done <$1
 
   local dirs=(
@@ -200,10 +216,51 @@ function set_dock_apps() {
   )
 
   for dir in "${dirs[@]}"; do
-    defaults write com.apple.dock persistent-others -array-add "<dict><key>tile-data</key><dict><key>arrangement</key><integer>1</integer><key>displayas</key><integer>1</integer><key>file-data</key><dict><key>_CFURLString</key><string>file://$dir</string><key>_CFURLStringType</key><integer>15</integer></dict><key>showas</key><integer>2</integer></dict><key>tile-type</key><string>directory-tile</string></dict>"
+    if echo "$CURRENT_DOCK_DIRS" | grep -q "$dir"; then
+      log_message "Directory already exists in Dock: $dir"
+    else
+      log_message "Adding directory to Dock: $dir"
+      defaults write com.apple.dock persistent-others -array-add "<dict><key>tile-data</key><dict><key>arrangement</key><integer>1</integer><key>displayas</key><integer>1</integer><key>file-data</key><dict><key>_CFURLString</key><string>file://$dir</string><key>_CFURLStringType</key><integer>15</integer></dict><key>showas</key><integer>2</integer></dict><key>tile-type</key><string>directory-tile</string></dict>"
+    fi
   done
 
   killall Dock
+
+  # Re-evaluate current dock items after changes
+  list_dock_apps
+  list_dock_dirs
+
+  # Check for extra apps
+  while IFS='' read -r CURRENT_APP; do
+    [ -z "$CURRENT_APP" ] && continue
+    FOUND=false
+    while IFS='' read -r DESIRED_APP || [ -n "${DESIRED_APP}" ]; do
+      if [ "$(eval echo "${DESIRED_APP}")" = "$CURRENT_APP" ]; then
+        FOUND=true
+        break
+      fi
+    done < "$1"
+    
+    if [ "$FOUND" = false ]; then
+      log_message "Extra app found in Dock: $CURRENT_APP"
+    fi
+  done <<< "$CURRENT_DOCK_APPS"
+
+  # Check for extra directories
+  while IFS='' read -r CURRENT_DIR; do
+    [ -z "$CURRENT_DIR" ] && continue
+    FOUND=false
+    for dir in "$HOME/" "$HOME/Downloads/"; do
+      if [ "$dir" = "$CURRENT_DIR" ]; then
+        FOUND=true
+        break
+      fi
+    done
+    
+    if [ "$FOUND" = false ]; then
+      log_message "Extra directory found in Dock: $CURRENT_DIR"
+    fi
+  done <<< "$CURRENT_DOCK_DIRS"
 }
 
 function configure_finder() {
