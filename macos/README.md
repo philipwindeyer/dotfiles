@@ -53,3 +53,9 @@ There is no homebrew formula for CodeLLM yet, so download it from https://codell
 - Login and setup as normal
 - Turn on Meshnet
 - Set to run on startup
+
+### AppCleaner
+
+- Run AppCleaner
+- Open Preferences
+- Turn on SmartDelete
