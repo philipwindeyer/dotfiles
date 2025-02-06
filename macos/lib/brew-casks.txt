@@ -36,3 +36,4 @@ signal
 mysqlworkbench
 ocenaudio
 nordvpn
+windsurf
