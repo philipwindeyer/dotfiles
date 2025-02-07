@@ -37,3 +37,4 @@ mysqlworkbench
 ocenaudio
 nordvpn
 windsurf
+brave-browser
