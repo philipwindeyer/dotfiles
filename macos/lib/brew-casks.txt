@@ -38,3 +38,4 @@ ocenaudio
 nordvpn
 windsurf
 brave-browser
+google-chrome
