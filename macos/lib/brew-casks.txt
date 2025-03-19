@@ -40,3 +40,4 @@ windsurf
 brave-browser
 google-chrome
 utm
+microsoft-word
