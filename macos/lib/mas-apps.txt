@@ -4,3 +4,5 @@ Xcode app
 TestFlight
 Trello
 Airclap
+ING Australia Banking
+Frollo - Money Manager
