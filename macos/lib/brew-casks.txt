@@ -42,5 +42,9 @@ windsurf
 brave-browser
 google-chrome
 utm
-microsoft-word
 freedom
+microsoft-auto-update
+microsoft-excel
+microsoft-powerpoint
+microsoft-word
+onedrive
