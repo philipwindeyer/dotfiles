@@ -48,3 +48,4 @@ microsoft-excel
 microsoft-powerpoint
 microsoft-word
 onedrive
+ffmpeg
