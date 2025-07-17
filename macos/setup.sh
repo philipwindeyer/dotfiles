@@ -35,6 +35,11 @@ if [ -f "$SCRIPT_DIR/lib/nvm-node-versions.txt" ]; then
   install_nvm_node_versions $SCRIPT_DIR/lib/nvm-node-versions.txt
 fi
 
+# TODO: move this into an npm-globals.txt file (installs yarn and pnpm via corepack)
+npm install -g corepack@latest
+
+# TODO: Install rvm or rbenv for ruby versions
+
 configure_git
 create_directories
 

@@ -1,6 +1,0 @@
-ruby
-nodejs
-yarn
-pnpm
-python
-terraform

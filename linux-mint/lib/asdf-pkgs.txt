@@ -1,4 +1,0 @@
-ruby latest
-ruby 3.0.0
-nodejs latest
-yarn latest

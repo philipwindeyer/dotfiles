@@ -1,7 +1,0 @@
-nodejs latest
-ruby latest
-ruby 3.0.0
-ruby truffleruby-24.1.1
-yarn latest
-pnpm latest
-python latest
