@@ -16,7 +16,6 @@ balenaetcher
 zoom
 keka
 canva
-ollama
 appcleaner
 onyx
 drawio

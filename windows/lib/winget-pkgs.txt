@@ -39,7 +39,6 @@ Adobe.Acrobat.Reader.64-bit
 KDE.Kdenlive
 OpenShot.OpenShot
 ByteDance.CapCut
-Ollama.Ollama
 Oracle.VirtualBox
 Ytmdesktop.Ytmdesktop
 TheBrowserCompany.Arc

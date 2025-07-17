@@ -125,11 +125,6 @@ ForEach ($Line in Get-Content $PSScriptRoot\lib\pip-pkgs.txt) {
 
 Invoke-ReloadEnv
 
-Write-Heading "Installing local LLMs (ollama)"
-ForEach ($Line in Get-Content $PSScriptRoot\lib\ollama-llms.txt) {
-  Get-OllamaLlm $Line
-}
-
 Write-Heading "Installing rbenv for Windows"
 $env:RBENV_ROOT = "C:\Ruby-on-Windows"
 Invoke-WebRequest -useb "https://github.com/RubyMetric/rbenv-for-windows/raw/main/tool/install.ps1" | Invoke-Expression

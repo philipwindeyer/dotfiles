@@ -35,8 +35,6 @@ if [ -f "$SCRIPT_DIR/lib/nvm-node-versions.txt" ]; then
   install_nvm_node_versions $SCRIPT_DIR/lib/nvm-node-versions.txt
 fi
 
-install_ollama_llms $SCRIPT_DIR/lib/ollama-llms.txt
-
 configure_git
 create_directories
 
