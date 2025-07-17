@@ -1,9 +1,4 @@
 # shellcheck disable=SC2148
-source "$HOME/.asdf/asdf.sh"
-
-if [ "$SHELL" != "/bin/zsh" ]; then
-  source "$HOME/.asdf/completions/asdf.bash"
-fi
 
 if [ "$SHELL" = "/bin/zsh" ] && [ -f "$HOME/.git-completion.zsh" ]; then
   fpath=(~/.git-completion.zsh $fpath)

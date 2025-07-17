@@ -26,7 +26,6 @@ log_heading "Installing other (manual .deb) packages"
 install_manual_debs $SCRIPT_DIR/lib/manual-pkgs.txt
 
 add_git_completion
-install_asdf
 
 add_to_bashrc "source $SCRIPT_DIR/../shared/dotfiles/aliases"
 add_to_bashrc "source $SCRIPT_DIR/../shared/dotfiles/bashrc"
@@ -34,10 +33,6 @@ add_to_bashrc "source $SCRIPT_DIR/../shared/dotfiles/bashrc"
 add_to_vimrc "source $SCRIPT_DIR/../shared/dotfiles/vimrc"
 
 reload_env
-
-add_asdf_plugins $SCRIPT_DIR/../shared/lib/asdf-plugins.txt
-install_asdf_packages $SCRIPT_DIR/lib/asdf-pkgs.txt
-set_asdf_global_versions $SCRIPT_DIR/lib/asdf-globals.txt
 
 configure_git
 create_directories

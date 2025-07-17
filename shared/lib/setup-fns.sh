@@ -55,65 +55,6 @@ function add_git_completion() {
   fi
 }
 
-function install_asdf() {
-  log_heading "asdf"
-
-  if [ -d ~/.asdf ]; then
-    log_message "asdf is already installed"
-  else
-    ASDF_VERSION_TO_INSTALL=$(curl --silent "https://api.github.com/repos/asdf-vm/asdf/releases/latest" | jq -r '.tag_name')
-    log_message "Installing asdf ($ASDF_VERSION_TO_INSTALL)"
-    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch $ASDF_VERSION_TO_INSTALL
-    log_message "Note: you will neeed to restart your shell and re-run this to complete the installation the first tim"
-  fi
-}
-
-function add_asdf_plugin() {
-  asdf plugin update --all
-  asdf plugin add $1
-}
-
-function add_asdf_plugins() {
-  log_heading "Adding asdf plugins"
-
-  while IFS='' read -r LINE || [ -n "${LINE}" ]; do
-    add_asdf_plugin ${LINE}
-  done <$1
-}
-
-function install_asdf_package() {
-  if [ -z "$2" ]; then
-    asdf install $1
-  else
-    asdf install $1 $2
-  fi
-}
-
-function install_asdf_packages() {
-  log_heading "Installing asdf packages"
-
-  while IFS='' read -r LINE || [ -n "${LINE}" ]; do
-    if [[ $LINE =~ " " ]]; then
-      PACKAGE=$(echo "${LINE}" | cut -d ' ' -f 1)
-      VERSION=$(echo "${LINE}" | cut -d ' ' -f 2)
-      install_asdf_package ${PACKAGE} ${VERSION}
-    else
-      PACKAGE=$LINE
-      install_asdf_package ${PACKAGE}
-    fi
-  done <$1
-}
-
-function set_asdf_global_versions() {
-  log_heading "Setting asdf global versions"
-
-  while IFS='' read -r LINE || [ -n "${LINE}" ]; do
-    PACKAGE=$(echo ${LINE} | cut -d ' ' -f 1)
-    VERSION=$(echo ${LINE} | cut -d ' ' -f 2)
-    asdf global ${PACKAGE} ${VERSION}
-  done <$1
-}
-
 function configure_git() {
   log_heading "Configuring git"
 

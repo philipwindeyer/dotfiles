@@ -16,7 +16,6 @@ log_heading "Installing pip packages"
 install_pip_packages $SCRIPT_DIR/lib/wsl-pip-pkgs.txt
 
 add_git_completion
-install_asdf
 
 log_heading "Setting up dotfiles"
 add_to_bashrc "source $SCRIPT_DIR/../shared/dotfiles/aliases"
@@ -25,23 +24,6 @@ add_to_bashrc "source $SCRIPT_DIR/wsl/bashrc"
 add_to_vimrc "source $SCRIPT_DIR/../shared/dotfiles/vimrc"
 
 reload_env
-
-add_asdf_plugin ruby
-install_asdf_package ruby latest
-install_asdf_package ruby 3.0.0
-asdf shell ruby 3.0.0
-asdf global ruby latest
-
-add_asdf_plugin nodejs
-install_asdf_package nodejs latest
-asdf shell nodejs latest
-asdf global nodejs latest
-
-# Not working as of 20/2/24 (404 not found)
-# add_asdf_plugin yarn
-# install_asdf_package yarn latest
-# asdf shell yarn latest
-# asdf global yarn latest
 
 # Fallback
 npm install --global yarn

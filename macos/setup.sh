@@ -27,12 +27,7 @@ install_mas_apps $SCRIPT_DIR/lib/mas-apps.txt
 install_web_apps $SCRIPT_DIR/lib/web-apps.txt
 
 add_git_completion
-install_asdf
 reload_env
-
-add_asdf_plugins $SCRIPT_DIR/../shared/lib/asdf-plugins.txt
-install_asdf_packages $SCRIPT_DIR/lib/asdf-pkgs.txt
-set_asdf_global_versions $SCRIPT_DIR/lib/asdf-globals.txt
 
 if [ -f "$SCRIPT_DIR/lib/nvm-node-versions.txt" ]; then
   install_nvm
