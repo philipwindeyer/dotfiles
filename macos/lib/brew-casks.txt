@@ -48,3 +48,5 @@ microsoft-powerpoint
 microsoft-word
 onedrive
 ffmpeg
+background-music
+beeper
