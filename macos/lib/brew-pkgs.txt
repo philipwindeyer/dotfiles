@@ -17,3 +17,4 @@ htmlq
 mysql
 lima
 libyaml
+vercel-cli
