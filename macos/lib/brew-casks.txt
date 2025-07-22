@@ -3,7 +3,6 @@ arc
 notion
 notion-calendar
 notion-mail
-keeweb
 slack
 visual-studio-code
 google-drive

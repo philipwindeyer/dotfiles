@@ -7,3 +7,4 @@ Airclap
 ING Australia Banking
 Frollo - Money Manager
 TP-Link Tapo
+KeePassium
