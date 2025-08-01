@@ -120,7 +120,7 @@ function install_mas_app() {
     log_message "$2 (ID $1) is already installed"
   else
     log_message "Installing $2 (ID $1)"
-    mas install "$1"
+    mas purchase "$1"
   fi
 }
 
