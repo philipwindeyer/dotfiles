@@ -117,10 +117,10 @@ function install_mas_app() {
   mas list | grep -q "$1"
 
   if [ $? -eq 0 ]; then
-    log_message "$1 is already installed"
+    log_message "$2 (ID $1) is already installed"
   else
-    log_message "Installing $1"
-    mas lucky "$1"
+    log_message "Installing $2 (ID $1)"
+    mas install "$1"
   fi
 }
 
