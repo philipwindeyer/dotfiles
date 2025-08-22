@@ -13,8 +13,6 @@ awscli
 cmake
 gron
 corkscrew
-htmlq
 mysql
-lima
 libyaml
 vercel-cli
