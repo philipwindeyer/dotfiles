@@ -21,6 +21,45 @@ function install_xcode_command_line_tools() {
   fi
 }
 
+function enable_touchid_sudo() {
+    local sudo_local="/etc/pam.d/sudo_local"
+    local template="/etc/pam.d/sudo_local.template"
+    local touchid_line="auth       sufficient     pam_tid.so"
+    
+    if [[ -f "$sudo_local" ]] && grep -q "^$touchid_line" "$sudo_local"; then
+        log_message "TouchID for sudo is already enabled"
+        return 0
+    fi
+    
+    log_message "Setting up TouchID for sudo..."
+    
+    if [[ ! -f "$sudo_local" ]]; then
+        if [[ ! -f "$template" ]]; then
+            log_message "Template file $template not found"
+            return 1
+        fi
+        log_message "Copying template to sudo_local..."
+        sudo cp "$template" "$sudo_local" || {
+            log_message "Failed to copy template"
+            return 1
+        }
+    fi
+    
+    if grep -q "^#.*$touchid_line" "$sudo_local"; then
+        log_message "Uncommenting TouchID line..."
+        sudo sed -i '' "s/^#\(.*$touchid_line\)/\1/" "$sudo_local"
+    elif ! grep -q "$touchid_line" "$sudo_local"; then
+        log_message "Adding TouchID line..."
+        sudo sed -i '' "1a\\
+$touchid_line
+" "$sudo_local"
+    fi
+    
+    log_message "TouchID for sudo has been enabled!"
+    log_message "You may need to restart Terminal for changes to take effect"
+}
+
+
 function install_rosetta() {
   log_heading "Rosetta"
 

@@ -16,6 +16,7 @@ add_to_zshrc "source $SCRIPT_DIR/../shared/dotfiles/aliases"
 add_to_zshrc "source $SCRIPT_DIR/../shared/dotfiles/bashrc"
 add_to_vimrc "source $SCRIPT_DIR/../shared/dotfiles/vimrc"
 
+enable_touchid_sudo
 install_rosetta
 install_homebrew
 install_mas
@@ -39,11 +40,6 @@ fi
 npm install -g corepack@latest
 
 # TODO: Install rvm or rbenv for ruby versions
-
-# TODO: enable sudo Touch ID
-# sudo cp /etc/pam.d/sudo_local.template /etc/pam.d/sudo_local
-# Locate the line "auth       sufficient     pam_tid.so" (minus the spaces), and
-# Uncomment it (can probably sed it)
 
 configure_git
 create_directories
