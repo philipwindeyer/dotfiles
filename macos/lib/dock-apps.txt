@@ -2,6 +2,7 @@
 /System/Applications/System Settings.app
 /Applications/Brave Browser.app
 /Applications/Notion.app
+/System/Applications/Notes.app
 $HOME/Applications/Brave Browser Apps.localized/Gmail.app
 $HOME/Applications/Brave Browser Apps.localized/Google Calendar.app
 $HOME/Applications/Brave Browser Apps.localized/Ionos Mail.app
@@ -11,7 +12,7 @@ $HOME/Applications/Brave Browser Apps.localized/Abacus ChatLLM.app
 /Applications/Windsurf.app
 /Applications/Sublime Text.app
 /Applications/Warp.app
-/System/Applications/App Store.app
+/System/Applications/Passwords.app
 /Applications/Spotify.app
 /Applications/Poolsuite FM.app
 /System/Applications/Messages.app
