@@ -36,7 +36,9 @@ install_nvm_node_versions $SCRIPT_DIR/lib/nvm-node-versions.txt
 
 install_npm_global_pkgs $SCRIPT_DIR/lib/npm-global-pkgs.txt
 
-# TODO: Install rvm or rbenv for ruby versions
+install_rbenv
+reload_env
+install_rbenv_ruby_versions $SCRIPT_DIR/lib/rbenv-ruby-versions.txt
 
 configure_git
 create_directories

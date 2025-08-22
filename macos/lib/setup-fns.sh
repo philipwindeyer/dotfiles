@@ -222,6 +222,37 @@ function install_npm_global_pkgs() {
   done <$1
 }
 
+function install_rbenv() {
+  log_heading "Installing rbenv"
+
+  if ! command -v rbenv &>/dev/null; then
+    log_message "Installing rbenv"
+    brew install rbenv
+  else
+    log_message "rbenv is already installed"
+  fi
+}
+
+function install_rbenv_ruby_versions() {
+  log_heading "Installing Ruby versions with rbenv"
+
+  while IFS='' read -r LINE || [ -n "${LINE}" ]; do
+    [[ -z "$LINE" || "$LINE" =~ ^# ]] && continue
+    if rbenv versions --bare | grep -qx "$LINE"; then
+      log_message "Ruby $LINE is already installed"
+    else
+      log_message "Installing Ruby $LINE"
+      rbenv install "$LINE"
+    fi
+  done <"$1"
+
+  local first_version
+  first_version=$(grep -v '^\s*#' "$1" | sed '/^\s*$/d' | head -n 1)
+  if [[ -n "$first_version" ]]; then
+    rbenv global "$first_version"
+  fi
+}
+
 function configure_dock() {
   log_heading "Configuring macOS Dock"
 
