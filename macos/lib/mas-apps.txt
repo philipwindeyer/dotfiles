@@ -4,3 +4,4 @@
 427100193 "ING Australia Banking"
 497799835 Xcode
 545519333  "Amazon Prime Video"
+6472538445  "Microsoft Copilot"
