@@ -34,3 +34,4 @@ onedrive
 background-music
 beeper
 pgadmin4
+kid3
