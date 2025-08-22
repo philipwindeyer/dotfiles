@@ -30,14 +30,11 @@ install_web_apps $SCRIPT_DIR/lib/web-apps.txt
 add_git_completion
 reload_env
 
-if [ -f "$SCRIPT_DIR/lib/nvm-node-versions.txt" ]; then
-  install_nvm
-  reload_env
-  install_nvm_node_versions $SCRIPT_DIR/lib/nvm-node-versions.txt
-fi
+install_nvm
+reload_env
+install_nvm_node_versions $SCRIPT_DIR/lib/nvm-node-versions.txt
 
-# TODO: move this into an npm-globals.txt file (installs yarn and pnpm via corepack)
-npm install -g corepack@latest
+install_npm_global_pkgs $SCRIPT_DIR/lib/npm-global-pkgs.txt
 
 # TODO: Install rvm or rbenv for ruby versions
 

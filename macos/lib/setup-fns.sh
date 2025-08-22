@@ -202,8 +202,23 @@ function install_nvm() {
 function install_nvm_node_versions() {
   log_heading "Installing Node.js versions with nvm"
 
+  if [[ -n "$1" && -f "$1" ]]; then
+    while IFS='' read -r LINE || [ -n "${LINE}" ]; do
+      [[ -z "$LINE" || "$LINE" =~ ^# ]] && continue
+      nvm install "${LINE}"
+    done <"$1"
+  else
+    log_message "Versions file not provided or not found; skipping explicit installs"
+  fi
+
+  nvm install node
+}
+
+function install_npm_global_pkgs() {
+  log_heading "Installing npm global packages"
+
   while IFS='' read -r LINE || [ -n "${LINE}" ]; do
-    nvm install "${LINE}"
+    npm install -g "${LINE}"
   done <$1
 }
 
