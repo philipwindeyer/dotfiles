@@ -171,27 +171,6 @@ function install_mas_apps() {
   done <$1
 }
 
-function install_web_app() {
-  if [ -d "$HOME"/Applications/"$2".app ]; then
-    log_message "$2 ($1) is already installed"
-  else
-    log_message "Installing $2 ($1)"
-    osascript lib/add-to-dock.scpt "$1" "$2"
-  fi
-}
-
-function install_web_apps() {
-  log_heading "Installing web apps"
-
-  while IFS=' ' read -r url name || [[ -n "$url" ]]; do
-    [[ -z "$url" || "$url" =~ ^# ]] && continue
-    read -r url name <<<"$(echo "$url $name" | tr -d '"')"
-    read -r url name <<<"$(echo "$url $name" | tr -d "\"'")"
-
-    install_web_app "$url" "$name"
-  done <"$1"
-}
-
 function install_nvm() {
   log_heading "Node Version Manager (nvm)"
 

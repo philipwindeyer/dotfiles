@@ -59,3 +59,25 @@ There is no homebrew formula for CodeLLM yet, so download it from https://codell
 - Run AppCleaner
 - Open Preferences
 - Turn on SmartDelete
+
+### Magic Switch
+
+Used to toggle Magic Keyboard and Magic Mouse between two Macs
+
+- Install [Magic Switch](https://www.magic-switch.com/)
+  - Note: If you've purchased a license already, you ought to have kept the original app downloaded provided to you
+  - I keep mine at ~/<cloud-storage>/Apps (distributed as MagicSwitch.dmg)
+
+### PWA Installation (via Brave Browser)
+
+- Open Brave Browser
+- Navigate to each app you'd like to install
+- Sign in first if required
+- Click "Install" if available, or Settings -> Save and Share -> "Install page as app..."
+
+These are the PWA I install:
+- Gmail (https://mail.google.com)
+- Google Calendar (https://calendar.google.com)
+- Google Contacts (https://contacts.google.com/)
+- Abacus ChatLLM (https://apps.abacus.ai/chatllm)
+- Ionos Mail (https://email.ionos.co.uk)

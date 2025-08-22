@@ -25,7 +25,6 @@ install_homebrew_taps $SCRIPT_DIR/lib/brew-taps.txt
 install_homebrew_packages $SCRIPT_DIR/lib/brew-pkgs.txt
 install_homebrew_casks $SCRIPT_DIR/lib/brew-casks.txt
 install_mas_apps $SCRIPT_DIR/lib/mas-apps.txt
-install_web_apps $SCRIPT_DIR/lib/web-apps.txt
 
 add_git_completion
 reload_env
