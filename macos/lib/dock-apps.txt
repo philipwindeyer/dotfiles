@@ -1,23 +1,21 @@
 /System/Applications/Launchpad.app
 /System/Applications/System Settings.app
-$HOME/Applications/Abacus ChatLLM.app
-/Applications/Arc.app
+/Applications/Brave Browser.app
 /Applications/Notion.app
+$HOME/Applications/Brave Browser Apps.localized/Gmail.app
+$HOME/Applications/Brave Browser Apps.localized/Google Calendar.app
+$HOME/Applications/Brave Browser Apps.localized/Ionos Mail.app
+$HOME/Applications/Brave Browser Apps.localized/Google Contacts.app
 /System/Applications/iPhone Mirroring.app
-$HOME/Applications/Gmail.app
-$HOME/Applications/Google Calendar.app
-$HOME/Applications/Ionos Mail.app
-/Applications/Visual Studio Code.app
-/Applications/CodeLLM.app
+$HOME/Applications/Brave Browser Apps.localized/Abacus ChatLLM.app
+/Applications/Windsurf.app
 /Applications/Sublime Text.app
 /Applications/Warp.app
-/Applications/KeeWeb.app
+/System/Applications/App Store.app
 /Applications/Spotify.app
 /Applications/Poolsuite FM.app
-$HOME/Applications/World Salsa Radio.app
-/Applications/Slack.app
 /System/Applications/Messages.app
-/Applications/WhatsApp.app
-/Applications/Messenger.app
+/Applications/Beeper Desktop.app
+/Applications/Slack.app
 /Applications/Steam.app
-/Applications/Whisky.app
+/Applications/Magic Switch.app
