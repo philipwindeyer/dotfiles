@@ -81,3 +81,14 @@ These are the PWA I install:
 - Google Contacts (https://contacts.google.com/)
 - Abacus ChatLLM (https://apps.abacus.ai/chatllm)
 - Ionos Mail (https://email.ionos.co.uk)
+
+### "Missing" App Store (mas) Apps
+
+As of 22/08/2025, MAS [cannot install iOS/iPadOS apps](https://github.com/mas-cli/mas?tab=readme-ov-file#-ios--ipados-apps) though they do appear in search.
+
+These apps (in [mas-app.txt](lib/mas-apps.txt)) need to be installed manually via the Mac App Store:
+
+- Frollo - Feel good about money (ID 1179563005)
+- TP-Link Tapo (ID 1472718009)
+- ING Australia Banking (ID 427100193)
+- Microsoft Copilot (ID 6472538445)
