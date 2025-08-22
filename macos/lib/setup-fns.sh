@@ -222,6 +222,17 @@ function install_npm_global_pkgs() {
   done <$1
 }
 
+function enable_pnpm() {
+  log_heading "Enabling pnpm"
+
+  if command -v corepack &>/dev/null; then
+    log_message "Corepack detected; enabling pnpm via Corepack"
+    corepack enable pnpm
+  else
+    log_message "Corepack not found; skipping pnpm enable. Install corepack first (add corepack to lib/npm-global-pkgs.txt)"
+  fi
+}
+
 function install_rbenv() {
   log_heading "Installing rbenv"
 

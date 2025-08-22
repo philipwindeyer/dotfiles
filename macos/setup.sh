@@ -35,6 +35,7 @@ reload_env
 install_nvm_node_versions $SCRIPT_DIR/lib/nvm-node-versions.txt
 
 install_npm_global_pkgs $SCRIPT_DIR/lib/npm-global-pkgs.txt
+enable_pnpm
 
 install_rbenv
 reload_env
