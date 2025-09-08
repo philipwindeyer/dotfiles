@@ -4,12 +4,9 @@ balenaetcher
 beeper
 brave-browser
 canva
-freedom
-google-drive
 insomnia
 kap
 keka
-keybase
 kid3
 lulu
 microsoft-auto-update
