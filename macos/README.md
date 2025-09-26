@@ -88,7 +88,6 @@ As of 22/08/2025, MAS [cannot install iOS/iPadOS apps](https://github.com/mas-cl
 
 These apps (in [mas-app.txt](lib/mas-apps.txt)) need to be installed manually via the Mac App Store:
 
-- Frollo - Feel good about money (ID 1179563005)
 - TP-Link Tapo (ID 1472718009)
 - ING Australia Banking (ID 427100193)
 - Microsoft Copilot (ID 6472538445)
