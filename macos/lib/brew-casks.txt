@@ -4,6 +4,7 @@ balenaetcher
 beeper
 brave-browser
 canva
+crystalfetch
 insomnia
 kap
 keka
