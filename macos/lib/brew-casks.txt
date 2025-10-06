@@ -27,6 +27,7 @@ slack
 spotify
 steam
 sublime-text
+utm
 vlc
 warp
 windsurf
