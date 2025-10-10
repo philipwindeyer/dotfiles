@@ -4,3 +4,4 @@
 497799835 Xcode
 545519333 "Amazon Prime Video"
 6472538445 "Microsoft Copilot"
+6714467650 "Perplexity: Ask Anything"
