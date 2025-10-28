@@ -198,8 +198,6 @@
 						<string>0</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
@@ -334,9 +332,7 @@
 						<key>isPathPopUp</key>
 						<true/>
 						<key>variableUUIDsInMenu</key>
-						<array>
-							<string>C02C974B-EA58-4C09-8FCE-7CBA6630A6D6</string>
-						</array>
+						<array/>
 					</dict>
 				</dict>
 				<key>AMProvides</key>
@@ -353,7 +349,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>appPath</key>
-					<string>~/Applications/Brave Browser Apps.localized/Gmail.app</string>
+					<string>~/Applications/Brave Browser Apps.localized/Gmai.app</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.OpenApplication</string>
@@ -370,16 +366,16 @@
 				<key>Class Name</key>
 				<string>AMLaunchApplicationAction</string>
 				<key>InputUUID</key>
-				<string>663364E8-5C4A-4266-8D71-7D6011FA5CD8</string>
+				<string>60318437-64AD-4F57-8CA3-3397D91AC33B</string>
 				<key>Keywords</key>
 				<array>
 					<string>File</string>
 					<string>Open</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>03EFF7F4-ECE6-4383-BED6-54E3E97D3BAB</string>
+				<string>835CC0A2-9025-4872-B8FF-4325D311CF11</string>
 				<key>UUID</key>
-				<string>48B75F60-8B53-4B52-8655-57F0C4B86364</string>
+				<string>C27DD6FA-1291-428D-9906-909A64ED09DA</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Finder</string>
@@ -400,6 +396,8 @@
 						<string>0</string>
 					</dict>
 				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
@@ -699,8 +697,6 @@
 						<string>0</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
@@ -912,61 +908,61 @@
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>0F43D494-00A8-4628-A26F-D6E90318406C</key>
+		<key>14C22683-2C89-4F5C-A4A3-30522A1E80B5</key>
+		<dict>
+			<key>from</key>
+			<string>4DEF02E9-7050-4270-8D43-E891378815A0 - 4DEF02E9-7050-4270-8D43-E891378815A0</string>
+			<key>to</key>
+			<string>9666DCC7-B4C9-4983-A955-34C0BCB31556 - 9666DCC7-B4C9-4983-A955-34C0BCB31556</string>
+		</dict>
+		<key>158DF31B-96FA-44D0-AA1E-ECC8F4F4A401</key>
+		<dict>
+			<key>from</key>
+			<string>A26E3833-F978-46C6-8573-B25046079429 - A26E3833-F978-46C6-8573-B25046079429</string>
+			<key>to</key>
+			<string>77074BF4-0A40-49F3-BDF5-45000519DAA6 - 77074BF4-0A40-49F3-BDF5-45000519DAA6</string>
+		</dict>
+		<key>2AFC2E02-4602-424C-BDD8-6BFE51C3563E</key>
+		<dict>
+			<key>from</key>
+			<string>8566A119-CAE9-4536-8969-6E30DDEDB2D6 - 8566A119-CAE9-4536-8969-6E30DDEDB2D6</string>
+			<key>to</key>
+			<string>4DEF02E9-7050-4270-8D43-E891378815A0 - 4DEF02E9-7050-4270-8D43-E891378815A0</string>
+		</dict>
+		<key>2D512069-C3CC-4D49-B86C-26E3BB9505A2</key>
+		<dict>
+			<key>from</key>
+			<string>77074BF4-0A40-49F3-BDF5-45000519DAA6 - 77074BF4-0A40-49F3-BDF5-45000519DAA6</string>
+			<key>to</key>
+			<string>AF78C46E-59E0-4B49-809E-A842AB19978D - AF78C46E-59E0-4B49-809E-A842AB19978D</string>
+		</dict>
+		<key>4BB85CE4-AC69-45B7-88CA-425860EFA169</key>
 		<dict>
 			<key>from</key>
 			<string>713A8739-FA97-45F1-9A29-DA0568371309 - 713A8739-FA97-45F1-9A29-DA0568371309</string>
 			<key>to</key>
 			<string>DC8E8D93-BA96-4527-A8E7-72FEB6A3B452 - DC8E8D93-BA96-4527-A8E7-72FEB6A3B452</string>
 		</dict>
-		<key>642133E1-8924-4A39-8510-E7F529AD4083</key>
+		<key>7D70BC33-E1EF-4C0F-B828-EC327D38E0AA</key>
+		<dict>
+			<key>from</key>
+			<string>C27DD6FA-1291-428D-9906-909A64ED09DA - C27DD6FA-1291-428D-9906-909A64ED09DA</string>
+			<key>to</key>
+			<string>8566A119-CAE9-4536-8969-6E30DDEDB2D6 - 8566A119-CAE9-4536-8969-6E30DDEDB2D6</string>
+		</dict>
+		<key>D636191E-7117-44B8-97F5-1D9C97669C28</key>
 		<dict>
 			<key>from</key>
 			<string>AF78C46E-59E0-4B49-809E-A842AB19978D - AF78C46E-59E0-4B49-809E-A842AB19978D</string>
 			<key>to</key>
-			<string>48B75F60-8B53-4B52-8655-57F0C4B86364 - 48B75F60-8B53-4B52-8655-57F0C4B86364</string>
+			<string>C27DD6FA-1291-428D-9906-909A64ED09DA - C27DD6FA-1291-428D-9906-909A64ED09DA</string>
 		</dict>
-		<key>669CD5DE-1734-4617-B3BF-FD12AFAEA5D1</key>
-		<dict>
-			<key>from</key>
-			<string>8566A119-CAE9-4536-8969-6E30DDEDB2D6 - 8566A119-CAE9-4536-8969-6E30DDEDB2D6</string>
-			<key>to</key>
-			<string>4DEF02E9-7050-4270-8D43-E891378815A0 - 4DEF02E9-7050-4270-8D43-E891378815A0</string>
-		</dict>
-		<key>77FC18C3-59C1-4295-A36C-7C26A7252E40</key>
-		<dict>
-			<key>from</key>
-			<string>48B75F60-8B53-4B52-8655-57F0C4B86364 - 48B75F60-8B53-4B52-8655-57F0C4B86364</string>
-			<key>to</key>
-			<string>8566A119-CAE9-4536-8969-6E30DDEDB2D6 - 8566A119-CAE9-4536-8969-6E30DDEDB2D6</string>
-		</dict>
-		<key>8C21FA5F-78B4-4501-BCD4-FD407684D13D</key>
-		<dict>
-			<key>from</key>
-			<string>4DEF02E9-7050-4270-8D43-E891378815A0 - 4DEF02E9-7050-4270-8D43-E891378815A0</string>
-			<key>to</key>
-			<string>9666DCC7-B4C9-4983-A955-34C0BCB31556 - 9666DCC7-B4C9-4983-A955-34C0BCB31556</string>
-		</dict>
-		<key>B677B986-56E4-4C26-BC38-09165B37C369</key>
-		<dict>
-			<key>from</key>
-			<string>77074BF4-0A40-49F3-BDF5-45000519DAA6 - 77074BF4-0A40-49F3-BDF5-45000519DAA6</string>
-			<key>to</key>
-			<string>AF78C46E-59E0-4B49-809E-A842AB19978D - AF78C46E-59E0-4B49-809E-A842AB19978D</string>
-		</dict>
-		<key>D0EBDB88-71FA-4471-B1E0-DA838A965FDC</key>
+		<key>E9A47BE9-05F0-4978-9DC4-61DFE83F3AE3</key>
 		<dict>
 			<key>from</key>
 			<string>9666DCC7-B4C9-4983-A955-34C0BCB31556 - 9666DCC7-B4C9-4983-A955-34C0BCB31556</string>
 			<key>to</key>
 			<string>713A8739-FA97-45F1-9A29-DA0568371309 - 713A8739-FA97-45F1-9A29-DA0568371309</string>
-		</dict>
-		<key>E87BD111-1FDB-4565-A177-CAD963655EC8</key>
-		<dict>
-			<key>from</key>
-			<string>A26E3833-F978-46C6-8573-B25046079429 - A26E3833-F978-46C6-8573-B25046079429</string>
-			<key>to</key>
-			<string>77074BF4-0A40-49F3-BDF5-45000519DAA6 - 77074BF4-0A40-49F3-BDF5-45000519DAA6</string>
 		</dict>
 	</dict>
 	<key>variables</key>
@@ -979,7 +975,7 @@
 			<key>name</key>
 			<string>Gmail</string>
 			<key>value</key>
-			<string>~/Applications/Gmail.app</string>
+			<string>~/Applications/Brave Browser Apps.localized/Gmai.app</string>
 		</dict>
 		<dict>
 			<key>UUID</key>
