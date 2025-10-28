@@ -30,10 +30,6 @@ _Note: this is still a WIP and may require multiple executions (and reboots duri
 
 ## Post Installation App Configuration
 
-### Abacus CodeLLM (27/12/24)
-
-There is no homebrew formula for CodeLLM yet, so download it from https://codellm.abacus.ai/ and install manually
-
 ### Rectangle
 
 - Run Rectangle
@@ -68,6 +64,10 @@ Used to toggle Magic Keyboard and Magic Mouse between two Macs
   - Note: If you've purchased a license already, you ought to have kept the original app downloaded provided to you
   - I keep mine at ~/<cloud-storage>/Apps (distributed as MagicSwitch.dmg)
 
+### Meta Quest Remote Desktop
+
+- Install [Meta Quest Remote Desktop](https://horizon.meta.com/desktop)
+
 ### PWA Installation (via Brave Browser)
 
 - Open Brave Browser
@@ -75,7 +75,7 @@ Used to toggle Magic Keyboard and Magic Mouse between two Macs
 - Sign in first if required
 - Click "Install" if available, or Settings -> Save and Share -> "Install page as app..."
 
-These are the PWA I install:
+These are the PWAs I install:
 - Gmail (https://mail.google.com)
 - Google Calendar (https://calendar.google.com)
 - Google Contacts (https://contacts.google.com/)
