@@ -23,6 +23,7 @@ ocenaudio
 onedrive
 onyx
 pgadmin4
+playcover-community
 qbittorrent
 rectangle
 slack
