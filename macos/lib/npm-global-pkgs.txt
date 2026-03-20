@@ -1,1 +1,2 @@
 corepack@latest
+@abacus-ai/cli
