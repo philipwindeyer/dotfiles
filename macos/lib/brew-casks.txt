@@ -16,6 +16,7 @@ microsoft-excel
 microsoft-powerpoint
 microsoft-word
 mysqlworkbench
+mythic
 nordvpn
 notion
 notion-calendar
