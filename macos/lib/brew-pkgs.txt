@@ -10,6 +10,7 @@ gron
 jq
 libyaml
 mysql
+ollama
 postgresql@18
 telnet
 thefuck

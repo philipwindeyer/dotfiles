@@ -5,7 +5,9 @@ beeper
 brave-browser
 canva
 crystalfetch
+docker
 gimp
+google-drive
 insomnia
 kap
 keka

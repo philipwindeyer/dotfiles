@@ -1,2 +1,3 @@
 corepack@latest
 @abacus-ai/cli
+openclaw
