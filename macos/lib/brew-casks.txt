@@ -17,6 +17,7 @@ microsoft-auto-update
 microsoft-excel
 microsoft-powerpoint
 microsoft-word
+moonlight
 mysqlworkbench
 mythic
 nordvpn
