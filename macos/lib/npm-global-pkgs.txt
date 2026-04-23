@@ -2,3 +2,4 @@
 @google/gemini-cli
 corepack@latest
 openclaw
+opencode-ai
