@@ -246,6 +246,12 @@ function install_rbenv_ruby_versions() {
   fi
 }
 
+function install_openhands() {
+  log_heading "Installing OpenHands"
+  
+  uv tool install openhands --python 3.12
+}
+
 function configure_dock() {
   log_heading "Configuring macOS Dock"
 

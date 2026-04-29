@@ -15,6 +15,7 @@ postgresql@18
 telnet
 thefuck
 tldr
+uv
 vercel-cli
 wget2
 with-readline
