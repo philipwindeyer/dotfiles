@@ -4,6 +4,7 @@ balenaetcher
 beeper
 brave-browser
 canva
+capcut
 crystalfetch
 docker
 gimp
@@ -17,7 +18,6 @@ microsoft-auto-update
 microsoft-excel
 microsoft-powerpoint
 microsoft-word
-moonlight
 mysqlworkbench
 mythic
 nordvpn
@@ -28,7 +28,6 @@ ocenaudio
 onedrive
 onyx
 pgadmin4
-playcover-community
 qbittorrent
 rectangle
 slack
