@@ -4,6 +4,7 @@ coreutils
 corkscrew
 ctop
 curl
+gh
 git
 gnupg
 gron
