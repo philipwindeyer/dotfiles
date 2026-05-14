@@ -1,1 +1,2 @@
 alias zsh-x86_64="env /usr/bin/arch -x86_64 /bin/zsh"
+alias abacusai-yolo="abacusai --permission-mode yolo"
