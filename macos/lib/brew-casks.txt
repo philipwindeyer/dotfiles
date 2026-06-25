@@ -6,6 +6,7 @@ brave-browser
 canva
 capcut
 crystalfetch
+devin-desktop
 docker
 gimp
 google-drive
@@ -37,5 +38,4 @@ sublime-text
 utm
 vlc
 warp
-windsurf
 zoom

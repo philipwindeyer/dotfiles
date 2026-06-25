@@ -9,7 +9,7 @@ $HOME/Applications/Brave Browser Apps.localized/Ionos Mail.app
 $HOME/Applications/Brave Browser Apps.localized/Google Contacts.app
 /System/Applications/iPhone Mirroring.app
 $HOME/Applications/Brave Browser Apps.localized/Abacus ChatLLM.app
-/Applications/Windsurf.app
+/Applications/Devin.app
 /Applications/Sublime Text.app
 /Applications/Warp.app
 /System/Applications/Passwords.app
