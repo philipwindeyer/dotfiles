@@ -252,6 +252,15 @@ function install_openhands() {
   uv tool install openhands --python 3.12
 }
 
+function install_openclaw() {
+  log_heading "Installing OpenClaw"
+  
+  curl -fsSL https://openclaw.ai/install.sh | bash
+
+  log_message "OpenClaw installed successfully"
+  log_message "To install companion desktop app, download the dmg file from here: https://github.com/openclaw/openclaw/releases/latest"
+}
+
 function configure_dock() {
   log_heading "Configuring macOS Dock"
 

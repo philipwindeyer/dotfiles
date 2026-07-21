@@ -38,4 +38,5 @@ sublime-text
 utm
 vlc
 warp
+whatcable
 zoom

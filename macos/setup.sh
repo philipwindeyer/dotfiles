@@ -41,6 +41,7 @@ reload_env
 install_rbenv_ruby_versions $SCRIPT_DIR/lib/rbenv-ruby-versions.txt
 
 install_openhands
+install_openclaw
 
 configure_git
 create_directories

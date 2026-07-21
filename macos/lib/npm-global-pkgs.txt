@@ -1,5 +1,4 @@
 @abacus-ai/cli
 @google/gemini-cli
 corepack@latest
-openclaw
 opencode-ai
