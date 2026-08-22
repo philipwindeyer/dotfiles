@@ -5,6 +5,7 @@ beeper
 brave-browser
 canva
 capcut
+caskhub
 crystalfetch
 devin-desktop
 docker
@@ -15,6 +16,7 @@ kap
 keka
 kid3
 lulu
+meta-quest-remote-desktop
 microsoft-auto-update
 microsoft-excel
 microsoft-powerpoint
@@ -28,6 +30,7 @@ notion-mail
 ocenaudio
 onedrive
 onyx
+opencore-patcher
 pgadmin4
 qbittorrent
 rectangle
@@ -35,6 +38,8 @@ slack
 spotify
 steam
 sublime-text
+tappie
+telegram
 utm
 vlc
 warp
