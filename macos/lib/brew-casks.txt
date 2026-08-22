@@ -13,6 +13,7 @@ gimp
 google-drive
 insomnia
 kap
+kde-connect
 keka
 kid3
 lulu
