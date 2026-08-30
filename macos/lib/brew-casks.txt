@@ -10,6 +10,7 @@ crystalfetch
 devin-desktop
 docker
 gimp
+github-copilot-app
 google-drive
 insomnia
 kap
