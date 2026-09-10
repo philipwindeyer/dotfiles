@@ -17,6 +17,8 @@ kap
 kde-connect
 keka
 kid3
+lm-studio
+lm-studio-bionic
 lulu
 meta-quest-remote-desktop
 microsoft-auto-update

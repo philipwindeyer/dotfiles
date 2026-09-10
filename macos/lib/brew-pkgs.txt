@@ -12,7 +12,6 @@ jq
 libyaml
 mole
 mysql
-ollama
 postgresql@18
 telnet
 thefuck
