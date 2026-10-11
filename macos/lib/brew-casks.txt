@@ -38,6 +38,7 @@ opencore-patcher
 pgadmin4
 qbittorrent
 rectangle
+Sikarugir-App/sikarugir/sikarugir
 slack
 spotify
 steam

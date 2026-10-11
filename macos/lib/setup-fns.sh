@@ -114,6 +114,14 @@ function install_homebrew_taps() {
   done <$1
 }
 
+function trust_homebrew_taps() {
+  log_heading "Trusting Homebrew taps"
+
+  while IFS='' read -r LINE || [ -n "${LINE}" ]; do
+    brew trust "${LINE}"
+  done <$1
+}
+
 function install_homebrew_cask() {
   brew list --cask $1 >/dev/null 2>&1
 

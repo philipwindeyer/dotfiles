@@ -1,0 +1,3 @@
+aws/awscli
+EmpiricApps/zenithal
+Sikarugir-App/sikarugir

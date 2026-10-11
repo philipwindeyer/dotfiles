@@ -22,6 +22,7 @@ install_homebrew
 install_mas
 
 install_homebrew_taps $SCRIPT_DIR/lib/brew-taps.txt
+trust_homebrew_taps $SCRIPT_DIR/lib/brew-trust.txt
 install_homebrew_packages $SCRIPT_DIR/lib/brew-pkgs.txt
 install_homebrew_casks $SCRIPT_DIR/lib/brew-casks.txt
 install_mas_apps $SCRIPT_DIR/lib/mas-apps.txt
