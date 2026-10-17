@@ -46,6 +46,7 @@ sublime-text
 tappie
 telegram
 utm
+vectorcraft
 vlc
 warp
 whatcable
